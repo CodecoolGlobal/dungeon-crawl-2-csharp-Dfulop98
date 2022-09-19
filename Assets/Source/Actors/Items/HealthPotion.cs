@@ -1,4 +1,5 @@
 ﻿using DungeonCrawl.Actors;
+using DungeonCrawl.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace Assets.Source.Actors.Items
         {
             // Apply change
             // player.Health += 10;
+            ActorManager.Singleton.DestroyActor(this);
         }
     }
 }

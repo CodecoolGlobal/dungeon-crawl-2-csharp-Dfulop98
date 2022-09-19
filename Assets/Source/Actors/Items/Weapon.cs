@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DungeonCrawl.Actors;
+using DungeonCrawl.Core;
 
 namespace Assets.Source.Actors.Items
 {
@@ -17,6 +18,7 @@ namespace Assets.Source.Actors.Items
             // Apply change
             // player.damage += 10;
             // player._inventory.Add(this);
+            ActorManager.Singleton.DestroyActor(this);
         }
     }
 }
