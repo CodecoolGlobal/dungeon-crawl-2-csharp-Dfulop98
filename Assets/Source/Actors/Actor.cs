@@ -53,8 +53,7 @@ namespace DungeonCrawl.Actors
             {
                 if (actorAtTargetPosition.OnCollision(this))
                 {
-                    // Allowed to move
-                    // Position = targetPosition;
+                    // Don't allow to move on other actors
                 }
             }
         }
