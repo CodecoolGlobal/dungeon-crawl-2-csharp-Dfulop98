@@ -2,6 +2,7 @@
 using DungeonCrawl.Actors.Static;
 using System;
 using System.Text.RegularExpressions;
+using Assets.Source.Actors.Items;
 using UnityEngine;
 
 namespace DungeonCrawl.Core
@@ -60,6 +61,14 @@ namespace DungeonCrawl.Core
                     ActorManager.Singleton.Spawn<Floor>(position);
                     break;
                 case ' ':
+                    break;
+                case 'w':
+                    ActorManager.Singleton.Spawn<Weapon>(position);
+                    ActorManager.Singleton.Spawn<Floor>(position);
+                    break;
+                case 'h':
+                    ActorManager.Singleton.Spawn<HealthPotion>(position);
+                    ActorManager.Singleton.Spawn<Floor>(position);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
