@@ -55,10 +55,12 @@ namespace DungeonCrawl.Core
                 case 'p':
                     ActorManager.Singleton.Spawn<Player>(position);
                     ActorManager.Singleton.Spawn<Floor>(position);
+                    
                     break;
                 case 's':
                     ActorManager.Singleton.Spawn<Skeleton>(position);
                     ActorManager.Singleton.Spawn<Floor>(position);
+                    
                     break;
                 case ' ':
                     break;
