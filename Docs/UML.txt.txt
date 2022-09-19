@@ -1,0 +1,67 @@
+@startuml
+
+package Actors{
+	+abstract Actor{
+		{field}- _position
+		{field}- _spriteRenderer
+		{field}+ virtual int Z
+		{field}+ virtual bool Detectable
+		{field}+ abstract int DefaultSpriteId { get; }
+		{field}+ abstract string DefaultName { get; }
+		{method}+ (int x, int y)Position
+		{method}- void Awake()
+		{method}- void Update()
+		{method}+ void SetSprite(int id)
+		{method}+ void TryMove(Direction direction)
+		{method}+ virtual bool OnCollision(Actor anotherActor)
+		{method}# virtual void OnUpdate(float deltaTime)
+	}
+
+	package Static{
+		+class Wall{
+			{field}+ override int DefaultSpriteId
+			{field}+ override string DeafultName
+		
+		}
+		
+		+class Floor{
+			{field}+ override int DefaultSpriteId
+			{field}+ override string DeafultName
+			{field}+ override bool Detectable
+		}
+	}
+	
+	package Characters{
+		+abstract Character{
+			{field}+ int Health {get; private set;}
+			{field}+ override int Z
+			{method}+ void ApplyDamage(int Damage)
+			{method}# abstract void OnDeath()
+		}
+		
+		+class Player{
+			{field}+ override int DefaultSpriteId
+			{field}+ override string DefaultName
+			{method}+ override void OnUpdate(float deltaTime)
+			{method}+ override bool OnCollision(Actor anotherActor)
+			{method}# override void OnDeath()
+		}
+		
+		+class Skeleton{
+			{field}+ override int DefaultSpriteId
+			{field}+ override string DefaultName
+			{method}+ override bool Oncollision(Actor anotherActor)
+			{method}# override void OnDeath()
+		}
+	}
+}
+
+
+Actor <|-- Wall
+Actor <|-- Floor
+Actor <|- Character
+
+Character <|-- Player 
+Character <|-- Skeleton
+
+@enduml
