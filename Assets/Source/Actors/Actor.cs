@@ -51,12 +51,7 @@ namespace DungeonCrawl.Actors
             }
             else
             {
-                if (actorAtTargetPosition is Item && this is Player)
-                {
-                    Item item = (Item)actorAtTargetPosition;
-                    item.Pickup(this);
-                }
-                else if (actorAtTargetPosition.OnCollision(this))
+                if (actorAtTargetPosition.OnCollision(this))
                 {
                     // Allowed to move
                     // Position = targetPosition;
