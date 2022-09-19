@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using Assets.Source.Actors.Items;
+using UnityEngine;
 
 namespace DungeonCrawl.Actors.Characters
 {
     public class Player : Character
     {
+        private List<Item> _inventory = new List<Item>();
         protected override void OnUpdate(float deltaTime)
         {
             if (Input.GetKeyDown(KeyCode.W))
