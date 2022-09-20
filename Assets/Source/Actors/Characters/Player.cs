@@ -12,7 +12,7 @@ namespace DungeonCrawl.Actors.Characters
         public override int Damage { get; set; } = 10;
         public override int Health { get; set; } = 100;
 
-        private List<Item> _inventory = new List<Item>();
+        public List<Item> _inventory = new List<Item>();
         public Item _floorItem = null;
 
         protected override void OnUpdate(float deltaTime)
