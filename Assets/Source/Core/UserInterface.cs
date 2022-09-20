@@ -50,5 +50,25 @@ namespace Assets.Source.Core
         {
             _textComponents[(int) textPosition].text = text;
         }
+
+        public void SetText(string text, TextPosition textPosition, string color)
+        {
+            switch (color)
+            {
+                case "magenta":
+                    _textComponents[(int)textPosition].color = Color.magenta;
+                    break;
+                case "black":
+                    _textComponents[(int)textPosition].color = Color.black;
+                    break;
+                case "red":
+                    _textComponents[(int)textPosition].color = Color.red;
+                    break;
+                default:
+                    _textComponents[(int)textPosition].color = Color.white;
+                    break;
+            }
+            _textComponents[(int)textPosition].text = text;
+        }
     }
 }
