@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Assets.Source.Actors.Items;
+using Assets.Source.scripts;
 using DungeonCrawl.Core;
 using UnityEngine;
 
@@ -9,8 +10,12 @@ namespace DungeonCrawl.Actors.Characters
     {
         private List<Item> _inventory = new List<Item>();
         public Item _floorItem = null;
+        public float Health = 100f;
         protected override void OnUpdate(float deltaTime)
         {
+            HealthBar_Script.CurrenctHealth = Health;
+            HealthBar_Script.HealthBar.fillAmount = HealthBar_Script.CurrenctHealth / HealthBar_Script.MaxHealth;
+
             if (Input.GetKeyDown(KeyCode.W))
             {
                 // Move up
@@ -39,6 +44,13 @@ namespace DungeonCrawl.Actors.Characters
             {
                 _floorItem.Pickup(this);
                 _floorItem = null;
+            }
+
+            //test HealthBar
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+
+                Health -= 30f;
             }
         }
 
@@ -92,5 +104,10 @@ namespace DungeonCrawl.Actors.Characters
 
         public override int DefaultSpriteId => 24;
         public override string DefaultName => "Player";
+
+
+      
+
+
     }
 }
