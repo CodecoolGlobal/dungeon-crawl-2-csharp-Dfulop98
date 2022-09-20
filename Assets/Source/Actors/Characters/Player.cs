@@ -12,12 +12,12 @@ namespace DungeonCrawl.Actors.Characters
 
         private List<Item> _inventory = new List<Item>();
         public Item _floorItem = null;
-        public float Health = 100f;
+        public new int Health = 100;
 
         protected override void OnUpdate(float deltaTime)
         {
-            HealthBar_Script.CurrenctHealth = Health;
-            HealthBar_Script.HealthBar.fillAmount = HealthBar_Script.CurrenctHealth / HealthBar_Script.MaxHealth;
+            HealthBar_Script.CurrentHealth = (float)Health;
+            HealthBar_Script.HealthBar.fillAmount = HealthBar_Script.CurrentHealth / HealthBar_Script.MaxHealth;
 
             if (Input.GetKeyDown(KeyCode.W))
             {
@@ -53,7 +53,7 @@ namespace DungeonCrawl.Actors.Characters
             if (Input.GetKeyDown(KeyCode.Space))
             {
 
-                Health -= 30f;
+                Health -= 30;
             }
         }
 
@@ -108,10 +108,6 @@ namespace DungeonCrawl.Actors.Characters
 
         public override int DefaultSpriteId => 24;
         public override string DefaultName => "Player";
-
-
-      
-
 
     }
 }
