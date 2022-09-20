@@ -68,14 +68,15 @@ namespace DungeonCrawl.Actors.Characters
             {
                 // No obstacle found, just move
                 Position = targetPosition;
+                CameraController.Singleton.Position = targetPosition;
                 _floorItem = null;
             }
             else
             {
-                if (actorAtTargetPosition is Item)
+                if (actorAtTargetPosition is Item item)
                 {
-                    Item item = (Item)actorAtTargetPosition;
                     Position = targetPosition;
+                    CameraController.Singleton.Position = targetPosition;
 
                     _floorItem = item;
                 }
