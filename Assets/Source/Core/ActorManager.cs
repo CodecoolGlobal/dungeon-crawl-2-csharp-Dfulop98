@@ -82,13 +82,20 @@ namespace DungeonCrawl.Core
         /// <returns></returns>
         
         
-        public Sprite GetMapSprite(int id)
+        public Sprite GetSprite(string id, string type)
         {
-            return _spriteAtlas.GetSprite($"Gress {id}");
-        }
-        public Sprite GetSprite(int id)
-        {
-            return _spriteAtlas.GetSprite($"kenney_transparent_{id}");
+            switch (type)
+            {
+                
+                case "Floor":
+                    return _spriteAtlas.GetSprite(id);
+                    
+                    //default incl: tree, wall, 
+                default:
+                    return _spriteAtlas.GetSprite(id);
+                    
+            }
+            
         }
 
         /// <summary>

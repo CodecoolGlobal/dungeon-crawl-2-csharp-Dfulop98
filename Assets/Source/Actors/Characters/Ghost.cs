@@ -26,7 +26,7 @@ namespace DungeonCrawl.Actors.Characters
             ActorManager.Singleton.DestroyActor(this);
         }
 
-        public override int DefaultSpriteId => 314;
+        public override string DefaultSpriteId => "kenney_transparent_314";
         public override string DefaultName => "Ghost";
     }
 }

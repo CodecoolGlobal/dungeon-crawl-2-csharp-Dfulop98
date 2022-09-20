@@ -107,7 +107,7 @@ namespace DungeonCrawl.Actors.Characters
             Debug.Log("Oh no, I'm dead!");
         }
 
-        public override int DefaultSpriteId => 24;
+        public override string DefaultSpriteId => "kenney_transparent_24";
         public override string DefaultName => "Player";
 
     }

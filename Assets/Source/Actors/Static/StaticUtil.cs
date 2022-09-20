@@ -4,11 +4,11 @@ using System.Linq;
 
 namespace Assets.Source.Actors.Static
 {
-    public class StaticUtil
+    public static class StaticUtil
     {
-        public Random Random = new Random();
+        public static Random Random = new Random();
 
-        public int RandomSprite(params int[] args)
+        public static int RandomSprite(params int[] args)
         {
             //random sprite from the given pack
 

@@ -16,7 +16,7 @@ namespace DungeonCrawl.Actors.Characters
             Debug.Log("Spider noises...");
         }
 
-        public override int DefaultSpriteId => 267;
+        public override string DefaultSpriteId => "kenney_transparent_267";
         public override string DefaultName => "Spider";
     }
 }

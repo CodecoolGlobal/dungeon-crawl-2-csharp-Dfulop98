@@ -17,7 +17,7 @@ namespace DungeonCrawl.Actors.Characters
             
         }
 
-        public override int DefaultSpriteId => 316;
+        public override string DefaultSpriteId => "kenney_transparent_316";
         public override string DefaultName => "Skeleton";
         
     }

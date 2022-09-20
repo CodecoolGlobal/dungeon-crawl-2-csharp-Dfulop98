@@ -23,28 +23,18 @@ namespace DungeonCrawl.Actors
         private void Awake()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
-
-            if (DefaultName == "Floor")
-            { SetMapSprite(DefaultSpriteId); }
-            else if (DefaultName == "Tree")
-            { SetTreeSprite(DefaultSpriteId); }
-            else
-            { SetSprite(DefaultSpriteId); }
-            
-
+            SetSprite(DefaultSpriteId, DefaultName);
         }
+
 
         private void Update()
         {
             OnUpdate(Time.deltaTime);
         }
-        public void SetMapSprite(int id)
+
+        public void SetSprite(string id, string type)
         {
-            _spriteRenderer.sprite = ActorManager.Singleton.GetMapSprite(id);
-        }
-        public void SetSprite(int id)
-        {
-            _spriteRenderer.sprite = ActorManager.Singleton.GetSprite(id);
+            _spriteRenderer.sprite = ActorManager.Singleton.GetSprite(id, type);
         }
 
         public void TryMove(Direction direction)
@@ -101,7 +91,7 @@ namespace DungeonCrawl.Actors
         /// <summary>
         ///     Id of the default sprite of this actor type
         /// </summary>
-        public abstract int DefaultSpriteId { get; }
+        public abstract string DefaultSpriteId { get; }
 
         /// <summary>
         ///     Default name assigned to this actor type

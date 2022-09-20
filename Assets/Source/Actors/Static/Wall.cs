@@ -2,7 +2,11 @@
 {
     public class Wall : Actor
     {
-        public override int DefaultSpriteId => 47;
+        public Wall(char id)
+        {
+
+        }
+        public override string DefaultSpriteId => "kenney_transparent_782";
         public override string DefaultName => "Wall";
     }
 }
