@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{384E71AE-0ACD-4D1C-BF65-C3E5F67B541C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -53,6 +54,7 @@
     <UnityVersion>2021.1.24f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Source\Actors\Characters\Enemy\Enemy.cs" />
     <Compile Include="Assets\Source\Actors\Static\Wall.cs" />
     <Compile Include="Assets\Source\Actors\Static\Floor.cs" />
     <Compile Include="Assets\Source\Core\CameraController.cs" />
@@ -62,7 +64,7 @@
     <Compile Include="Assets\Source\Actors\Characters\Character.cs" />
     <Compile Include="Assets\Source\Actors\Items\Weapon.cs" />
     <Compile Include="Assets\Source\Actors\Items\Item.cs" />
-    <Compile Include="Assets\Source\Actors\Characters\Skeleton.cs" />
+    <Compile Include="Assets\Source\Actors\Characters\Enemy\Skeleton.cs" />
     <Compile Include="Assets\Source\Core\MapLoader.cs" />
     <Compile Include="Assets\Source\Utilities.cs" />
     <Compile Include="Assets\Source\Actors\Items\HealthPotion.cs" />
@@ -70,8 +72,8 @@
     <Compile Include="Assets\Source\Core\ActorManager.cs" />
     <Compile Include="Assets\Source\scripts\HealthBar_Script.cs" />
     <Compile Include="Assets\Hea.cs" />
-    <Compile Include="Assets\Source\Actors\Characters\Spider.cs" />
-    <Compile Include="Assets\Source\Actors\Characters\Ghost.cs" />
+    <Compile Include="Assets\Source\Actors\Characters\Enemy\Spider.cs" />
+    <Compile Include="Assets\Source\Actors\Characters\Enemy\Ghost.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -11,20 +11,15 @@ namespace DungeonCrawl.Actors.Characters
         public abstract int Damage { get; set; }
 
 
-        public void ApplyDamage(int damage)
-        {
-            Health -= damage;
+        public abstract void ApplyDamage(int damage);
+        public abstract void ApplyDamage(int damage, Player player);
 
-            if (Health <= 0)
-            {
-                // Die
-                OnDeath();
-            }
-        }
 
 
         protected abstract void OnDeath();
+        protected abstract void OnDeath(Player player);
 
+        protected abstract void OnDeathFeedBack();
         /// <summary>
         ///     All characters are drawn "above" floor etc
         /// </summary>

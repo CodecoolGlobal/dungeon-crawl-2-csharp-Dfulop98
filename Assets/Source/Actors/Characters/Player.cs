@@ -9,7 +9,7 @@ namespace DungeonCrawl.Actors.Characters
 {
     public class Player : Character
     {
-        public new int Score { get; set; } = 0;
+        public int Score { get; set; } = 0;
         public override int Damage { get; set; } = 10;
         public override int Health { get; set; } = 100;
 
@@ -124,7 +124,34 @@ namespace DungeonCrawl.Actors.Characters
 
         protected override void OnDeath()
         {
+            OnDeathFeedBack();
+            ActorManager.Singleton.DestroyActor(this);
+        }
+
+        protected override void OnDeath(Player player)
+        {
+            
+        }
+
+        protected override void OnDeathFeedBack()
+        {
             Debug.Log("Oh no, I'm dead!");
+        }
+
+        public override void ApplyDamage(int damage)
+        {
+            Health -= damage;
+
+            if (Health <= 0)
+            {
+                // Die
+                OnDeath();
+            }
+        }
+
+        public override void ApplyDamage(int damage, Player player)
+        {
+            
         }
 
         public override int DefaultSpriteId => 24;
