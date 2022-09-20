@@ -4,6 +4,8 @@ namespace DungeonCrawl.Actors.Characters
 {
     public class Player : Character
     {
+        public new int Score { get; set; }
+       
         protected override void OnUpdate(float deltaTime)
         {
             if (Input.GetKeyDown(KeyCode.W))
