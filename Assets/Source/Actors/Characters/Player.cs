@@ -8,9 +8,12 @@ namespace DungeonCrawl.Actors.Characters
 {
     public class Player : Character
     {
+        public new int Score { get; set; }
+
         private List<Item> _inventory = new List<Item>();
         public Item _floorItem = null;
         public float Health = 100f;
+
         protected override void OnUpdate(float deltaTime)
         {
             HealthBar_Script.CurrenctHealth = Health;

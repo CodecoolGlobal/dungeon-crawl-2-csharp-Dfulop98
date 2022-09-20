@@ -2,7 +2,7 @@
 
 namespace DungeonCrawl.Actors.Characters
 {
-    public class Skeleton : Character
+    public class Ghost : Character
     {
         public override bool OnCollision(Actor anotherActor)
         {
@@ -11,12 +11,10 @@ namespace DungeonCrawl.Actors.Characters
 
         protected override void OnDeath()
         {
-            Debug.Log("Well, I was already dead anyway...");
-            
+            Debug.Log("I am going to haunt you in your dreams!...");
         }
 
-        public override int DefaultSpriteId => 316;
-        public override string DefaultName => "Skeleton";
-        
+        public override int DefaultSpriteId => 314;
+        public override string DefaultName => "Ghost";
     }
 }
