@@ -25,13 +25,17 @@ namespace DungeonCrawl.Actors
             _spriteRenderer = GetComponent<SpriteRenderer>();
 
             SetSprite(DefaultSpriteId);
+            SetMapSprite(DefaultMapSpriteId);
         }
 
         private void Update()
         {
             OnUpdate(Time.deltaTime);
         }
-
+        public void SetMapSprite(int id)
+        {
+            _spriteRenderer.sprite = ActorManager.Singleton.GetMapSprite(id);
+        }
         public void SetSprite(int id)
         {
             _spriteRenderer.sprite = ActorManager.Singleton.GetSprite(id);
@@ -96,6 +100,7 @@ namespace DungeonCrawl.Actors
         /// <summary>
         ///     Default name assigned to this actor type
         /// </summary>
+        public abstract int DefaultMapSpriteId { get; }
         public abstract string DefaultName { get; }
     }
 }
