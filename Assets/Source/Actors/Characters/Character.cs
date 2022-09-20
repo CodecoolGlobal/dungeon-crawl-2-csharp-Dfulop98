@@ -7,20 +7,21 @@ namespace DungeonCrawl.Actors.Characters
 {
     public abstract class Character : Actor
     {
-        
+        public abstract int Health { get; set; }
+        public abstract int Damage { get; set; }
 
-        //public void ApplyDamage(int damage)
-        //{
-        //    Health -= damage;
 
-        //    if (Health <= 0)
-        //    {
-        //        // Die
-        //        OnDeath();
+        public void ApplyDamage(int damage)
+        {
+            Health -= damage;
 
-        //        ActorManager.Singleton.DestroyActor(this);
-        //    }
-        //}
+            if (Health <= 0)
+            {
+                // Die
+                OnDeath();
+            }
+        }
+
 
         protected abstract void OnDeath();
 

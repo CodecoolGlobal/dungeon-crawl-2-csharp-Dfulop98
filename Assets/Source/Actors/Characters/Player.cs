@@ -8,13 +8,17 @@ namespace DungeonCrawl.Actors.Characters
 {
     public class Player : Character
     {
-        private List<Item> _inventory = new List<Item>();
+        public new int Score { get; set; }
+        public override int Damage { get; set; } = 10;
+        public override int Health { get; set; } = 100;
+
+        public List<Item> _inventory = new List<Item>();
         public Item _floorItem = null;
-        public float Health = 100f;
+
         protected override void OnUpdate(float deltaTime)
         {
-            HealthBar_Script.CurrenctHealth = Health;
-            HealthBar_Script.HealthBar.fillAmount = HealthBar_Script.CurrenctHealth / HealthBar_Script.MaxHealth;
+            HealthBar_Script.CurrentHealth = (float)Health;
+            HealthBar_Script.HealthBar.fillAmount = HealthBar_Script.CurrentHealth / HealthBar_Script.MaxHealth;
 
             if (Input.GetKeyDown(KeyCode.W))
             {
@@ -50,7 +54,7 @@ namespace DungeonCrawl.Actors.Characters
             if (Input.GetKeyDown(KeyCode.Space))
             {
 
-                Health -= 30f;
+                Health -= Damage;
             }
         }
 
@@ -65,14 +69,15 @@ namespace DungeonCrawl.Actors.Characters
             {
                 // No obstacle found, just move
                 Position = targetPosition;
+                CameraController.Singleton.Position = targetPosition;
                 _floorItem = null;
             }
             else
             {
-                if (actorAtTargetPosition is Item)
+                if (actorAtTargetPosition is Item item)
                 {
-                    Item item = (Item)actorAtTargetPosition;
                     Position = targetPosition;
+                    CameraController.Singleton.Position = targetPosition;
 
                     _floorItem = item;
                 }
@@ -104,10 +109,6 @@ namespace DungeonCrawl.Actors.Characters
 
         public override int DefaultSpriteId => 24;
         public override string DefaultName => "Player";
-
-
-      
-
 
     }
 }

@@ -9,7 +9,7 @@ namespace Assets.Source.scripts
     public class HealthBar_Script : MonoBehaviour
     {
         public static Image HealthBar;
-        public static float CurrenctHealth;
+        public static float CurrentHealth;
         public static float MaxHealth = 100f;
         Player Player;
 
