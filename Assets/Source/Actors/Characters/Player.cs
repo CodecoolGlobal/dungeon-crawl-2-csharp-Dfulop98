@@ -9,10 +9,11 @@ namespace DungeonCrawl.Actors.Characters
     public class Player : Character
     {
         public new int Score { get; set; }
+        public override int Damage { get; set; } = 10;
+        public override int Health { get; set; } = 100;
 
         private List<Item> _inventory = new List<Item>();
         public Item _floorItem = null;
-        public new int Health = 100;
 
         protected override void OnUpdate(float deltaTime)
         {
@@ -53,7 +54,7 @@ namespace DungeonCrawl.Actors.Characters
             if (Input.GetKeyDown(KeyCode.Space))
             {
 
-                Health -= 30;
+                Health -= Damage;
             }
         }
 
