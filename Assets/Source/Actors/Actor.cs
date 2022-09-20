@@ -24,8 +24,14 @@ namespace DungeonCrawl.Actors
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
 
-            SetSprite(DefaultSpriteId);
-            SetMapSprite(DefaultMapSpriteId);
+            if (DefaultName == "Floor")
+            { SetMapSprite(DefaultSpriteId); }
+            else if (DefaultName == "Tree")
+            { SetTreeSprite(DefaultSpriteId); }
+            else
+            { SetSprite(DefaultSpriteId); }
+            
+
         }
 
         private void Update()
@@ -100,7 +106,6 @@ namespace DungeonCrawl.Actors
         /// <summary>
         ///     Default name assigned to this actor type
         /// </summary>
-        public abstract int DefaultMapSpriteId { get; }
         public abstract string DefaultName { get; }
     }
 }

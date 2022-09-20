@@ -81,10 +81,10 @@ namespace DungeonCrawl.Core
         /// <param name="id"></param>
         /// <returns></returns>
         
-        //Todo: külön class a map generáláshoz nem az actorrel ahol másik csomag spritejait hivja meg
+        
         public Sprite GetMapSprite(int id)
         {
-            return _spriteAtlas.GetSprite($"Tiles{id}");
+            return _spriteAtlas.GetSprite($"Gress {id}");
         }
         public Sprite GetSprite(int id)
         {

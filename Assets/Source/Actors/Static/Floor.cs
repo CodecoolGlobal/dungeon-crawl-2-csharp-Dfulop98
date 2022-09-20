@@ -37,7 +37,7 @@ namespace DungeonCrawl.Actors.Static
         //    return 304;
         //}
 
-        public override int DefaultMapSpriteId => 4;
+        public override int DefaultSpriteId=> 4;
         public override string DefaultName => "Floor";
 
         public override bool Detectable => false;
