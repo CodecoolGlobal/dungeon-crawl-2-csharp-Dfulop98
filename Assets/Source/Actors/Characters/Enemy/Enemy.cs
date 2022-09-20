@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Assets.Source.Actors.Characters.Enemy
 {
-    public abstract class Enemy : Character
+    public abstract class Enemy : Character, IDamageableEnemy
     {
         public override int Health { get; set; }
         public override int Damage { get; set; }
@@ -20,42 +20,34 @@ namespace Assets.Source.Actors.Characters.Enemy
 
         public abstract override  string DefaultName { get; }
 
-        public override void ApplyDamage(int damage, Player player)
+        public void ApplyDamage(Player player)
         {
-            Health -= damage;
+            Health -= player.Damage;
 
             if (Health <= 0)
             {
                 // Die
-                OnDeath();
+                OnDeath(player);
             }
         }
 
-        public override void ApplyDamage(int damage)
-        {
-            
-        }
         public override bool OnCollision(Actor anotherActor)
         {
             if (anotherActor is Player player)
             {
-                ApplyDamage(player.Damage, player);
+                ApplyDamage(player);
                 if (Health > 0)
                 {
-                    player.ApplyDamage(this.Damage);
+                    player.ApplyDamage(this);
                 }
             }
             return true;
         }
-        protected override void OnDeath(Player player)
+        public void OnDeath(Player player)
         {
             OnDeathFeedBack();
             player.Score += ScoreValue;
             ActorManager.Singleton.DestroyActor(this);
-        }
-
-        protected override void OnDeath()
-        {
         }
 
         protected abstract override void OnDeathFeedBack();

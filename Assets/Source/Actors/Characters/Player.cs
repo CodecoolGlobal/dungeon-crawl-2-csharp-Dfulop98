@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Assets.Source.Actors.Characters;
+using Assets.Source.Actors.Characters.Enemy;
 using Assets.Source.Actors.Items;
 using Assets.Source.Core;
 using Assets.Source.scripts;
@@ -7,7 +9,7 @@ using UnityEngine;
 
 namespace DungeonCrawl.Actors.Characters
 {
-    public class Player : Character
+    public class Player : Character, IDamageablePlayer
     {
         public int Score { get; set; } = 0;
         public override int Damage { get; set; } = 10;
@@ -122,36 +124,27 @@ namespace DungeonCrawl.Actors.Characters
             return false;
         }
 
-        protected override void OnDeath()
+        public void OnDeath()
         {
             OnDeathFeedBack();
             ActorManager.Singleton.DestroyActor(this);
         }
 
-        protected override void OnDeath(Player player)
-        {
-            
-        }
 
         protected override void OnDeathFeedBack()
         {
             Debug.Log("Oh no, I'm dead!");
         }
 
-        public override void ApplyDamage(int damage)
+        public void ApplyDamage(Enemy enemy)
         {
-            Health -= damage;
+            Health -= enemy.Damage;
 
             if (Health <= 0)
             {
                 // Die
                 OnDeath();
             }
-        }
-
-        public override void ApplyDamage(int damage, Player player)
-        {
-            
         }
 
         public override int DefaultSpriteId => 24;

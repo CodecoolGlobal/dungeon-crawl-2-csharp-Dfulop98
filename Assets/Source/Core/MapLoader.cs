@@ -2,6 +2,7 @@
 using DungeonCrawl.Actors.Static;
 using System;
 using System.Text.RegularExpressions;
+using Assets.Source.Actors.Characters.Enemy;
 using Assets.Source.Actors.Items;
 using UnityEngine;
 
