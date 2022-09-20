@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Assets.Source.Actors.Items;
+using Assets.Source.Core;
 using Assets.Source.scripts;
 using DungeonCrawl.Core;
 using UnityEngine;
@@ -8,7 +9,7 @@ namespace DungeonCrawl.Actors.Characters
 {
     public class Player : Character
     {
-        public new int Score { get; set; }
+        public new int Score { get; set; } = 0;
         public override int Damage { get; set; } = 10;
         public override int Health { get; set; } = 100;
 
@@ -19,6 +20,11 @@ namespace DungeonCrawl.Actors.Characters
         {
             HealthBar_Script.CurrentHealth = (float)Health;
             HealthBar_Script.HealthBar.fillAmount = HealthBar_Script.CurrentHealth / HealthBar_Script.MaxHealth;
+
+            UserInterface.Singleton.SetText($"Health: {Health}\nDamage: {Damage}\nScore: {Score}", UserInterface.TextPosition.TopRight);
+
+            UserInterface.Singleton.SetText($"{CreateInventoryString()}", UserInterface.TextPosition.BottomRight);
+
 
             if (Input.GetKeyDown(KeyCode.W))
             {
@@ -86,6 +92,20 @@ namespace DungeonCrawl.Actors.Characters
                     // Allowed to move
                     // Position = targetPosition;
                 }
+            }
+        }
+
+        private string CreateInventoryString()
+        {
+            if (_inventory.Count == 0)
+            {
+                return "None";
+            }
+            else
+            {
+                string output = "";
+                _inventory.ForEach(item => output += item.DefaultName);
+                return output;
             }
         }
 

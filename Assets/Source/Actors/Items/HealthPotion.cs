@@ -16,9 +16,17 @@ namespace Assets.Source.Actors.Items
 
         public override void Pickup(Player player)
         {
-            // Apply change
-            player.Health += 10;
-            ActorManager.Singleton.DestroyActor(this);
+            if (player.Health <= 90)
+            {
+                // Apply change
+                player.Health += 10;
+                ActorManager.Singleton.DestroyActor(this);
+            }
+            else if (90 < player.Health && player.Health < 100)
+            {
+                player.Health = 100;
+                ActorManager.Singleton.DestroyActor(this);
+            }
         }
     }
 }
