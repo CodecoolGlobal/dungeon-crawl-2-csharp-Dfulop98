@@ -30,7 +30,7 @@ namespace Assets.Source.Actors.Characters.Enemy
 
         private int _detectionRange = 5;
 
-        public abstract override int DefaultSpriteId { get; }
+        public abstract override string DefaultSpriteId { get; }
 
         public abstract override string DefaultName { get; }
 

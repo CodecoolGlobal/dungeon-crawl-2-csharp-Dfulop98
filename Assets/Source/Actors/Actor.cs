@@ -23,7 +23,6 @@ namespace DungeonCrawl.Actors
         private void Awake()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
-
             SetSprite(DefaultSpriteId);
         }
 
@@ -32,7 +31,7 @@ namespace DungeonCrawl.Actors
             OnUpdate(Time.deltaTime);
         }
 
-        public void SetSprite(int id)
+        public void SetSprite(string id)
         {
             _spriteRenderer.sprite = ActorManager.Singleton.GetSprite(id);
         }
@@ -70,7 +69,7 @@ namespace DungeonCrawl.Actors
         /// <summary>
         ///     Id of the default sprite of this actor type
         /// </summary>
-        public abstract int DefaultSpriteId { get; }
+        public abstract string DefaultSpriteId { get; }
 
         /// <summary>
         ///     Default name assigned to this actor type
