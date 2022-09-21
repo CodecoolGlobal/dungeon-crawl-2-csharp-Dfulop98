@@ -20,6 +20,16 @@ namespace DungeonCrawl.Actors.Characters
 
         public string Name = "Hegyiember";
 
+        public static Player Singleton { get; private set; }
+
+        private void Awake()
+        {
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+
+            SetSprite(DefaultSpriteId);
+            Singleton = this;
+        }
+
         protected override void OnUpdate(float deltaTime)
         {
             HealthBar_Script.CurrentHealth = (float)Health;
