@@ -89,11 +89,6 @@ namespace DungeonCrawl.Actors.Characters
 
                     _floorItem = item;
                 }
-                else if (actorAtTargetPosition.OnCollision(this))
-                {
-                    // Allowed to move
-                    // Position = targetPosition;
-                }
             }
         }
 

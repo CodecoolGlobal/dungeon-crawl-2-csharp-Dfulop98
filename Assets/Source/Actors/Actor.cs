@@ -27,7 +27,7 @@ namespace DungeonCrawl.Actors
             SetSprite(DefaultSpriteId);
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             OnUpdate(Time.deltaTime);
         }
