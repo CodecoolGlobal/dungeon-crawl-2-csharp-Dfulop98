@@ -95,21 +95,17 @@ namespace Assets.Source.Actors.Characters.Enemy
             _elapsedTime += deltaTime;
             if (_elapsedTime >= 1)
             {
-                DetectPlayer();
-                var dir = (Direction)_rnd.Next(Enum.GetNames(typeof(Direction)).Length);
+                var dir = CalculateDirection();
+
                 TryMove(dir);
                 _elapsedTime = 0;
             }
         }
 
-        // Detect player in aura
-        // Calculate distance from player
-        // if in aura => Calculate
-
         protected bool DetectPlayer()
         {
-            if ((Position.x - 5 < Player.Singleton.Position.x && Player.Singleton.Position.x < Position.x + 5) &&
-                (Position.y - 5 < Player.Singleton.Position.y && Player.Singleton.Position.y < Position.y + 5))
+            if ((Position.x - _detectionRange < Player.Singleton.Position.x && Player.Singleton.Position.x < Position.x + _detectionRange) &&
+                (Position.y - _detectionRange < Player.Singleton.Position.y && Player.Singleton.Position.y < Position.y + _detectionRange))
             {
                 EventLog.AddEvent($"{this.DefaultName} detects player");
                 return true;
@@ -117,6 +113,40 @@ namespace Assets.Source.Actors.Characters.Enemy
             else
             {
                 return false;
+            }
+        }
+
+        protected Direction CalculateDirection()
+        {
+            if (DetectPlayer())
+            {
+                int xDifference = Position.x - Player.Singleton.Position.x;
+                int yDifference = Position.y - Player.Singleton.Position.y;
+
+                if (xDifference < 0)
+                {
+                    return Direction.Right;
+                }
+                if (xDifference > 0)
+                {
+                    return Direction.Left;
+                }
+                if (yDifference < 0)
+                {
+                    return Direction.Up;
+                }
+                if (yDifference > 0)
+                {
+                    return Direction.Down;
+                }
+                else
+                {
+                    return (Direction)_rnd.Next(Enum.GetNames(typeof(Direction)).Length);
+                }
+            }
+            else
+            {
+                return (Direction)_rnd.Next(Enum.GetNames(typeof(Direction)).Length);
             }
         }
     }
