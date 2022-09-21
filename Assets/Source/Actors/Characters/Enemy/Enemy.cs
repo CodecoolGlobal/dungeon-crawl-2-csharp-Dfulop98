@@ -7,6 +7,12 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DungeonCrawl;
+using UnityEngine;
+using Random = System.Random;
+using Debug = UnityEngine.Debug;
+using System.Threading;
+using System.Runtime.Serialization;
 
 namespace Assets.Source.Actors.Characters.Enemy
 {
@@ -14,7 +20,13 @@ namespace Assets.Source.Actors.Characters.Enemy
     {
         public override int Health { get; set; }
         public override int Damage { get; set; }
-        public virtual int ScoreValue { get; set; }  
+        public virtual int ScoreValue { get; set; }
+
+        private static Random _seedrandom = new Random();
+
+        private Random _rnd = new Random(_seedrandom.Next());
+
+        private float _elapsedTime = 0;
 
         public abstract override int DefaultSpriteId { get; }
 
@@ -43,6 +55,28 @@ namespace Assets.Source.Actors.Characters.Enemy
             }
             return true;
         }
+
+        public override void TryMove(Direction direction)
+        {
+            var vector = direction.ToVector();
+            (int x, int y) targetPosition = (Position.x + vector.x, Position.y + vector.y);
+
+            var actorAtTargetPosition = ActorManager.Singleton.GetActorAt(targetPosition);
+
+            if (actorAtTargetPosition == null)
+            {
+                // No obstacle found, just move
+                Position = targetPosition;
+            }
+            else
+            {
+                if (actorAtTargetPosition.OnCollision(this))
+                {
+                    // Don't allow to move on other actors
+                    // TODO handle fight with player
+                }
+            }
+        }
         public void OnDeath(Player player)
         {
             OnDeathFeedBack();
@@ -51,5 +85,21 @@ namespace Assets.Source.Actors.Characters.Enemy
         }
 
         protected abstract override void OnDeathFeedBack();
+
+        protected override void Update()
+        {
+            OnUpdate(Time.deltaTime);
+        }
+
+        protected override void OnUpdate(float deltaTime)
+        {
+            _elapsedTime += deltaTime;
+            if (_elapsedTime >= 1)
+            {
+                var dir = (Direction)_rnd.Next(Enum.GetNames(typeof(Direction)).Length);
+                TryMove(dir);
+                _elapsedTime = 0;
+            }
+        }
     }
 }

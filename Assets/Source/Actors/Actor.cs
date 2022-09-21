@@ -27,7 +27,7 @@ namespace DungeonCrawl.Actors
             SetSprite(DefaultSpriteId);
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             OnUpdate(Time.deltaTime);
         }
@@ -35,27 +35,6 @@ namespace DungeonCrawl.Actors
         public void SetSprite(int id)
         {
             _spriteRenderer.sprite = ActorManager.Singleton.GetSprite(id);
-        }
-
-        public void TryMove(Direction direction)
-        {
-            var vector = direction.ToVector();
-            (int x, int y) targetPosition = (Position.x + vector.x, Position.y + vector.y);
-
-            var actorAtTargetPosition = ActorManager.Singleton.GetActorAt(targetPosition);
-
-            if (actorAtTargetPosition == null)
-            {
-                // No obstacle found, just move
-                Position = targetPosition;
-            }
-            else
-            {
-                if (actorAtTargetPosition.OnCollision(this))
-                {
-                    // Don't allow to move on other actors
-                }
-            }
         }
 
         /// <summary>

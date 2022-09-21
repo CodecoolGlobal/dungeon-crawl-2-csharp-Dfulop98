@@ -57,16 +57,9 @@ namespace DungeonCrawl.Actors.Characters
                 _floorItem.Pickup(this);
                 _floorItem = null;
             }
-
-            //test HealthBar
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-
-                Health -= Damage;
-            }
         }
 
-        public new void TryMove(Direction direction)
+        public override void TryMove(Direction direction)
         {
             var vector = direction.ToVector();
             (int x, int y) targetPosition = (Position.x + vector.x, Position.y + vector.y);
@@ -88,11 +81,6 @@ namespace DungeonCrawl.Actors.Characters
                     CameraController.Singleton.Position = targetPosition;
 
                     _floorItem = item;
-                }
-                else if (actorAtTargetPosition.OnCollision(this))
-                {
-                    // Allowed to move
-                    // Position = targetPosition;
                 }
             }
         }
@@ -116,6 +104,14 @@ namespace DungeonCrawl.Actors.Characters
             if (anotherActor is Item item)
             {
                 _floorItem = item;
+            }
+            else if (anotherActor is Enemy enemy)
+            {
+                ApplyDamage(enemy);
+                if (Health > 0)
+                {
+                    enemy.ApplyDamage(this);
+                }
             }
             else
             {
