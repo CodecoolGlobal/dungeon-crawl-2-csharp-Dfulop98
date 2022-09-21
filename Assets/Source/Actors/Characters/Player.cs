@@ -28,6 +28,14 @@ namespace DungeonCrawl.Actors.Characters
             UserInterface.Singleton.SetText($"Health: {Health}\nDamage: {Damage}\nScore: {Score}", UserInterface.TextPosition.TopRight, "magenta");
 
             UserInterface.Singleton.SetText($"{CreateInventoryString()}", UserInterface.TextPosition.BottomRight, "red");
+            if (_floorItem != null)
+            {
+                UserInterface.Singleton.SetText($"Press 'E' to pick up {_floorItem.DefaultName}", UserInterface.TextPosition.BottomCenter, "white");
+            }
+            else
+            {
+                UserInterface.Singleton.SetText("", UserInterface.TextPosition.BottomCenter, "white");
+            }
 
 
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
