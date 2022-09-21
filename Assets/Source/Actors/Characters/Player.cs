@@ -112,6 +112,14 @@ namespace DungeonCrawl.Actors.Characters
             {
                 _floorItem = item;
             }
+            else if (anotherActor is Enemy enemy)
+            {
+                ApplyDamage(enemy);
+                if (Health > 0)
+                {
+                    enemy.ApplyDamage(this);
+                }
+            }
             else
             {
                 _floorItem = null;
