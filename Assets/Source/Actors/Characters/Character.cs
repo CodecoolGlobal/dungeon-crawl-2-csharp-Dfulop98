@@ -10,6 +10,8 @@ namespace DungeonCrawl.Actors.Characters
         public abstract int Health { get; set; }
         public abstract int Damage { get; set; }
 
+        protected float _elapsedTime = 0;
+
         protected abstract void OnDeathFeedBack();
 
         /// <summary>
