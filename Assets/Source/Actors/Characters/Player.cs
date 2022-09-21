@@ -57,13 +57,6 @@ namespace DungeonCrawl.Actors.Characters
                 _floorItem.Pickup(this);
                 _floorItem = null;
             }
-
-            //test HealthBar
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-
-                Health -= Damage;
-            }
         }
 
         public override void TryMove(Direction direction)
