@@ -18,7 +18,7 @@ namespace DungeonCrawl.Actors
         }
 
         private (int x, int y) _position;
-        private SpriteRenderer _spriteRenderer;
+        protected SpriteRenderer _spriteRenderer;
 
         private void Awake()
         {

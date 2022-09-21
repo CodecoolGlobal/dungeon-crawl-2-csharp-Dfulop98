@@ -14,6 +14,7 @@ using Random = System.Random;
 using Debug = UnityEngine.Debug;
 using System.Threading;
 using System.Runtime.Serialization;
+using EventLog = Assets.Source.Core.EventLog;
 
 namespace Assets.Source.Actors.Characters.Enemy
 {
@@ -26,6 +27,8 @@ namespace Assets.Source.Actors.Characters.Enemy
         private static Random _seedrandom = new Random();
 
         private Random _rnd = new Random(_seedrandom.Next());
+
+        private int _detectionRange = 5;
 
         public abstract override int DefaultSpriteId { get; }
 
@@ -92,9 +95,28 @@ namespace Assets.Source.Actors.Characters.Enemy
             _elapsedTime += deltaTime;
             if (_elapsedTime >= 1)
             {
+                DetectPlayer();
                 var dir = (Direction)_rnd.Next(Enum.GetNames(typeof(Direction)).Length);
                 TryMove(dir);
                 _elapsedTime = 0;
+            }
+        }
+
+        // Detect player in aura
+        // Calculate distance from player
+        // if in aura => Calculate
+
+        protected bool DetectPlayer()
+        {
+            if ((Position.x - 5 < Player.Singleton.Position.x && Player.Singleton.Position.x < Position.x + 5) &&
+                (Position.y - 5 < Player.Singleton.Position.y && Player.Singleton.Position.y < Position.y + 5))
+            {
+                EventLog.AddEvent($"{this.DefaultName} detects player");
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }
