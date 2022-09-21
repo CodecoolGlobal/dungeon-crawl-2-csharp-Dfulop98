@@ -46,41 +46,112 @@ namespace DungeonCrawl.Core
         {
             switch (c)
             {
+                //map sprites 
+                //TODO: find something shorter for this
+                case 'g':
+                    ActorManager.Singleton.Spawn<Water9>(position);
+                    break;
+                case 'h':
+                    ActorManager.Singleton.Spawn<Water8>(position);
+                    break;
+                case 't':
+                    ActorManager.Singleton.Spawn<Water7>(position);
+                    break;
+                case 'z':
+                    ActorManager.Singleton.Spawn<Water6>(position);
+                    break;
+                case 'y':
+                    ActorManager.Singleton.Spawn<Water5>(position);
+                    break;
+                case 'x':
+                    ActorManager.Singleton.Spawn<Water4>(position);
+                    break;
+                case 'c':
+                    ActorManager.Singleton.Spawn<Water3>(position);
+                    break;
+                case 'v':
+                    ActorManager.Singleton.Spawn<Water2>(position);
+                    break;
+                case 'b':
+                    ActorManager.Singleton.Spawn<Water1>(position);
+                    break;
+                case 'n':
+                    ActorManager.Singleton.Spawn<DirtFloor9>(position);
+                    break;
+                case 'm':
+                    ActorManager.Singleton.Spawn<DirtFloor8>(position);
+                    break;
+                case 'j':
+                    ActorManager.Singleton.Spawn<DirtFloor7>(position);
+                    break;
+                case 'k':
+                    ActorManager.Singleton.Spawn<DirtFloor6>(position);
+                    break;
+                case 'l':
+                    ActorManager.Singleton.Spawn<DirtFloor5>(position);
+                    break;
+                case 'i':
+                    ActorManager.Singleton.Spawn<DirtFloor4>(position);
+                    break;
+                case 'u':
+                    ActorManager.Singleton.Spawn<DirtFloor2>(position);
+                    break;
+                case 'o':
+                    ActorManager.Singleton.Spawn<DirtFloor3>(position);
+                    break;
+                case 'D':
+                    ActorManager.Singleton.Spawn<WoodenFloor>(position);
+                    ActorManager.Singleton.Spawn<Door>(position);
+                    break;
+                case 's':
+                    ActorManager.Singleton.Spawn<DirtFloor1>(position);
+                    break;
+                case 'r':
+                    ActorManager.Singleton.Spawn<WoodenFloor>(position);
+                    break;
                 case '#':
+                    ActorManager.Singleton.Spawn<WoodenFloor>(position);
                     ActorManager.Singleton.Spawn<Wall>(position);
                     break;
                 case 'T':
+                    ActorManager.Singleton.Spawn<GrassFloor>(position);
                     ActorManager.Singleton.Spawn<Actors.Static.Tree>(position);
                     break;
                 case '.':
-                    ActorManager.Singleton.Spawn<Floor>(position);
+                    ActorManager.Singleton.Spawn<GrassFloor>(position);
                     break;
+
+                    //player
                 case 'p':
                     ActorManager.Singleton.Spawn<Player>(position);
-                    ActorManager.Singleton.Spawn<Floor>(position);
+                    ActorManager.Singleton.Spawn<WoodenFloor>(position);
                     CameraController.Singleton.Position = position;
                     break;
-                case 's':
+
+                    //mobs
+                case 'a':
                     ActorManager.Singleton.Spawn<Skeleton>(position);
-                    ActorManager.Singleton.Spawn<Floor>(position);
+                    ActorManager.Singleton.Spawn<GrassFloor>(position);
                     break;
-                case 'i':
+                case 'q':
                     ActorManager.Singleton.Spawn<Spider>(position);
-                    ActorManager.Singleton.Spawn<Floor>(position);
+                    ActorManager.Singleton.Spawn<GrassFloor>(position);
                     break;
-                case 'g':
+                case 'Y':
                     ActorManager.Singleton.Spawn<Ghost>(position);
-                    ActorManager.Singleton.Spawn<Floor>(position);
+                    ActorManager.Singleton.Spawn<GrassFloor>(position);
                     break;
                 case ' ':
                     break;
+
+                    //items
                 case 'w':
                     ActorManager.Singleton.Spawn<Weapon>(position);
-                    ActorManager.Singleton.Spawn<Floor>(position);
+                    ActorManager.Singleton.Spawn<GrassFloor>(position);
                     break;
-                case 'h':
+                case ',':
                     ActorManager.Singleton.Spawn<HealthPotion>(position);
-                    ActorManager.Singleton.Spawn<Floor>(position);
+                    ActorManager.Singleton.Spawn<GrassFloor>(position);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
