@@ -23,7 +23,7 @@ namespace DungeonCrawl.Actors
         private void Awake()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
-            SetSprite(DefaultSpriteId, DefaultName);
+            SetSprite(DefaultSpriteId);
         }
 
 
@@ -32,9 +32,9 @@ namespace DungeonCrawl.Actors
             OnUpdate(Time.deltaTime);
         }
 
-        public void SetSprite(string id, string type)
+        public void SetSprite(string id)
         {
-            _spriteRenderer.sprite = ActorManager.Singleton.GetSprite(id, type);
+            _spriteRenderer.sprite = ActorManager.Singleton.GetSprite(id);
         }
 
         public void TryMove(Direction direction)
