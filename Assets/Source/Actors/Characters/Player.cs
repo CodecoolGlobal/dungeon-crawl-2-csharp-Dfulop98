@@ -103,11 +103,11 @@ namespace DungeonCrawl.Actors.Characters
         {
             if (_inventory.Count == 0)
             {
-                return "None";
+                return "Inventory: \nNone";
             }
             else
             {
-                string output = "";
+                string output = "Inventory: \n";
                 _inventory.ForEach(item => output += item.DefaultName);
                 return output;
             }
