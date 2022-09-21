@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Assets.Source.Core;
 using DungeonCrawl.Actors;
 using DungeonCrawl.Actors.Characters;
 using DungeonCrawl.Core;
@@ -22,6 +23,7 @@ namespace Assets.Source.Actors.Items
             player.Damage += 10;
             player._inventory.Add(this);
             ActorManager.Singleton.DestroyActor(this);
+            EventLog.AddEvent($"{player.Name} picks up {DefaultName}");
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Assets.Source.Core;
 using DungeonCrawl.Actors.Characters;
 
 namespace Assets.Source.Actors.Items
@@ -21,11 +22,13 @@ namespace Assets.Source.Actors.Items
                 // Apply change
                 player.Health += 10;
                 ActorManager.Singleton.DestroyActor(this);
+                EventLog.AddEvent($"{player.Name} picks up {DefaultName}");
             }
             else if (90 < player.Health && player.Health < 100)
             {
                 player.Health = 100;
                 ActorManager.Singleton.DestroyActor(this);
+                EventLog.AddEvent($"{player.Name} picks up {DefaultName}");
             }
         }
     }
