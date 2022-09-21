@@ -18,6 +18,8 @@ namespace DungeonCrawl.Actors.Characters
         public List<Item> _inventory = new List<Item>();
         public Item _floorItem = null;
 
+        public string Name = "Hegyiember";
+
         protected override void OnUpdate(float deltaTime)
         {
             HealthBar_Script.CurrentHealth = (float)Health;
@@ -26,6 +28,14 @@ namespace DungeonCrawl.Actors.Characters
             UserInterface.Singleton.SetText($"Health: {Health}\nDamage: {Damage}\nScore: {Score}", UserInterface.TextPosition.TopRight, "magenta");
 
             UserInterface.Singleton.SetText($"{CreateInventoryString()}", UserInterface.TextPosition.BottomRight, "red");
+            if (_floorItem != null)
+            {
+                UserInterface.Singleton.SetText($"Press 'E' to pick up {_floorItem.DefaultName}", UserInterface.TextPosition.BottomCenter, "white");
+            }
+            else
+            {
+                UserInterface.Singleton.SetText("", UserInterface.TextPosition.BottomCenter, "white");
+            }
 
 
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
@@ -89,11 +99,11 @@ namespace DungeonCrawl.Actors.Characters
         {
             if (_inventory.Count == 0)
             {
-                return "None";
+                return "Inventory: \nNone";
             }
             else
             {
-                string output = "";
+                string output = "Inventory: \n";
                 _inventory.ForEach(item => output += item.DefaultName);
                 return output;
             }
@@ -131,7 +141,7 @@ namespace DungeonCrawl.Actors.Characters
         public void ApplyDamage(Enemy enemy)
         {
             Health -= enemy.Damage;
-
+            EventLog.AddEvent($"{enemy.DefaultName} hits {Name} for {enemy.Damage}");
             if (Health <= 0)
             {
                 // Die
