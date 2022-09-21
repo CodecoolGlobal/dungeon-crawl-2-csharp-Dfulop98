@@ -26,8 +26,6 @@ namespace Assets.Source.Actors.Characters.Enemy
 
         private Random _rnd = new Random(_seedrandom.Next());
 
-        private float _elapsedTime = 0;
-
         public abstract override int DefaultSpriteId { get; }
 
         public abstract override  string DefaultName { get; }
