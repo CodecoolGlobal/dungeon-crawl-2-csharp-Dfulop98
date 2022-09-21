@@ -54,28 +54,29 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Source\Actors\Static\Wall.cs" />
+    <Compile Include="Assets\Source\Actors\Characters\Interface\IDamageable.cs" />
     <Compile Include="Assets\Source\Actors\Static\Floor.cs" />
     <Compile Include="Assets\Source\Core\CameraController.cs" />
     <Compile Include="Assets\Source\Core\UserInterface.cs" />
     <Compile Include="Assets\Source\Actors\Actor.cs" />
+    <Compile Include="Assets\Source\Actors\Characters\Interface\IDamageablePlayer.cs" />
+    <Compile Include="Assets\Source\Actors\Characters\Interface\IDamageableEnemy.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Player.cs" />
+    <Compile Include="Assets\Hea.cs" />
+    <Compile Include="Assets\Source\Actors\Characters\Enemy\Ghost.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Character.cs" />
+    <Compile Include="Assets\Source\scripts\HealthBar_Script.cs" />
     <Compile Include="Assets\Source\Actors\Items\Weapon.cs" />
     <Compile Include="Assets\Source\Actors\Items\Item.cs" />
     <Compile Include="Assets\Source\Core\MapLoader.cs" />
     <Compile Include="Assets\Source\Utilities.cs" />
-    <Compile Include="Assets\Source\Actors\Items\HealthPotion.cs" />
-    <Compile Include="Assets\Source\Core\GameManager.cs" />
-    <Compile Include="Assets\Source\Core\ActorManager.cs" />
-    <Compile Include="Assets\Source\scripts\HealthBar_Script.cs" />
-    <Compile Include="Assets\Hea.cs" />
-    <Compile Include="Assets\Source\Actors\Characters\Enemy\Enemy.cs" />
-    <Compile Include="Assets\Source\Actors\Characters\Enemy\Ghost.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Enemy\Skeleton.cs" />
+    <Compile Include="Assets\Source\Actors\Items\HealthPotion.cs" />
+    <Compile Include="Assets\Source\Actors\Characters\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Source\Core\GameManager.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Enemy\Spider.cs" />
-    <Compile Include="Assets\Source\Actors\Characters\Interface\IDamageable.cs" />
-    <Compile Include="Assets\Source\Actors\Characters\Interface\IDamageablePlayer.cs" />
-    <Compile Include="Assets\Source\Actors\Characters\Interface\IDamageableEnemy.cs" />
+    <Compile Include="Assets\Source\Core\ActorManager.cs" />
+    <Compile Include="Assets\Source\Core\EventLog.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -744,6 +745,12 @@
     <Reference Include="Unity.2D.IK.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Animation.Triangle.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
     </Reference>
@@ -770,12 +777,6 @@
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
