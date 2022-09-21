@@ -2,7 +2,8 @@
 {
     public class Wall : Actor
     {
-        public override int DefaultSpriteId => 825;
+       
+        public override string DefaultSpriteId => "Wall 3";
         public override string DefaultName => "Wall";
     }
 }

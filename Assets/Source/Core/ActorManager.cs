@@ -80,9 +80,15 @@ namespace DungeonCrawl.Core
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Sprite GetSprite(int id)
+        
+        
+        public Sprite GetSprite(string id)
         {
-            return _spriteAtlas.GetSprite($"kenney_transparent_{id}");
+            
+             return _spriteAtlas.GetSprite(id);
+                    
+            
+            
         }
 
         /// <summary>
