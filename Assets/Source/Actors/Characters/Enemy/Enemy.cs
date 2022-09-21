@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DungeonCrawl;
 
 namespace Assets.Source.Actors.Characters.Enemy
 {
@@ -42,6 +43,27 @@ namespace Assets.Source.Actors.Characters.Enemy
                 }
             }
             return true;
+        }
+
+        public override void  TryMove(Direction direction)
+        {
+            var vector = direction.ToVector();
+            (int x, int y) targetPosition = (Position.x + vector.x, Position.y + vector.y);
+
+            var actorAtTargetPosition = ActorManager.Singleton.GetActorAt(targetPosition);
+
+            if (actorAtTargetPosition == null)
+            {
+                // No obstacle found, just move
+                Position = targetPosition;
+            }
+            else
+            {
+                if (actorAtTargetPosition.OnCollision(this))
+                {
+                    // Don't allow to move on other actors
+                }
+            }
         }
         public void OnDeath(Player player)
         {

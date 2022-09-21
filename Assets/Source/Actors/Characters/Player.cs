@@ -66,7 +66,7 @@ namespace DungeonCrawl.Actors.Characters
             }
         }
 
-        public new void TryMove(Direction direction)
+        public override void TryMove(Direction direction)
         {
             var vector = direction.ToVector();
             (int x, int y) targetPosition = (Position.x + vector.x, Position.y + vector.y);
