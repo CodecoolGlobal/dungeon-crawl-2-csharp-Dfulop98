@@ -6,13 +6,15 @@ namespace Assets.Source.Actors.Static
 {
     public static class StaticUtil
     {
-        public static Random Random = new Random();
+        
 
         public static int RandomSprite(params int[] args)
         {
             //random sprite from the given pack
-
+            Random Random = new Random();
+            
             int number = Random.Next(0, 100);
+            
             if (number > 0 && number < 25)
             {
                 return args[0];
