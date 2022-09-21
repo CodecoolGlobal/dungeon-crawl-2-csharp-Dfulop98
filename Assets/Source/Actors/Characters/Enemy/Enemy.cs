@@ -68,13 +68,9 @@ namespace Assets.Source.Actors.Characters.Enemy
                 // No obstacle found, just move
                 Position = targetPosition;
             }
-            else
+            else if (actorAtTargetPosition is Player player)
             {
-                if (actorAtTargetPosition.OnCollision(this))
-                {
-                    // Don't allow to move on other actors
-                    // TODO handle fight with player
-                }
+                player.OnCollision(this);
             }
         }
         public void OnDeath(Player player)

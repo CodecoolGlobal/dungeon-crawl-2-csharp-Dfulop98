@@ -73,15 +73,15 @@ namespace DungeonCrawl.Actors.Characters
                 CameraController.Singleton.Position = targetPosition;
                 _floorItem = null;
             }
-            else
+            else if (actorAtTargetPosition is Item item)
             {
-                if (actorAtTargetPosition is Item item)
-                {
-                    Position = targetPosition;
-                    CameraController.Singleton.Position = targetPosition;
-
-                    _floorItem = item;
-                }
+                Position = targetPosition;
+                CameraController.Singleton.Position = targetPosition;
+                _floorItem = item;
+            }
+            else if (actorAtTargetPosition is Enemy enemy)
+            {
+                enemy.OnCollision(this);
             }
         }
 
@@ -108,10 +108,6 @@ namespace DungeonCrawl.Actors.Characters
             else if (anotherActor is Enemy enemy)
             {
                 ApplyDamage(enemy);
-                if (Health > 0)
-                {
-                    enemy.ApplyDamage(this);
-                }
             }
             else
             {
