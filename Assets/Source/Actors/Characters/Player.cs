@@ -18,6 +18,8 @@ namespace DungeonCrawl.Actors.Characters
         public List<Item> _inventory = new List<Item>();
         public Item _floorItem = null;
 
+        public string Name = "Hegyiember";
+
         protected override void OnUpdate(float deltaTime)
         {
             HealthBar_Script.CurrentHealth = (float)Health;
@@ -139,7 +141,7 @@ namespace DungeonCrawl.Actors.Characters
         public void ApplyDamage(Enemy enemy)
         {
             Health -= enemy.Damage;
-
+            EventLog.AddEvent($"{enemy.DefaultName} hits {Name} for {enemy.Damage}");
             if (Health <= 0)
             {
                 // Die

@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Assets.Source.Core;
 
 namespace Assets.Source.Actors.Characters.Enemy
 {
@@ -18,16 +19,17 @@ namespace Assets.Source.Actors.Characters.Enemy
 
         public abstract override int DefaultSpriteId { get; }
 
-        public abstract override  string DefaultName { get; }
+        public abstract override string DefaultName { get; }
 
         public void ApplyDamage(Player player)
         {
             Health -= player.Damage;
-
+            EventLog.AddEvent($"{player.Name} hits {this.DefaultName} for {player.Damage}");
             if (Health <= 0)
             {
                 // Die
                 OnDeath(player);
+                EventLog.AddEvent($"{this.DefaultName} Dies");
             }
         }
 
