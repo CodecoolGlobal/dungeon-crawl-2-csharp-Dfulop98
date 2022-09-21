@@ -138,7 +138,7 @@ namespace DungeonCrawl.Actors.Characters
 
         public void OnDeath()
         {
-            OnDeathFeedBack();
+            EventLog.AddEvent($"You Dieded! Oh Noes!");
             ActorManager.Singleton.DestroyActor(this);
         }
 
@@ -156,6 +156,7 @@ namespace DungeonCrawl.Actors.Characters
             {
                 // Die
                 OnDeath();
+                UserInterface.Singleton.SetText($"Health: {Health}\nDamage: {Damage}\nScore: {Score}", UserInterface.TextPosition.TopRight, "magenta");
             }
         }
 
