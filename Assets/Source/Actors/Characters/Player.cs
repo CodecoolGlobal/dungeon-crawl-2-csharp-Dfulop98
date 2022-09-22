@@ -158,12 +158,6 @@ namespace DungeonCrawl.Actors.Characters
             ActorManager.Singleton.DestroyActor(this);
         }
 
-
-        protected override void OnDeathFeedBack()
-        {
-            Debug.Log("Oh no, I'm dead!");
-        }
-
         public void ApplyDamage(Enemy enemy)
         {
             Health -= enemy.Damage;

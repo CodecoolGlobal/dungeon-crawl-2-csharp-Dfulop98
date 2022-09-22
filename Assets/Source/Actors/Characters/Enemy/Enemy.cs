@@ -78,12 +78,9 @@ namespace Assets.Source.Actors.Characters.Enemy
         }
         public void OnDeath(Player player)
         {
-            OnDeathFeedBack();
             player.Score += ScoreValue;
             ActorManager.Singleton.DestroyActor(this);
         }
-
-        protected abstract override void OnDeathFeedBack();
 
         protected override void Update()
         {

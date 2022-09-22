@@ -10,9 +10,5 @@ namespace Assets.Source.Actors.Characters.Enemy
 
         public override string DefaultSpriteId => "kenney_transparent_267";
         public override string DefaultName => "Spider";
-        protected override void OnDeathFeedBack()
-        {
-            Debug.Log("Spider noises...");
-        }
     }
 }
