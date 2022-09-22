@@ -12,8 +12,6 @@ namespace DungeonCrawl.Actors.Characters
 
         protected float _elapsedTime = 0;
 
-        protected abstract void OnDeathFeedBack();
-
         /// <summary>
         ///     All characters are drawn "above" floor etc
         /// </summary>

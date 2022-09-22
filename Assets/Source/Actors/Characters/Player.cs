@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading;
 using Assets.Source.Actors.Characters;
 using Assets.Source.Actors.Characters.Enemy;
 using Assets.Source.Actors.Items;
@@ -7,6 +8,7 @@ using Assets.Source.scripts;
 using DungeonCrawl.Actors.Static;
 using DungeonCrawl.Core;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace DungeonCrawl.Actors.Characters
 {
@@ -20,7 +22,7 @@ namespace DungeonCrawl.Actors.Characters
 
         public Item _floorItem = null;
 
-        public string Name = "Hegyiember";
+        public string Name = "Röszkei Rambó";
 
         public static Player Singleton { get; private set; }
 
@@ -107,12 +109,10 @@ namespace DungeonCrawl.Actors.Characters
             }
             else if (actorAtTargetPosition is Door door)
             {
-                EventLog.AddEvent($"igen itt az ajto");
                 foreach (Item element in _inventory)
                 {
                     if (element is Key key)
                     {
-                        EventLog.AddEvent($"nyitnia kéne");
                         door.DoorOpen();
                     }
                 }
@@ -129,7 +129,7 @@ namespace DungeonCrawl.Actors.Characters
             else
             {
                 string output = "Inventory: \n";
-                _inventory.ForEach(item => output += item.DefaultName);
+                _inventory.ForEach(item => output += $"{item.DefaultName}\n");
                 return output;
             }
         }
@@ -156,12 +156,7 @@ namespace DungeonCrawl.Actors.Characters
         {
             EventLog.AddEvent($"You Dieded! Oh Noes!");
             ActorManager.Singleton.DestroyActor(this);
-        }
-
-
-        protected override void OnDeathFeedBack()
-        {
-            Debug.Log("Oh no, I'm dead!");
+            SceneManager.LoadScene(0);
         }
 
         public void ApplyDamage(Enemy enemy)

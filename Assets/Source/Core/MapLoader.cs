@@ -49,9 +49,6 @@ namespace DungeonCrawl.Core
             {
                 //map sprites 
                 //TODO: find something shorter for this
-                case 'K':
-                    ActorManager.Singleton.Spawn<Key>(position);
-                    break;
                 case 'g':
                     ActorManager.Singleton.Spawn<Water9>(position);
                     break;
@@ -127,35 +124,42 @@ namespace DungeonCrawl.Core
 
                     //player
                 case 'p':
-                    ActorManager.Singleton.Spawn<Player>(position);
                     ActorManager.Singleton.Spawn<WoodenFloor>(position);
+                    ActorManager.Singleton.Spawn<Player>(position);
                     CameraController.Singleton.Position = position;
                     break;
 
                     //mobs
                 case 'a':
-                    ActorManager.Singleton.Spawn<Skeleton>(position);
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
+                    ActorManager.Singleton.Spawn<Skeleton>(position);
                     break;
                 case 'q':
-                    ActorManager.Singleton.Spawn<Spider>(position);
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
+                    ActorManager.Singleton.Spawn<Spider>(position);
                     break;
                 case 'Y':
-                    ActorManager.Singleton.Spawn<Ghost>(position);
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
+                    ActorManager.Singleton.Spawn<Ghost>(position);
                     break;
                 case ' ':
                     break;
 
-                    //items
+                //items
+                case 'K':
+                    ActorManager.Singleton.Spawn<Key>(position);
+                    break;
                 case 'w':
-                    ActorManager.Singleton.Spawn<Weapon>(position);
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
+                    ActorManager.Singleton.Spawn<Sword>(position);
                     break;
                 case ',':
-                    ActorManager.Singleton.Spawn<HealthPotion>(position);
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
+                    ActorManager.Singleton.Spawn<HealthPotion>(position);
+                    break;
+                case 'G':
+                    ActorManager.Singleton.Spawn<GrassFloor>(position);
+                    ActorManager.Singleton.Spawn<MachineGun>(position);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

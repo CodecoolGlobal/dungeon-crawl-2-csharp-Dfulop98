@@ -11,10 +11,5 @@ namespace Assets.Source.Actors.Characters.Enemy
         
         public override string DefaultSpriteId => "PackCastle01_54";
         public override string DefaultName => "Ghost";
-
-        protected override void OnDeathFeedBack()
-        {
-            Debug.Log("I am going to haunt you in your dreams!...");
-        }
     }
 }

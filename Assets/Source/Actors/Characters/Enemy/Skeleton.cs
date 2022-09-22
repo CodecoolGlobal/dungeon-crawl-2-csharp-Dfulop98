@@ -10,10 +10,5 @@ namespace Assets.Source.Actors.Characters.Enemy
 
         public override string DefaultSpriteId => "PackCastle01_4";
         public override string DefaultName => "Skeleton";
-
-        protected override void OnDeathFeedBack()
-        {
-            Debug.Log("Well, I was already dead anyway...");
-        }
     }
 }
