@@ -132,15 +132,15 @@ namespace DungeonCrawl.Core
                     //mobs
                 case 'a':
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
-                    ActorManager.Singleton.Spawn<Skeleton>(position);
+                    ActorManager.Singleton.Spawn<Krampus>(position);
                     break;
                 case 'q':
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
-                    ActorManager.Singleton.Spawn<Spider>(position);
+                    ActorManager.Singleton.Spawn<SwordMan>(position);
                     break;
                 case 'Y':
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
-                    ActorManager.Singleton.Spawn<Ghost>(position);
+                    ActorManager.Singleton.Spawn<AxeMan>(position);
                     break;
                 case ' ':
                     break;
@@ -159,7 +159,7 @@ namespace DungeonCrawl.Core
                     break;
                 case 'G':
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
-                    ActorManager.Singleton.Spawn<MachineGun>(position);
+                    ActorManager.Singleton.Spawn<Spear>(position);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{384E71AE-0ACD-4D1C-BF65-C3E5F67B541C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -66,7 +67,7 @@
     <Compile Include="Assets\Source\Actors\Characters\Player.cs" />
     <Compile Include="Assets\Source\Actors\Static\Water.cs" />
     <Compile Include="Assets\Source\Actors\Static\Door.cs" />
-    <Compile Include="Assets\Source\Actors\Characters\Enemy\Ghost.cs" />
+    <Compile Include="Assets\Source\Actors\Characters\Enemy\AxeMan.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Character.cs" />
     <Compile Include="Assets\Source\Actors\Static\Tree.cs" />
     <Compile Include="Assets\Source\scripts\HealthBar_Script.cs" />
@@ -74,15 +75,15 @@
     <Compile Include="Assets\Source\Actors\Items\Item.cs" />
     <Compile Include="Assets\Source\Core\MapLoader.cs" />
     <Compile Include="Assets\Source\Utilities.cs" />
-    <Compile Include="Assets\Source\Actors\Characters\Enemy\Skeleton.cs" />
+    <Compile Include="Assets\Source\Actors\Characters\Enemy\Krampus.cs" />
     <Compile Include="Assets\Source\Actors\Items\HealthPotion.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Enemy\Enemy.cs" />
     <Compile Include="Assets\Source\Core\GameManager.cs" />
-    <Compile Include="Assets\Source\Actors\Characters\Enemy\Spider.cs" />
+    <Compile Include="Assets\Source\Actors\Characters\Enemy\SwordMan.cs" />
     <Compile Include="Assets\Source\Core\EventLog.cs" />
     <Compile Include="Assets\Source\Core\ActorManager.cs" />
     <Compile Include="Assets\Source\Actors\Items\Key.cs" />
-    <Compile Include="Assets\Source\Actors\Items\MachineGun.cs" />
+    <Compile Include="Assets\Source\Actors\Items\Spear.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Assets.Source.Actors.Items
 {
-    internal class MachineGun : Item
+    internal class Spear : Item
     {
         public override string DefaultName => "Halandzsa";
         public override string DefaultSpriteId => "PackCastle01_9";
