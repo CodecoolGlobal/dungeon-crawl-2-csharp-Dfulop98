@@ -49,6 +49,9 @@ namespace DungeonCrawl.Core
             {
                 //map sprites 
                 //TODO: find something shorter for this
+                case 'K':
+                    ActorManager.Singleton.Spawn<Key>(position);
+                    break;
                 case 'g':
                     ActorManager.Singleton.Spawn<Water9>(position);
                     break;
