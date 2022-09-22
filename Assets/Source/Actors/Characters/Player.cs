@@ -129,7 +129,7 @@ namespace DungeonCrawl.Actors.Characters
             else
             {
                 string output = "Inventory: \n";
-                _inventory.ForEach(item => output += item.DefaultName);
+                _inventory.ForEach(item => output += $"{item.DefaultName}\n");
                 return output;
             }
         }
