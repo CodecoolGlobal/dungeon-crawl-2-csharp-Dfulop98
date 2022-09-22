@@ -176,7 +176,7 @@ namespace DungeonCrawl.Actors.Characters
             }
         }
 
-        public override string DefaultSpriteId => "kenney_transparent_24";
+        public override string DefaultSpriteId => "PackCastle01_0";
         public override string DefaultName => "Player";
 
     }
