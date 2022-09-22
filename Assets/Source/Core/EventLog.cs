@@ -29,7 +29,7 @@ namespace Assets.Source.Core
             {
                 text += $"{Events[i]}\n";
             }
-            UserInterface.Singleton.SetText(text, UserInterface.TextPosition.MiddleLeft, "red");
+            UserInterface.Singleton.SetText(text, UserInterface.TextPosition.BottomLeft, "red");
         }
     }
 }
