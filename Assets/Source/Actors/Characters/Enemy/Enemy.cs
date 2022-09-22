@@ -107,7 +107,6 @@ namespace Assets.Source.Actors.Characters.Enemy
             if ((Position.x - _detectionRange < Player.Singleton.Position.x && Player.Singleton.Position.x < Position.x + _detectionRange) &&
                 (Position.y - _detectionRange < Player.Singleton.Position.y && Player.Singleton.Position.y < Position.y + _detectionRange))
             {
-                EventLog.AddEvent($"{this.DefaultName} detects player");
                 return true;
             }
             else
