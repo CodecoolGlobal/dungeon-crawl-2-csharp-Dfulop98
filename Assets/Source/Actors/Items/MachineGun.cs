@@ -11,8 +11,8 @@ namespace Assets.Source.Actors.Items
 {
     internal class MachineGun : Item
     {
-        public override string DefaultName => "Gépágyú";
-        public override string DefaultSpriteId => "kenney_transparent_473";
+        public override string DefaultName => "Halandzsa";
+        public override string DefaultSpriteId => "PackCastle01_9";
 
         public override void Pickup(Player player)
         {

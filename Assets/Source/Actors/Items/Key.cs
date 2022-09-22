@@ -13,7 +13,7 @@ namespace Assets.Source.Actors.Items
     {
         // in txt: K
         public override string DefaultName => "Key";
-        public override string DefaultSpriteId => "kenney_transparent_801";
+        public override string DefaultSpriteId => "kenney_transparent_559";
         public override void Pickup(Player player)
         {
           

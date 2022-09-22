@@ -10,7 +10,7 @@ namespace Assets.Source.Actors.Items
     public class Sword : Item
     {
         public override string DefaultName => "Sword";
-        public override string DefaultSpriteId => "kenney_transparent_128";
+        public override string DefaultSpriteId => "PackCastle01_43";
 
         public override void Pickup(Player player)
         {
