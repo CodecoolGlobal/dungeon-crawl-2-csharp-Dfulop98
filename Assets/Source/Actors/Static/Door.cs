@@ -1,23 +1,27 @@
-﻿using System.Runtime.InteropServices.ComTypes;
+﻿using DungeonCrawl.Core;
+using System.Runtime.InteropServices.ComTypes;
 using System.Runtime.Serialization;
 
 namespace DungeonCrawl.Actors.Static
 {
     public class Door: Actor
     {
-        private string DoorId = "kenney_transparent_146";
-        //true if closed
-        public bool IsClosed = true;
-
-        public override bool Detectable => IsClosed;
-        public override string DefaultSpriteId => DoorId;
+        public override bool Detectable => true;
+        public override string DefaultSpriteId => "kenney_transparent_146";
         public override string DefaultName => "Door";
 
         public void DoorOpen()
         {
-            DoorId = "kenney_transparent_147";
-            IsClosed = false;
+            ActorManager.Singleton.Spawn<OpenDoor>(Position);
+            ActorManager.Singleton.DestroyActor(this);
         }
-        
+    }
+
+    public class OpenDoor: Actor
+    {
+        public override bool Detectable => false;
+        public override string DefaultSpriteId => "kenney_transparent_147";
+        public override string DefaultName => "OpenDoor";
+
     }
 }
