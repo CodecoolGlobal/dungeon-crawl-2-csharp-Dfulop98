@@ -7,9 +7,9 @@ using Debug = UnityEngine.Debug;
 
 namespace Assets.Source.Actors.Items
 {
-    public class Weapon : Item
+    public class Sword : Item
     {
-        public override string DefaultName => "Weapon";
+        public override string DefaultName => "Sword";
         public override string DefaultSpriteId => "kenney_transparent_128";
 
         public override void Pickup(Player player)
