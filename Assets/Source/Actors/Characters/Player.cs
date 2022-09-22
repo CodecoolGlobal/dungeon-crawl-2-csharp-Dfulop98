@@ -107,12 +107,10 @@ namespace DungeonCrawl.Actors.Characters
             }
             else if (actorAtTargetPosition is Door door)
             {
-                EventLog.AddEvent($"igen itt az ajto");
                 foreach (Item element in _inventory)
                 {
                     if (element is Key key)
                     {
-                        EventLog.AddEvent($"nyitnia kéne");
                         door.DoorOpen();
                     }
                 }
