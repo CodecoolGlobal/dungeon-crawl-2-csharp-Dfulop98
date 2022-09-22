@@ -20,6 +20,16 @@ namespace DungeonCrawl.Actors.Characters
 
         public string Name = "Hegyiember";
 
+        public static Player Singleton { get; private set; }
+
+        private void Awake()
+        {
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+
+            SetSprite(DefaultSpriteId);
+            Singleton = this;
+        }
+
         protected override void OnUpdate(float deltaTime)
         {
             HealthBar_Script.CurrentHealth = (float)Health;
@@ -128,7 +138,7 @@ namespace DungeonCrawl.Actors.Characters
 
         public void OnDeath()
         {
-            OnDeathFeedBack();
+            EventLog.AddEvent($"You Dieded! Oh Noes!");
             ActorManager.Singleton.DestroyActor(this);
         }
 
@@ -146,10 +156,11 @@ namespace DungeonCrawl.Actors.Characters
             {
                 // Die
                 OnDeath();
+                UserInterface.Singleton.SetText($"Health: {Health}\nDamage: {Damage}\nScore: {Score}", UserInterface.TextPosition.TopRight, "magenta");
             }
         }
 
-        public override int DefaultSpriteId => 24;
+        public override string DefaultSpriteId => "kenney_transparent_24";
         public override string DefaultName => "Player";
 
     }

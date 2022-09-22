@@ -13,7 +13,7 @@ namespace Assets.Source.Actors.Items
     internal class HealthPotion : Item
     {
         public override string DefaultName => "Health Potion";
-        public override int DefaultSpriteId => 896;
+        public override string DefaultSpriteId => "kenney_transparent_896";
 
         public override void Pickup(Player player)
         {

@@ -8,7 +8,7 @@ namespace Assets.Source.Core
 {
     public static class EventLog
     {
-        public static readonly int LogLength = 5;
+        public static readonly int LogLength = 3;
         public static List<string> Events = new List<string>();
 
         public static void AddEvent(string text)
@@ -29,7 +29,7 @@ namespace Assets.Source.Core
             {
                 text += $"{Events[i]}\n";
             }
-            UserInterface.Singleton.SetText(text, UserInterface.TextPosition.MiddleLeft, "magenta");
+            UserInterface.Singleton.SetText(text, UserInterface.TextPosition.MiddleLeft, "red");
         }
     }
 }
