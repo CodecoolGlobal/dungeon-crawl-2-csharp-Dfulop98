@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using Assets.Source.Core;
 using DungeonCrawl.Actors;
 using DungeonCrawl.Actors.Characters;
@@ -12,7 +7,7 @@ using Debug = UnityEngine.Debug;
 
 namespace Assets.Source.Actors.Items
 {
-    internal class Weapon : Item
+    public class Weapon : Item
     {
         public override string DefaultName => "Weapon";
         public override string DefaultSpriteId => "kenney_transparent_128";
