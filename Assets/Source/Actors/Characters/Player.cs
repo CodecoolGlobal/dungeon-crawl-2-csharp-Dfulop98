@@ -4,6 +4,7 @@ using Assets.Source.Actors.Characters.Enemy;
 using Assets.Source.Actors.Items;
 using Assets.Source.Core;
 using Assets.Source.scripts;
+using DungeonCrawl.Actors.Static;
 using DungeonCrawl.Core;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ namespace DungeonCrawl.Actors.Characters
         public override int Health { get; set; } = 100;
 
         public List<Item> _inventory = new List<Item>();
+
         public Item _floorItem = null;
 
         public string Name = "Hegyiember";
@@ -103,6 +105,19 @@ namespace DungeonCrawl.Actors.Characters
             {
                 enemy.OnCollision(this);
             }
+            else if (actorAtTargetPosition is Door door)
+            {
+                EventLog.AddEvent($"igen itt az ajto");
+                foreach (Item element in _inventory)
+                {
+                    if (element is Key key)
+                    {
+                        EventLog.AddEvent($"nyitnia kéne");
+                        door.DoorOpen();
+                    }
+                }
+
+            }
         }
 
         private string CreateInventoryString()
@@ -129,6 +144,7 @@ namespace DungeonCrawl.Actors.Characters
             {
                 ApplyDamage(enemy);
             }
+            
             else
             {
                 _floorItem = null;
