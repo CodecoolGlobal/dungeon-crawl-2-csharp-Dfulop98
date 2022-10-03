@@ -1,71 +1,13 @@
 @startuml
+!theme reddress-darkorange
 package UtilityEngine{
 	class MonoBehaviour{
 		utility build in
 	}
 }
+
 package Source{
 	
-	class Utilities{
-		+ enum Direction
-		{method}{static}+ (int x, int y) ToVetor(this Direction dir)
-	}
-	
-	package Actors{
-		+abstract Actor{
-			{field}- _position
-			{field}- _spriteRenderer
-			{field}+ virtual int Z
-			{field}+ virtual bool Detectable
-			{field}{abstract}+ int DefaultSpriteId { get; }
-			{field}{abstract}+ string DefaultName { get; }
-			{method}+ (int x, int y)Position
-			{method}- void Awake()
-			{method}- void Update()
-			{method}+ void SetSprite(int id)
-			{method}+ void TryMove(Direction direction)
-			{method}+ virtual bool OnCollision(Actor anotherActor)
-			{method}# virtual void OnUpdate(float deltaTime)
-		}
-	
-		package Static{
-			+class Wall{
-				{field}+ override int DefaultSpriteId
-				{field}+ override string DeafultName
-			
-			}
-			
-			+class Floor{
-				{field}+ override int DefaultSpriteId
-				{field}+ override string DeafultName
-				{field}+ override bool Detectable
-			}
-		}
-		
-		package Characters{
-			+abstract Character{
-				{field}+ int Health {get; private set;}
-				{field}+ override int Z
-				{method}+ void ApplyDamage(int Damage)
-				{method}{abstract}# void OnDeath()
-			}
-			
-			+class Player{
-				{field}+ override int DefaultSpriteId
-				{field}+ override string DefaultName
-				{method}+ override void OnUpdate(float deltaTime)
-				{method}+ override bool OnCollision(Actor anotherActor)
-				{method}# override void OnDeath()
-			}
-			
-			+class Skeleton{
-				{field}+ override int DefaultSpriteId
-				{field}+ override string DefaultName
-				{method}+ override bool Oncollision(Actor anotherActor)
-				{method}# override void OnDeath()
-			}
-		}
-	}
 	package Core{
 		
 		class ActorManager{
@@ -102,12 +44,216 @@ package Source{
 			{method}+ void SetText(string text, TestPosition textposition)
 		}
 		
+		class MainMenu{
+			{method}+ void NewGame()
+			{method}+ void QuitGame()
+			{method}+ void LoadMainMenu()
+		}
+		
 		class MapLoader{
 			{method}{static}+ void loadMap(int id)
 			{method}{static}- void SpawnActor(char c, (int x, int y) position)
 		}
 		
+		class EventLog{
+			{field}+{static} readonly int LogLength
+			{field}+{static} List<string> Events
+			{method}+{static} void AddEvent(string Text)
+			{method}+{static} void UpdateLog() 
+		}
+		
 	}
+	
+	class Utilities{
+		+ enum Direction
+		{method}{static}+ (int x, int y) ToVector(this Direction dir)
+	}
+	
+	package Script{
+		class HealthBarScript{
+			{field}+{static} Image HealthBar
+			{field}+{static} float CurrentHealth
+			{field}+{static} float MaxHealth
+			{field}+{static} Player player
+			{method}- void Start()
+		}
+	}
+	
+	package Actors{
+	
+		+abstract Actor{
+			{field}- _position
+			{field}- _spriteRenderer
+			{field}+ virtual int Z
+			{field}+ virtual bool Detectable
+			{field}{abstract}+ string DefaultSpriteId { get; }
+			{field}{abstract}+ string DefaultName { get; }
+			{field}+ bool virtual Detectable
+			{method}+ (int x, int y)Position
+			{method}- void Awake()
+			{method}- void Update()
+			{method}+ void SetSprite(string id)
+			{method}+ void TryMove(Direction direction)
+			{method}+ virtual bool OnCollision(Actor anotherActor)
+			{method}# virtual void OnUpdate(float deltaTime)
+			
+			
+		}
+		package Item{
+			+abstract Item{
+				{method}+ {abstract}void PickUp(Player player)
+			}
+			+class HealtPotion{
+				{field}+ override string DefaultName
+				{field}+ override string DefaultSpriteId
+				{field}+ override void PickUp
+			}
+			+class Spear{
+				{field}+ override string DefaultName
+				{field}+ override string DefaultSpriteId
+				{field}+ override void PickUp
+			}
+			+class Key{
+				{field}+ override string DefaultName
+				{field}+ override string DefaultSpriteId
+				{field}+ override void PickUp
+			}
+			+class Sword{
+				{field}+ override string DefaultName
+				{field}+ override string DefaultSpriteId
+				{field}+ override void PickUp
+			}		
+		}
+	
+		package Static{
+			+class Wall{
+				{field}+ override int DefaultSpriteId
+				{field}+ override string DeafultName
+			
+			}
+			
+			+class Floor{
+				{field}+ override int DefaultSpriteId
+				{field}+ override string DeafultName
+				{field}+ override bool Detectable
+			}
+			
+			+class Door{
+				{field}+ override int DefaultSpriteId
+				{field}+ override string DeafultName
+				{field}+ override bool Detectable
+				{method}+ void DoorOpen()
+			}
+			
+			+class Tree{
+				{field}+ override int DefaultSpriteId
+				{field}+ override string DeafultName
+				{field}+ override bool Detectable
+			}
+			
+			+class Water{
+				{field}+ override int DefaultSpriteId
+				{field}+ override string DeafultName
+				{field}+ override bool Detectable
+			}
+			
+			+class StaticUtil{
+				{method}+ RandomSprite(params int[] args)
+			}
+			
+		}
+		
+		package Characters{
+			+abstract Character{
+				{field}+ abstract int Health {get; set;}
+				{field}+ abstract int Damage {get; set;}
+				{field}+ override int Z
+				{field}# float ElapsedTime
+				{method}{abstract}# void OnDeath()
+			}
+			
+			+class Player{
+				{field}+ override int DefaultSpriteId
+				{field}+ override string DefaultName
+				{field}+ int Score
+				{field}+ override int Damage
+				{field}+ override int Health
+				{field}+ List<item> Inventory
+				{field}+ Item FloorItem
+				{field}+ string Name
+				{field}+ static Player Singleton{get; private set;}
+				{method}+ override void OnUpdate(float deltaTime)
+				{method}+ override bool OnCollision(Actor anotherActor)
+				{method}# override void OnDeath()
+				{method}- void Awake()
+				{method}+ override void TryMove(Direction direction)
+				{method}- string CreateInventoryString()
+				{method}+ void ApplyDamage(Enemy enemy)
+			}
+			
+			package Enemy{
+				+class Enemy{
+					{field}+ override int Health{get; set;}
+					{field}+ override int Damage{get; set;}
+					{field}+ virtual ScoreValue{get; set;}
+					{field}+ abstract override DefaultSpriteId{get;}
+					{field}+ abstract override defaultName{get;}
+					{field}- static Random _seedRandom
+					{field}- Random _rnd
+					{field}- int _detectionRange
+					{method}+ void ApplyDamage(Player player)
+					{method}+ override void TryMove(Direction direction)
+					{method}+ override bool Oncollision(Actor anotherActor)
+					{method}+ override void OnDeath(Player player)
+					{method}# override void Update()
+					{method}# override void OnUpdate(float DeltaTime)
+					{method}# bool DetectPlayer()
+					{method}# Direction CalculateDirection()
+				}
+				
+				+class AxeMan{ 
+					{field}+ override int Damage
+					{field}+ override int Health
+					{field}+ override int ScoreValue
+					{field}+ override string DefaultSpriteId
+					{field}+ override string DefaultName
+				}
+				
+				+class Krampus{
+					{field}+ override int Damage
+					{field}+ override int Health
+					{field}+ override int ScoreValue
+					{field}+ override string DefaultSpriteId
+					{field}+ override string DefaultName
+				}
+				
+				+class SwordMan{
+					{field}+ override int Damage
+					{field}+ override int Health
+					{field}+ override int ScoreValue
+					{field}+ override string DefaultSpriteId
+					{field}+ override string DefaultName
+				}
+				package InterFace{
+					
+					+interface IDamageable{
+						
+					}
+					
+					+interface IDamageableEnemy{
+						{method}+ void OnDeath(Player player)
+						{method}+ void ApplyDamage(Player player)
+					}
+					
+					+interface IDamageablePlayer{
+						{method}+ void OnDeath()
+						{method}+ void ApplyDamage(Enemy enemy)
+					}
+				}
+			}
+		}
+	}
+	
 }
 
 MonoBehaviour <|-- ActorManager
@@ -115,12 +261,27 @@ MonoBehaviour <|-- CameraController
 MonoBehaviour <|-- GameManager 
 MonoBehaviour <|-- UserInterface
 
-Actor <|-- Wall
-Actor <|-- Floor
-Actor <|- Character
+Actor <|-down Character
+Actor <|-- Item
+
+
+Item <|-- HealtPotion
+Item <|-- Key
+Item <|-- Sword
+Item <|-- Spear
+
 
 Character <|-- Player 
-Character <|-- Skeleton
+Character <|-- Enemy
 
+Enemy <|-- AxeMan
+Enemy <|-- SwordMan
+Enemy <|-- Krampus
 
+IDamageable <|-- IDamageableEnemy
+IDamageable <|-- IDamageablePlayer
+
+Player <-- IDamageablePlayer 
+
+Enemy <-- IDamageableEnemy
 @enduml
