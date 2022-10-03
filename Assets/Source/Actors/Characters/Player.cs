@@ -3,6 +3,7 @@ using System.Threading;
 using Assets.Source.Actors.Characters;
 using Assets.Source.Actors.Characters.Enemy;
 using Assets.Source.Actors.Items;
+using Assets.Source.Actors.SpriteCollection;
 using Assets.Source.Core;
 using Assets.Source.scripts;
 using DungeonCrawl.Actors.Static;
@@ -14,7 +15,7 @@ namespace DungeonCrawl.Actors.Characters
 {
     public class Player : Character, IDamageablePlayer
     {
-        public override string DefaultSpriteId => "PackCastle01_0";
+        public override string DefaultSpriteId => SpriteCollection.PlayerSprites[""];
         public override string DefaultName => "Player";
         public int Score { get; set; } = 0;
         public override int Damage { get; set; } = 10;
