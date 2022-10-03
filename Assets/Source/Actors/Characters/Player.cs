@@ -9,6 +9,9 @@ using DungeonCrawl.Actors.Static;
 using DungeonCrawl.Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
+
+
 
 namespace DungeonCrawl.Actors.Characters
 {
@@ -32,6 +35,16 @@ namespace DungeonCrawl.Actors.Characters
 
             SetSprite(DefaultSpriteId);
             Singleton = this;
+
+            SaveObject saveObject = new SaveObject
+            {
+                Score = 5
+            };
+            string json = JsonUtility.ToJson(saveObject);
+            Debug.Log(json);
+
+            SaveObject loadedSaveObject = JsonUtility.FromJson<SaveObject>(json);
+            Debug.Log(loadedSaveObject.Score);
         }
 
         protected override void OnUpdate(float deltaTime)
@@ -82,8 +95,30 @@ namespace DungeonCrawl.Actors.Characters
                 _floorItem.Pickup(this);
                 _floorItem = null;
             }
+
+            if (Input.GetKeyDown(KeyCode.F5))
+            {
+                SaveGame();
+            }
+
+            
+        }
+        public void SaveGame()
+        {
+            Debug.Log("Save");
+
+            SaveObject saveObject = new SaveObject
+            {
+                Score = this.Score,
+                Damage = this.Damage,
+                Health = this.Health
+            };
+            string json = JsonUtility.ToJson(saveObject);
+
+            File.WriteAllText(Application.dataPath + "/text/test.txt", json);
         }
 
+       
         public override void TryMove(Direction direction)
         {
             var vector = direction.ToVector();
@@ -175,5 +210,15 @@ namespace DungeonCrawl.Actors.Characters
         public override string DefaultSpriteId => "PackCastle01_0";
         public override string DefaultName => "Player";
 
+
+        public class SaveObject
+        {
+            public int Score;
+            public int Health;
+            public int Damage;
+        }
     }
+    
+
+   
 }

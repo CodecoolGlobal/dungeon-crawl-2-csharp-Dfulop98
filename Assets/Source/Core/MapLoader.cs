@@ -23,20 +23,12 @@ namespace DungeonCrawl.Core
                 {'T', 'T', 'T', 'u', 'T'},
                 {'T', '.', '.', 's', 'T'},
                 {'T', 'p', '.', 'g', 'T'},
+                {'T', '.', '.', 'Y', 'T'},
                 {'T', '.', '.', 'h', 'T'},
-                {'T', '.', '.', 'h', 'T'},
-                {'T', '.', '.', 'h', 'T'}
+                {'T', 'a', '.', 'q', 'T'}
         };
         public static void LoadMap(int id)
         {
-
-            var lines = Regex.Split(Resources.Load<TextAsset>($"map_{id}").text, "\r\n|\r|\n");
-
-            // Read map size from the first line
-            var split = lines[0].Split(' ');
-            var width = int.Parse(split[0]);
-            var height = int.Parse(split[1]);
-
             for (var i = 0; i < Map.GetLength(0); i++)
             {
                 
@@ -47,6 +39,12 @@ namespace DungeonCrawl.Core
                 }
             }
 
+            var lines = Regex.Split(Resources.Load<TextAsset>($"map_{id}").text, "\r\n|\r|\n");
+
+            // Read map size from the first line
+            var split = lines[0].Split(' ');
+            var width = int.Parse(split[0]);
+            var height = int.Parse(split[1]);
 
             //Create actors
             //for (var y = 0; y < height; y++)
