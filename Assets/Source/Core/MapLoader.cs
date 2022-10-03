@@ -1,9 +1,9 @@
-﻿using DungeonCrawl.Actors.Characters;
+﻿using Assets.Source.Actors.Characters.Enemy;
+using Assets.Source.Actors.Items;
+using DungeonCrawl.Actors.Characters;
 using DungeonCrawl.Actors.Static;
 using System;
 using System.Text.RegularExpressions;
-using Assets.Source.Actors.Characters.Enemy;
-using Assets.Source.Actors.Items;
 using UnityEngine;
 
 namespace DungeonCrawl.Core
@@ -17,8 +17,19 @@ namespace DungeonCrawl.Core
         ///     Constructs map from txt file and spawns actors at appropriate positions
         /// </summary>
         /// <param name="id"></param>
+
+        public static char[,] Map = new char[,]
+        {
+                {'T', 'T', 'T', 'u', 'T'},
+                {'T', '.', '.', 's', 'T'},
+                {'T', 'p', '.', 'g', 'T'},
+                {'T', '.', '.', 'h', 'T'},
+                {'T', '.', '.', 'h', 'T'},
+                {'T', '.', '.', 'h', 'T'}
+        };
         public static void LoadMap(int id)
         {
+
             var lines = Regex.Split(Resources.Load<TextAsset>($"map_{id}").text, "\r\n|\r|\n");
 
             // Read map size from the first line
@@ -26,21 +37,32 @@ namespace DungeonCrawl.Core
             var width = int.Parse(split[0]);
             var height = int.Parse(split[1]);
 
-            // Create actors
-            for (var y = 0; y < height; y++)
+            for (var i = 0; i < Map.GetLength(0); i++)
             {
-                var line = lines[y + 1];
-                for (var x = 0; x < width; x++)
+                
+                for (int j = 0; i < Map.GetLength(1); i++)
                 {
-                    var character = line[x];
-
-                    SpawnActor(character, (x, -y));
+                    
+                    SpawnActor(Map[i,j], (i, j));
                 }
             }
 
+
+            //Create actors
+            //for (var y = 0; y < height; y++)
+            //{
+            //    var line = lines[y + 1];
+            //    for (var x = 0; x < width; x++)
+            //    {
+            //        var character = line[x];
+
+            //        SpawnActor(character, (x, -y));
+            //    }
+            //}
+
             // Set default camera size and position
             CameraController.Singleton.Size = 10;
-            
+
         }
 
         private static void SpawnActor(char c, (int x, int y) position)
@@ -122,14 +144,14 @@ namespace DungeonCrawl.Core
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
                     break;
 
-                    //player
+                //player
                 case 'p':
                     ActorManager.Singleton.Spawn<WoodenFloor>(position);
                     ActorManager.Singleton.Spawn<Player>(position);
                     CameraController.Singleton.Position = position;
                     break;
 
-                    //mobs
+                //mobs
                 case 'a':
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
                     ActorManager.Singleton.Spawn<Krampus>(position);
