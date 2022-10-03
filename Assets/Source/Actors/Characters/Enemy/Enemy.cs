@@ -2,18 +2,9 @@
 using DungeonCrawl.Actors.Characters;
 using DungeonCrawl.Core;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Assets.Source.Core;
 using DungeonCrawl;
 using UnityEngine;
 using Random = System.Random;
-using Debug = UnityEngine.Debug;
-using System.Threading;
-using System.Runtime.Serialization;
 using EventLog = Assets.Source.Core.EventLog;
 
 namespace Assets.Source.Actors.Characters.Enemy
@@ -88,13 +79,13 @@ namespace Assets.Source.Actors.Characters.Enemy
 
         protected override void OnUpdate(float deltaTime)
         {
-            _elapsedTime += deltaTime;
-            if (_elapsedTime >= 1)
+            ElapsedTime += deltaTime;
+            if (ElapsedTime >= 1)
             {
                 var dir = CalculateDirection();
 
                 TryMove(dir);
-                _elapsedTime = 0;
+                ElapsedTime = 0;
             }
         }
 

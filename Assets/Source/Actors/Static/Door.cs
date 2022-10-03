@@ -1,6 +1,4 @@
 ﻿using DungeonCrawl.Core;
-using System.Runtime.InteropServices.ComTypes;
-using System.Runtime.Serialization;
 
 namespace DungeonCrawl.Actors.Static
 {

@@ -1,13 +1,10 @@
 ﻿
 using System;
-using System.Linq;
 
 namespace Assets.Source.Actors.Static
 {
     public static class StaticUtil
     {
-        
-
         public static int RandomSprite(params int[] args)
         {
             //random sprite from the given pack

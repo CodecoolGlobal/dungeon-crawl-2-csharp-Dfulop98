@@ -1,7 +1,4 @@
-﻿using DungeonCrawl.Core;
-using UnityEngine;
-
-namespace Assets.Source.Actors.Characters.Enemy
+﻿namespace Assets.Source.Actors.Characters.Enemy
 {
     public class AxeMan : Enemy
     {
