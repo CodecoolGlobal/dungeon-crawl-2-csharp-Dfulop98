@@ -2,18 +2,9 @@
 using DungeonCrawl.Actors.Characters;
 using DungeonCrawl.Core;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Assets.Source.Core;
 using DungeonCrawl;
 using UnityEngine;
 using Random = System.Random;
-using Debug = UnityEngine.Debug;
-using System.Threading;
-using System.Runtime.Serialization;
 using EventLog = Assets.Source.Core.EventLog;
 
 namespace Assets.Source.Actors.Characters.Enemy
@@ -24,16 +15,15 @@ namespace Assets.Source.Actors.Characters.Enemy
         public override int Damage { get; set; }
         public virtual int ScoreValue { get; set; }
 
-        private static Random _seedrandom = new Random();
-
-        private Random _rnd = new Random(_seedrandom.Next());
-
-        private int _detectionRange = 5;
-
         public abstract override string DefaultSpriteId { get; }
 
         public abstract override string DefaultName { get; }
 
+        private static Random _seedRandom = new Random();
+
+        private Random _rnd = new Random(_seedRandom.Next());
+
+        private int _detectionRange = 5;
         public void ApplyDamage(Player player)
         {
             Health -= player.Damage;
@@ -89,13 +79,13 @@ namespace Assets.Source.Actors.Characters.Enemy
 
         protected override void OnUpdate(float deltaTime)
         {
-            _elapsedTime += deltaTime;
-            if (_elapsedTime >= 1)
+            ElapsedTime += deltaTime;
+            if (ElapsedTime >= 1)
             {
                 var dir = CalculateDirection();
 
                 TryMove(dir);
-                _elapsedTime = 0;
+                ElapsedTime = 0;
             }
         }
 

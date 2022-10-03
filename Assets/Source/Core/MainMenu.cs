@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mime;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Assets.Source.Core
@@ -18,6 +12,11 @@ namespace Assets.Source.Core
         public void QuitGame()
         {
             Application.Quit();
+        }
+
+        public void LoadMainMenu()
+        {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }

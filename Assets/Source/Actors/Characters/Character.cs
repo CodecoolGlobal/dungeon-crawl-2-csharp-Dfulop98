@@ -1,16 +1,11 @@
-﻿
-using DungeonCrawl.Core;
-using UnityEngine;
-
-
-namespace DungeonCrawl.Actors.Characters
+﻿namespace DungeonCrawl.Actors.Characters
 {
     public abstract class Character : Actor
     {
         public abstract int Health { get; set; }
         public abstract int Damage { get; set; }
 
-        protected float _elapsedTime = 0;
+        protected float ElapsedTime = 0;
 
         /// <summary>
         ///     All characters are drawn "above" floor etc

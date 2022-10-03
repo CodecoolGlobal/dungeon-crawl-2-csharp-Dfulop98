@@ -14,13 +14,15 @@ namespace DungeonCrawl.Actors.Characters
 {
     public class Player : Character, IDamageablePlayer
     {
+        public override string DefaultSpriteId => "PackCastle01_0";
+        public override string DefaultName => "Player";
         public int Score { get; set; } = 0;
         public override int Damage { get; set; } = 10;
         public override int Health { get; set; } = 100;
 
-        public List<Item> _inventory = new List<Item>();
+        public List<Item> Inventory = new List<Item>();
 
-        public Item _floorItem = null;
+        public Item FloorItem = null;
 
         public string Name = "Röszkei Rambó";
 
@@ -36,6 +38,7 @@ namespace DungeonCrawl.Actors.Characters
 
         protected override void OnUpdate(float deltaTime)
         {
+            
             HealthBar_Script.CurrentHealth = (float)Health;
             HealthBar_Script.HealthBar.fillAmount = HealthBar_Script.CurrentHealth / HealthBar_Script.MaxHealth;
 
@@ -43,9 +46,9 @@ namespace DungeonCrawl.Actors.Characters
             UserInterface.Singleton.SetText($"Health: {Health}\n", UserInterface.TextPosition.TopLeft, "red");
 
             UserInterface.Singleton.SetText($"{CreateInventoryString()}", UserInterface.TextPosition.BottomRight, "red");
-            if (_floorItem != null)
+            if (FloorItem != null)
             {
-                UserInterface.Singleton.SetText($"Press 'E' to pick up {_floorItem.DefaultName}", UserInterface.TextPosition.BottomCenter, "white");
+                UserInterface.Singleton.SetText($"Press 'E' to pick up {FloorItem.DefaultName}", UserInterface.TextPosition.BottomCenter, "white");
             }
             else
             {
@@ -77,10 +80,10 @@ namespace DungeonCrawl.Actors.Characters
                 TryMove(Direction.Right);
             }
 
-            if (Input.GetKeyDown(KeyCode.E) && _floorItem != null)
+            if (Input.GetKeyDown(KeyCode.E) && FloorItem != null)
             {
-                _floorItem.Pickup(this);
-                _floorItem = null;
+                FloorItem.Pickup(this);
+                FloorItem = null;
             }
         }
 
@@ -96,13 +99,13 @@ namespace DungeonCrawl.Actors.Characters
                 // No obstacle found, just move
                 Position = targetPosition;
                 CameraController.Singleton.Position = targetPosition;
-                _floorItem = null;
+                FloorItem = null;
             }
             else if (actorAtTargetPosition is Item item)
             {
                 Position = targetPosition;
                 CameraController.Singleton.Position = targetPosition;
-                _floorItem = item;
+                FloorItem = item;
             }
             else if (actorAtTargetPosition is Enemy enemy)
             {
@@ -110,7 +113,7 @@ namespace DungeonCrawl.Actors.Characters
             }
             else if (actorAtTargetPosition is Door door)
             {
-                foreach (Item element in _inventory)
+                foreach (Item element in Inventory)
                 {
                     if (element is Key key)
                     {
@@ -123,14 +126,14 @@ namespace DungeonCrawl.Actors.Characters
 
         private string CreateInventoryString()
         {
-            if (_inventory.Count == 0)
+            if (Inventory.Count == 0)
             {
                 return "Inventory: \nNone";
             }
             else
             {
                 string output = "Inventory: \n";
-                _inventory.ForEach(item => output += $"{item.DefaultName}\n");
+                Inventory.ForEach(item => output += $"{item.DefaultName}\n");
                 return output;
             }
         }
@@ -139,7 +142,7 @@ namespace DungeonCrawl.Actors.Characters
         {
             if (anotherActor is Item item)
             {
-                _floorItem = item;
+                FloorItem = item;
             }
             else if (anotherActor is Enemy enemy)
             {
@@ -148,16 +151,15 @@ namespace DungeonCrawl.Actors.Characters
             
             else
             {
-                _floorItem = null;
+                FloorItem = null;
             }
             return false;
         }
 
         public void OnDeath()
         {
-            EventLog.AddEvent($"You Dieded! Oh Noes!");
             ActorManager.Singleton.DestroyActor(this);
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("DeathScene");
         }
 
         public void ApplyDamage(Enemy enemy)
@@ -171,9 +173,5 @@ namespace DungeonCrawl.Actors.Characters
                 UserInterface.Singleton.SetText($"Health: {Health}\nDamage: {Damage}\nScore: {Score}", UserInterface.TextPosition.TopRight, "magenta");
             }
         }
-
-        public override string DefaultSpriteId => "PackCastle01_0";
-        public override string DefaultName => "Player";
-
     }
 }

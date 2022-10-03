@@ -1,7 +1,4 @@
-﻿using Assets.Source.Actors.Static;
-using System;
-
-namespace DungeonCrawl.Actors.Static
+﻿namespace DungeonCrawl.Actors.Static
 {
     public class GrassFloor : Actor
     {
