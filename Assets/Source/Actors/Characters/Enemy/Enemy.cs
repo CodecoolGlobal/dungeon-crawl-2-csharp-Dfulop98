@@ -24,16 +24,15 @@ namespace Assets.Source.Actors.Characters.Enemy
         public override int Damage { get; set; }
         public virtual int ScoreValue { get; set; }
 
-        private static Random _seedrandom = new Random();
-
-        private Random _rnd = new Random(_seedrandom.Next());
-
-        private int _detectionRange = 5;
-
         public abstract override string DefaultSpriteId { get; }
 
         public abstract override string DefaultName { get; }
 
+        private static Random _seedRandom = new Random();
+
+        private Random _rnd = new Random(_seedRandom.Next());
+
+        private int _detectionRange = 5;
         public void ApplyDamage(Player player)
         {
             Health -= player.Damage;
