@@ -38,8 +38,14 @@ namespace DungeonCrawl.Actors.Characters
 
         protected override void OnUpdate(float deltaTime)
         {
-            
             HealthBar_Script.CurrentHealth = (float)Health;
+
+            HandleInput();
+            ShowHud();
+        }
+
+        private void ShowHud()
+        {
             HealthBar_Script.HealthBar.fillAmount = HealthBar_Script.CurrentHealth / HealthBar_Script.MaxHealth;
 
             UserInterface.Singleton.SetText($"Damage: {Damage}\nScore: {Score}", UserInterface.TextPosition.TopRight, "magenta");
@@ -54,8 +60,10 @@ namespace DungeonCrawl.Actors.Characters
             {
                 UserInterface.Singleton.SetText("", UserInterface.TextPosition.BottomCenter, "white");
             }
+        }
 
-
+        private void HandleInput()
+        {
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 // Move up
