@@ -40,7 +40,7 @@ namespace DungeonCrawl.Core
             for (var i = 0; i < Map.GetLength(0); i++)
             {
                 
-                for (int j = 0; i < Map.GetLength(1); i++)
+                for (int j = 0; j < Map.GetLength(1); j++)
                 {
                     
                     SpawnActor(Map[i,j], (i, j));
