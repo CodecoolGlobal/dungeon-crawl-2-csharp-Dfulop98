@@ -19,5 +19,10 @@ namespace Assets.Source.Core
         {
             Application.Quit();
         }
+
+        public void LoadMainMenu()
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }

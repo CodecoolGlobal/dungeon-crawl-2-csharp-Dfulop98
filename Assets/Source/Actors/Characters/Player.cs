@@ -155,9 +155,8 @@ namespace DungeonCrawl.Actors.Characters
 
         public void OnDeath()
         {
-            EventLog.AddEvent($"You Dieded! Oh Noes!");
             ActorManager.Singleton.DestroyActor(this);
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("DeathScene");
         }
 
         public void ApplyDamage(Enemy enemy)
