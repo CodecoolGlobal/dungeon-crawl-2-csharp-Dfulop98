@@ -1,0 +1,126 @@
+@startuml
+package UtilityEngine{
+	class MonoBehaviour{
+		utility build in
+	}
+}
+package Source{
+	
+	class Utilities{
+		+ enum Direction
+		{method}{static}+ (int x, int y) ToVetor(this Direction dir)
+	}
+	
+	package Actors{
+		+abstract Actor{
+			{field}- _position
+			{field}- _spriteRenderer
+			{field}+ virtual int Z
+			{field}+ virtual bool Detectable
+			{field}{abstract}+ int DefaultSpriteId { get; }
+			{field}{abstract}+ string DefaultName { get; }
+			{method}+ (int x, int y)Position
+			{method}- void Awake()
+			{method}- void Update()
+			{method}+ void SetSprite(int id)
+			{method}+ void TryMove(Direction direction)
+			{method}+ virtual bool OnCollision(Actor anotherActor)
+			{method}# virtual void OnUpdate(float deltaTime)
+		}
+	
+		package Static{
+			+class Wall{
+				{field}+ override int DefaultSpriteId
+				{field}+ override string DeafultName
+			
+			}
+			
+			+class Floor{
+				{field}+ override int DefaultSpriteId
+				{field}+ override string DeafultName
+				{field}+ override bool Detectable
+			}
+		}
+		
+		package Characters{
+			+abstract Character{
+				{field}+ int Health {get; private set;}
+				{field}+ override int Z
+				{method}+ void ApplyDamage(int Damage)
+				{method}{abstract}# void OnDeath()
+			}
+			
+			+class Player{
+				{field}+ override int DefaultSpriteId
+				{field}+ override string DefaultName
+				{method}+ override void OnUpdate(float deltaTime)
+				{method}+ override bool OnCollision(Actor anotherActor)
+				{method}# override void OnDeath()
+			}
+			
+			+class Skeleton{
+				{field}+ override int DefaultSpriteId
+				{field}+ override string DefaultName
+				{method}+ override bool Oncollision(Actor anotherActor)
+				{method}# override void OnDeath()
+			}
+		}
+	}
+	package Core{
+		
+		class ActorManager{
+			{field}- SpriteAtlas _spriteAtlas
+			{field}- HashSet<Actor> _allActors
+			{method}- void Awake()
+			{method}+ Actor GetActorAt((int x, int y) position)
+			{method}+ T GetActorAt<T>((int x, int y) position) where T
+			{method}+ void DestroyActor(Actor actor)
+			{method}+ void DestroyAllActors()
+			{method}+ Sprite GetSprite(int id)
+			{method}+ T Spawn<T>((int x, int y) position, string ActorName)
+			{method}+ T Spawn<T>(int x, int y, string ActorName)
+		}
+	
+		class CameraController{
+			{field}{static}+ CameraController Singleton { get; private set; }
+			{field}- (int x, int y)_position 
+			{field}- Camera _camera 
+			{field}+ float Size
+			{method}+ (int x, int y)Position
+			{method}+ void Awake()
+		}	
+	
+		class GameManager{
+			{method}+ void Start()
+		}
+		
+		class UserInterface{
+			+ enum TextPosition
+			{field}{static}+ UserInterface Singleton {get; set;}
+			{field}- TextMeshProUGUI[] _textComponents
+			{method}- void Awake()
+			{method}+ void SetText(string text, TestPosition textposition)
+		}
+		
+		class MapLoader{
+			{method}{static}+ void loadMap(int id)
+			{method}{static}- void SpawnActor(char c, (int x, int y) position)
+		}
+		
+	}
+}
+
+MonoBehaviour <|-- ActorManager
+MonoBehaviour <|-- CameraController
+MonoBehaviour <|-- GameManager 
+MonoBehaviour <|-- UserInterface
+
+Actor <|-- Wall
+Actor <|-- Floor
+Actor <|- Character
+
+Character <|-- Player 
+Character <|-- Skeleton
+
+
+@enduml
