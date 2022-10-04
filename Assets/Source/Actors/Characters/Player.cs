@@ -23,7 +23,7 @@ namespace DungeonCrawl.Actors.Characters
         public List<string> UsedSpriteCollection { get; set; }
 
         //Possible need remove
-        public override string DefaultSpriteId => Sprites.PlayerIdleSprites[_spriteIndex];
+        public override string DefaultSpriteId => Sprites.Warrior[_spriteIndex];
 
         public override string DefaultName => "Player";
         public int Score { get; set; } = 0;
@@ -42,7 +42,7 @@ namespace DungeonCrawl.Actors.Characters
         private void Awake()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
-            UsedSpriteCollection = Sprites.PlayerIdleSprites;
+            UsedSpriteCollection = Sprites.Warrior;
             SetSprite(UsedSpriteCollection[_spriteIndex]);
             Singleton = this;
         }
