@@ -33,6 +33,14 @@ namespace DungeonCrawl.Actors.Characters
 
         public Direction Facing = Direction.Right;
 
+        private Dictionary<Direction, float> _movementCounters = new Dictionary<Direction, float>()
+        {
+            { Direction.Up, 0 },
+            { Direction.Down, 0 },
+            { Direction.Left, 0 },
+            { Direction.Right, 0 }
+        };
+
         private void Awake()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
