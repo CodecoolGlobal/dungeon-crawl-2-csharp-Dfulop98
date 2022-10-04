@@ -15,7 +15,7 @@ using System.IO;
 
 namespace DungeonCrawl.Actors.Characters
 {
-    public class Player : Character, IDamageablePlayer
+    public class Player : Character, IDamageablePlayer, IDataPersistence
     {
         public int Score { get; set; } = 0;
         public override int Damage { get; set; } = 10;
@@ -41,10 +41,10 @@ namespace DungeonCrawl.Actors.Characters
                 Score = 5
             };
             string json = JsonUtility.ToJson(saveObject);
-            Debug.Log(json);
+            
 
             SaveObject loadedSaveObject = JsonUtility.FromJson<SaveObject>(json);
-            Debug.Log(loadedSaveObject.Score);
+            
         }
 
         protected override void OnUpdate(float deltaTime)
@@ -103,6 +103,15 @@ namespace DungeonCrawl.Actors.Characters
 
             
         }
+        public void LoadData(GameData data)
+        {
+            this.Score = data.Score;    
+        }
+        public void SaveData(ref GameData data)
+        {
+            data.Score = this.Score;
+        }
+        
         public void SaveGame()
         {
             Debug.Log("Save");
