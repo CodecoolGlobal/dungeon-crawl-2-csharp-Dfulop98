@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Threading;
+using System.Linq;
 using Assets.Source.Actors;
 using Assets.Source.Actors.Characters;
 using Assets.Source.Actors.Characters.Enemy;
@@ -31,7 +31,17 @@ namespace DungeonCrawl.Actors.Characters
 
         private List<Crosshair> _crosshairs = new List<Crosshair>();
 
+        private float _movementTimeThreshold = 0.35f;
+
         public Direction Facing = Direction.Right;
+
+        private Dictionary<Direction, float> _movementCounters = new Dictionary<Direction, float>()
+        {
+            { Direction.Up, 0 },
+            { Direction.Down, 0 },
+            { Direction.Left, 0 },
+            { Direction.Right, 0 }
+        };
 
         private void Awake()
         {
@@ -47,7 +57,8 @@ namespace DungeonCrawl.Actors.Characters
         {
             HealthBar_Script.CurrentHealth = (float)Health;
 
-            HandleInput();
+            HandleInput(deltaTime);
+            HandleContinousKeyPress(deltaTime);
             ShowHud();
             UpdateCrosshairs();
         }
@@ -85,7 +96,39 @@ namespace DungeonCrawl.Actors.Characters
             }
         }
 
-        private void HandleInput()
+        private void ContinualMovement(Direction direction, float deltatime)
+        {
+            switch (direction)
+            {
+                case Direction.Up:
+                    _movementCounters[direction] += deltatime;
+                    break;
+                case Direction.Down:
+                    _movementCounters[direction] += deltatime;
+                    break;
+                case Direction.Left:
+                    _movementCounters[direction] += deltatime;
+                    break;
+                case Direction.Right:
+                    _movementCounters[direction] += deltatime;
+                    break;
+            }
+
+            var directionsToZero = _movementCounters.Where(element => element.Key != direction).Select(element => element.Key).ToList();
+
+            // Reset all other direction counters to 0
+            foreach (var dir in directionsToZero)
+            {
+                _movementCounters[dir] = 0;
+            }
+
+            if (_movementCounters[direction] >= _movementTimeThreshold)
+            {
+                TryMove(direction);
+                _movementCounters[direction] = 0;
+            }
+        }
+        private void HandleInput(float deltaTime)
         {
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
@@ -124,6 +167,29 @@ namespace DungeonCrawl.Actors.Characters
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 AttackEnemiesUnderCrosshairs();
+            }
+        }
+
+        private void HandleContinousKeyPress(float deltaTime)
+        {
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+            {
+                ContinualMovement(Direction.Up, deltaTime);
+            }
+
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            {
+                ContinualMovement(Direction.Down, deltaTime);
+            }
+
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            {
+                ContinualMovement(Direction.Left, deltaTime);
+            }
+
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            {
+                ContinualMovement(Direction.Right, deltaTime);
             }
         }
 
