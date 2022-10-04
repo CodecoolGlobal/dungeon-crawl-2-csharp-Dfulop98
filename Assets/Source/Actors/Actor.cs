@@ -1,4 +1,6 @@
-﻿using DungeonCrawl.Core;
+﻿using Assets.Source.Actors.SpritesCollection;
+using DungeonCrawl.Core;
+using System.Linq;
 using UnityEngine;
 
 namespace DungeonCrawl.Actors
@@ -23,7 +25,7 @@ namespace DungeonCrawl.Actors
             _spriteRenderer = GetComponent<SpriteRenderer>();
             SetSprite(DefaultSpriteId);
         }
-
+        
         protected virtual void Update()
         {
             OnUpdate(Time.deltaTime);
@@ -33,6 +35,8 @@ namespace DungeonCrawl.Actors
         {
             _spriteRenderer.sprite = ActorManager.Singleton.GetSprite(id);
         }
+
+        
 
         /// <summary>
         ///     Invoked whenever another actor attempts to walk on the same position

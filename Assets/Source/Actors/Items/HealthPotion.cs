@@ -1,13 +1,14 @@
 ﻿using DungeonCrawl.Core;
 using Assets.Source.Core;
 using DungeonCrawl.Actors.Characters;
+using Assets.Source.Actors.SpritesCollection;
 
 namespace Assets.Source.Actors.Items
 {
     internal class HealthPotion : Item
     {
         public override string DefaultName => "Health Potion";
-        public override string DefaultSpriteId => "kenney_transparent_896";
+        public override string DefaultSpriteId => Sprites.ItemSprites["HealthPotion"];
 
         public override void Pickup(Player player)
         {

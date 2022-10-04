@@ -9,18 +9,29 @@ using DungeonCrawl.Actors.Static;
 using DungeonCrawl.Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Assets.Source.Actors.SpritesCollection;
+using System.Runtime.CompilerServices;
+using System.Linq;
+using System.Collections;
 
 namespace DungeonCrawl.Actors.Characters
 {
     public class Player : Character, IDamageablePlayer
     {
-        public override string DefaultSpriteId => "PackCastle01_0";
+        private int _spriteIndex { get; set; } = 0;
+
+        public List<string> UsedSpriteCollection { get; set; }
+
+        //Possible need remove
+        public override string DefaultSpriteId => Sprites.PlayerIdleSprites[_spriteIndex];
+
         public override string DefaultName => "Player";
         public int Score { get; set; } = 0;
         public override int Damage { get; set; } = 10;
         public override int Health { get; set; } = 100;
 
         public List<Item> Inventory = new List<Item>();
+
 
         public Item FloorItem = null;
 
@@ -31,8 +42,8 @@ namespace DungeonCrawl.Actors.Characters
         private void Awake()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
-
-            SetSprite(DefaultSpriteId);
+            UsedSpriteCollection = Sprites.PlayerIdleSprites;
+            SetSprite(UsedSpriteCollection[_spriteIndex]);
             Singleton = this;
         }
 
@@ -40,8 +51,27 @@ namespace DungeonCrawl.Actors.Characters
         {
             HealthBar_Script.CurrentHealth = (float)Health;
 
+            UpdateSprite(Time.deltaTime);
             HandleInput();
             ShowHud();
+        }
+        private void UpdateSprite(float deltaTime)
+        {
+            ElapsedTime += deltaTime;
+            if (ElapsedTime >= 0.15)
+            {
+                
+                if (_spriteIndex == 3)
+                    _spriteIndex = 0;
+                else{_spriteIndex++;}
+
+                var newSprite = UsedSpriteCollection[_spriteIndex];
+                SetSprite(newSprite);
+            
+                Debug.Log(_spriteIndex);
+                ElapsedTime = 0;
+            }
+            
         }
 
         private void ShowHud()
@@ -97,11 +127,13 @@ namespace DungeonCrawl.Actors.Characters
 
         public override void TryMove(Direction direction)
         {
+            //this.SetSprite(Sprites.PlayerSprites["move1"]);
+
             var vector = direction.ToVector();
             (int x, int y) targetPosition = (Position.x + vector.x, Position.y + vector.y);
 
             var actorAtTargetPosition = ActorManager.Singleton.GetActorAt(targetPosition);
-
+            
             if (actorAtTargetPosition == null)
             {
                 // No obstacle found, just move
@@ -131,6 +163,7 @@ namespace DungeonCrawl.Actors.Characters
 
             }
         }
+        
 
         private string CreateInventoryString()
         {
@@ -181,5 +214,7 @@ namespace DungeonCrawl.Actors.Characters
                 UserInterface.Singleton.SetText($"Health: {Health}\nDamage: {Damage}\nScore: {Score}", UserInterface.TextPosition.TopRight, "magenta");
             }
         }
+
+        
     }
 }

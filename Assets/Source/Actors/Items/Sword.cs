@@ -1,4 +1,5 @@
 ﻿
+using Assets.Source.Actors.SpritesCollection;
 using Assets.Source.Core;
 using DungeonCrawl.Actors.Characters;
 using DungeonCrawl.Core;
@@ -8,7 +9,7 @@ namespace Assets.Source.Actors.Items
     public class Sword : Item
     {
         public override string DefaultName => "Sword";
-        public override string DefaultSpriteId => "PackCastle01_43";
+        public override string DefaultSpriteId => Sprites.ItemSprites["Sword"];
 
         public override void Pickup(Player player)
         {

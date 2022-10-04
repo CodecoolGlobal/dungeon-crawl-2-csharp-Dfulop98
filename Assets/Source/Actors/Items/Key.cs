@@ -1,4 +1,5 @@
-﻿using Assets.Source.Core;
+﻿using Assets.Source.Actors.SpritesCollection;
+using Assets.Source.Core;
 using DungeonCrawl.Actors.Characters;
 using DungeonCrawl.Core;
 
@@ -8,7 +9,7 @@ namespace Assets.Source.Actors.Items
     {
         // in txt: K
         public override string DefaultName => "Key";
-        public override string DefaultSpriteId => "kenney_transparent_559";
+        public override string DefaultSpriteId => Sprites.ItemSprites["Key"];
         public override void Pickup(Player player)
         {
           
