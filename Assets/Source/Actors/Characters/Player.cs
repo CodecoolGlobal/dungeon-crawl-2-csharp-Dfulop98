@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
+using Assets.Source.Actors;
 using Assets.Source.Actors.Characters;
 using Assets.Source.Actors.Characters.Enemy;
 using Assets.Source.Actors.Items;
@@ -28,12 +29,18 @@ namespace DungeonCrawl.Actors.Characters
 
         public static Player Singleton { get; private set; }
 
+        private List<Crosshair> _crosshairs = new List<Crosshair>();
+
+        public Direction Facing = Direction.Right;
+
         private void Awake()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
 
             SetSprite(DefaultSpriteId);
             Singleton = this;
+
+            CreateCrosshair(1);
         }
 
         protected override void OnUpdate(float deltaTime)
@@ -42,6 +49,22 @@ namespace DungeonCrawl.Actors.Characters
 
             HandleInput();
             ShowHud();
+            UpdateCrosshairs();
+        }
+
+        private void CreateCrosshair(int offset)
+        {
+            Crosshair crosshair = ActorManager.Singleton.Spawn<Crosshair>(this.Position.x, this.Position.y);
+            crosshair.Offset = offset;
+            _crosshairs.Add(crosshair);
+        }
+
+        private void UpdateCrosshairs()
+        {
+            foreach (Crosshair crosshair in _crosshairs)
+            {
+                crosshair.Move(this);
+            }
         }
 
         private void ShowHud()
@@ -68,24 +91,28 @@ namespace DungeonCrawl.Actors.Characters
             {
                 // Move up
                 TryMove(Direction.Up);
+                Facing = Direction.Up;
             }
 
             if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
                 // Move down
                 TryMove(Direction.Down);
+                Facing = Direction.Down;
             }
 
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 // Move left
                 TryMove(Direction.Left);
+                Facing = Direction.Left;
             }
 
             if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 // Move right
                 TryMove(Direction.Right);
+                Facing = Direction.Right;
             }
 
             if (Input.GetKeyDown(KeyCode.E) && FloorItem != null)
@@ -102,7 +129,7 @@ namespace DungeonCrawl.Actors.Characters
 
             var actorAtTargetPosition = ActorManager.Singleton.GetActorAt(targetPosition);
 
-            if (actorAtTargetPosition == null)
+            if (actorAtTargetPosition == null || actorAtTargetPosition is Crosshair)
             {
                 // No obstacle found, just move
                 Position = targetPosition;
