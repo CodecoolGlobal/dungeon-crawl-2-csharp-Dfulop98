@@ -120,6 +120,22 @@ namespace DungeonCrawl.Actors.Characters
                 FloorItem.Pickup(this);
                 FloorItem = null;
             }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                AttackEnemiesUnderCrosshairs();
+            }
+        }
+
+        private void AttackEnemiesUnderCrosshairs()
+        {
+            foreach (var crosshair in _crosshairs)
+            {
+                if (ActorManager.Singleton.GetActorAt(crosshair.Position) is Enemy enemy)
+                {
+                    enemy.ApplyDamage(this);
+                }
+            }
         }
 
         public override void TryMove(Direction direction)
@@ -128,8 +144,8 @@ namespace DungeonCrawl.Actors.Characters
             (int x, int y) targetPosition = (Position.x + vector.x, Position.y + vector.y);
 
             var actorAtTargetPosition = ActorManager.Singleton.GetActorAt(targetPosition);
-
-            if (actorAtTargetPosition == null || actorAtTargetPosition is Crosshair)
+            
+            if (actorAtTargetPosition == null)
             {
                 // No obstacle found, just move
                 Position = targetPosition;
