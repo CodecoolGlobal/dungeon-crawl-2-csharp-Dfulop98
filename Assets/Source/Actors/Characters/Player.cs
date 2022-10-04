@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Threading;
+using System.Linq;
 using Assets.Source.Actors;
 using Assets.Source.Actors.Characters;
 using Assets.Source.Actors.Characters.Enemy;
@@ -93,8 +93,38 @@ namespace DungeonCrawl.Actors.Characters
             }
         }
 
-        private void HandleInput()
+        private void ContinualMovement(Direction direction, float deltatime)
         {
+            switch (direction)
+            {
+                case Direction.Up:
+                    _movementCounters[direction] += deltatime;
+                    break;
+                case Direction.Down:
+                    _movementCounters[direction] += deltatime;
+                    break;
+                case Direction.Left:
+                    _movementCounters[direction] += deltatime;
+                    break;
+                case Direction.Right:
+                    _movementCounters[direction] += deltatime;
+                    break;
+            }
+
+            var directionsToZero = _movementCounters.Where(element => element.Key != direction).Select(element => element.Key).ToList();
+
+            // Reset all other direction counters to 0
+            foreach (var dir in directionsToZero)
+            {
+                _movementCounters[dir] = 0;
+            }
+
+            if (_movementCounters[direction] >= _movementTimeThreshold)
+            {
+                TryMove(direction);
+                _movementCounters[direction] = 0;
+            }
+        }
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 // Move up
