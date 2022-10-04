@@ -17,25 +17,31 @@ namespace DungeonCrawl.Core
         ///     Constructs map from txt file and spawns actors at appropriate positions
         /// </summary>
         /// <param name="id"></param>
+        public static string jsonMapData;
+        
 
         public static char[,] Map = new char[,]
-        {
-                {'T', 'T', 'T', 'u', 'T'},
-                {'T', '.', '.', 's', 'T'},
-                {'T', 'p', '.', 'g', 'T'},
-                {'T', '.', '.', 'Y', 'T'},
-                {'T', '.', '.', 'h', 'T'},
-                {'T', 'a', '.', 'q', 'T'}
-        };
+            {
+                    {'T', 'T', 'T', 'T', 'T'},
+                    {'T', '.', '.', '.', 'T'},
+                    {'T', 'p', 'a', '.', 'T'},
+                    {'T', '.', '.', '.', 'T'},
+                    {'T', '.', '.', '.', 'T'},
+                    {'T', '.', 'T', 'T', 'T'}
+            };
         public static void LoadMap(int id)
         {
             for (var i = 0; i < Map.GetLength(0); i++)
-            {
+            {  
                 
                 for (int j = 0; j < Map.GetLength(1); j++)
-                {
-                    
+                {       
                     SpawnActor(Map[i,j], (i, j));
+                    Debug.Log($"The {Map[i,j]} char spawned at{i}{j}");
+                    jsonMapData += $"{i},{j}:{Map[i,j]} ";
+                    //jsonMapData += $"{Map[i,j]} X:" + i + ",";
+                    //jsonMapData += $"{Map[i,j]} Y:" + j + ",";
+
                 }
             }
 
@@ -62,7 +68,7 @@ namespace DungeonCrawl.Core
             CameraController.Singleton.Size = 10;
 
         }
-
+        
         private static void SpawnActor(char c, (int x, int y) position)
         {
             switch (c)

@@ -106,16 +106,27 @@ namespace DungeonCrawl.Actors.Characters
         public void SaveGame()
         {
             Debug.Log("Save");
+            
 
             SaveObject saveObject = new SaveObject
             {
+                Name = this.Name,
                 Score = this.Score,
                 Damage = this.Damage,
-                Health = this.Health
+                Health = this.Health,
+                PositionX = this.Position.x,
+                PositionY = this.Position.y,    
+                DefaultSpriteId = this.DefaultSpriteId,
+                _inventory = this._inventory,
+                jsonMapData = MapLoader.jsonMapData,
+                
+
+
             };
             string json = JsonUtility.ToJson(saveObject);
+            
 
-            File.WriteAllText(Application.dataPath + "/text/test.txt", json);
+            File.WriteAllText(Application.dataPath + "/text/test.json", json);
         }
 
        
@@ -213,9 +224,18 @@ namespace DungeonCrawl.Actors.Characters
 
         public class SaveObject
         {
+            public string Name;
             public int Score;
             public int Health;
             public int Damage;
+            public int PositionX;
+            public int PositionY;
+            public string DefaultSpriteId;
+            public List<Item> _inventory;
+            public string jsonMapData;
+            
+
+
         }
     }
     
