@@ -168,6 +168,11 @@ namespace DungeonCrawl.Actors.Characters
             {
                 AttackEnemiesUnderCrosshairs();
             }
+
+            if (Input.GetKeyDown(KeyCode.F5))
+            {
+                SaveObject saveGame = new SaveObject();
+            }
         }
 
         private void HandleContinousKeyPress(float deltaTime)
@@ -250,7 +255,7 @@ namespace DungeonCrawl.Actors.Characters
             else
             {
                 string output = "Inventory: \n";
-                Inventory.ForEach(item => output += $"{item.DefaultName}\n");
+                Inventory.ForEach(item => output += $"{item.Name}\n");
                 return output;
             }
         }

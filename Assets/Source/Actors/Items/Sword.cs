@@ -1,4 +1,5 @@
 ﻿
+using System.Runtime.CompilerServices;
 using Assets.Source.Core;
 using DungeonCrawl.Actors.Characters;
 using DungeonCrawl.Core;
