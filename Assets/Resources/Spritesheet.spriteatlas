@@ -1184,7 +1184,6 @@ SpriteAtlas:
   - {fileID: 2572769797556459918, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -1093389774342442321, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: 3712323348182225130, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
-  - {fileID: 7659029137066544238, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -3731662067933768952, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -962875921394492947, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: 3919475699358871922, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
@@ -1211,6 +1210,7 @@ SpriteAtlas:
   - {fileID: 1911302321199760291, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -5402384334591392313, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -1202370827357078574, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
+  - {fileID: 7659029137066544238, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: 3029378327609832570, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -1484777090196401527, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -6556743904625465184, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
@@ -2368,7 +2368,6 @@ SpriteAtlas:
   - WizardWandBlacket01
   - WizardBlanketAttack
   - WarriorArmorSwordAttack
-  - WoodeStick
   - MagicWand
   - WizardBlanket03
   - WizardBlanket02
@@ -2395,6 +2394,7 @@ SpriteAtlas:
   - mushroom02
   - mushroom08
   - Spear
+  - WoodenStick
   - WizardStickBlacket04
   - WizardStickBlacket05
   - WarriorAttack

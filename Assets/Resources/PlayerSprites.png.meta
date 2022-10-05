@@ -82,7 +82,7 @@ TextureImporter:
     second: PlayerSprites_25
   - first:
       213: 7659029137066544238
-    second: WoodeStick
+    second: WoodenStick
   - first:
       213: 2572769797556459918
     second: WizardWandBlacket01
@@ -1018,7 +1018,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WoodeStick
+      name: WoodenStick
       rect:
         serializedVersion: 2
         x: 959
