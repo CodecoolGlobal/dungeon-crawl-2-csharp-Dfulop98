@@ -7,6 +7,7 @@ using Assets.Source.Actors.Characters;
 using Assets.Source.Actors.Characters.Enemy;
 using Assets.Source.Core;
 using Assets.Source.scripts;
+using DungeonCrawl.Actors;
 using DungeonCrawl.Actors.Characters;
 using DungeonCrawl.Actors.Static;
 using DungeonCrawl.Core;
@@ -39,8 +40,6 @@ namespace Assets.Source.Core
             PositionY = Player.Singleton.Position.y;
             DefaultSpriteId = Player.Singleton.DefaultSpriteId;
             Inventory = new List<Item>(Player.Singleton.Inventory);
-            Debug.Log(JsonUtility.ToJson(Inventory[0]));
-            Debug.Log(JsonUtility.ToJson(Player.Singleton.Inventory[0]));
             //jsonMapData = MapLoader.jsonMapData,
 
             Debug.Log(this.Name);
@@ -50,6 +49,19 @@ namespace Assets.Source.Core
         public void MakeSave()
         {
             string json = JsonUtility.ToJson(this);
+            HashSet<Actor> actors = ActorManager.Singleton.GetActors();
+            
+            
+            
+            foreach (var actor in actors)
+            {
+                if (actor is Enemy enemy)
+                {
+                    enemy.LastPositionx = enemy.Position.x;
+                    enemy.LastPositiony = enemy.Position.y;
+                    json += JsonUtility.ToJson(actor);
+                }
+            }
 
             Debug.Log(json);
             File.WriteAllText(Application.dataPath + "/text/test.json", json);

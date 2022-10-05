@@ -4,6 +4,7 @@ using DungeonCrawl.Core;
 using System;
 using DungeonCrawl;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Random = System.Random;
 using EventLog = Assets.Source.Core.EventLog;
 
@@ -24,6 +25,11 @@ namespace Assets.Source.Actors.Characters.Enemy
         private readonly Random _rnd = new Random(SeedRandom.Next());
 
         private readonly int _detectionRange = 5;
+
+        public char MapIcon;
+        public int LastPositionx;
+        public int LastPositiony;
+
         public void ApplyDamage(Player player)
         {
             Health -= player.Damage;
