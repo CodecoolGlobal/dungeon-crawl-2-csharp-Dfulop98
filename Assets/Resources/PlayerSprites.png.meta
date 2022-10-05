@@ -106,19 +106,19 @@ TextureImporter:
     second: PlayerSprites_33
   - first:
       213: -8168332641009394939
-    second: WizardBlacket01
+    second: WizardBlanket01
   - first:
       213: 3919475699358871922
-    second: WizardBlacket02
+    second: WizardBlanket02
   - first:
       213: -962875921394492947
-    second: WizardBlacket03
+    second: WizardBlanket03
   - first:
       213: -7038384602596112438
-    second: WizardBlacket04
+    second: WizardBlanket04
   - first:
       213: -1093389774342442321
-    second: WizardBlacketAttack
+    second: WizardBlanketAttack
   - first:
       213: 9212350716104666238
     second: PlayerSprites_39
@@ -235,7 +235,7 @@ TextureImporter:
     second: WarriorSword04
   - first:
       213: -4622132508615236563
-    second: PlayerSprites_77
+    second: WarriorSwordAttack
   - first:
       213: -3518600090219396457
     second: WarriorArmorSword01
@@ -1054,7 +1054,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WizardBlacket01
+      name: WizardBlanket01
       rect:
         serializedVersion: 2
         x: 80
@@ -1075,7 +1075,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WizardBlacket02
+      name: WizardBlanket02
       rect:
         serializedVersion: 2
         x: 230
@@ -1096,7 +1096,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WizardBlacket03
+      name: WizardBlanket03
       rect:
         serializedVersion: 2
         x: 383
@@ -1117,7 +1117,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WizardBlacket04
+      name: WizardBlanket04
       rect:
         serializedVersion: 2
         x: 524
@@ -1138,7 +1138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WizardBlacketAttack
+      name: WizardBlanketAttack
       rect:
         serializedVersion: 2
         x: 736
@@ -1957,7 +1957,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSprites_77
+      name: WarriorSwordAttack
       rect:
         serializedVersion: 2
         x: 734
