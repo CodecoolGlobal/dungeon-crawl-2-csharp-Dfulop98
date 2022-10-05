@@ -18,32 +18,35 @@ namespace DungeonCrawl.Actors.Characters
 {
     public class Player : Character, IDamageablePlayer
     {
-        private int _spriteIndex { get; set; } = 0;
 
-        public List<string> UsedSpriteCollection { get; set; }
-
-        //Possible need remove
-        public override string DefaultSpriteId => Sprites.Warrior[_spriteIndex];
-
+        // Stats
         public override string DefaultName => "Player";
-        public int Score { get; set; } = 0;
         public override int Damage { get; set; } = 10;
         public override int Health { get; set; } = 100;
-
-        public List<Item> Inventory = new List<Item>();
-
-
-        public Item FloorItem = null;
+        public int Score { get; set; } = 0;
 
         public string Name = "Röszkei Rambó";
 
+        public List<Item> Inventory = new List<Item>();
+        
+        
+        // Sprite Handle
+        public List<string> UsedSpriteCollection { get; set; }
+        public override string DefaultSpriteId => UsedSpriteCollection[SpriteIndex];
+        protected override int SpriteIndex { get; set; } = 0;
+        protected override float IdleTime { get; set; } = 0;
+
+        
+        // init
+        public Item FloorItem = null;
         public static Player Singleton { get; private set; }
+
 
         private void Awake()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
             UsedSpriteCollection = Sprites.Warrior;
-            SetSprite(UsedSpriteCollection[_spriteIndex]);
+            SetSprite(UsedSpriteCollection[SpriteIndex]);
             Singleton = this;
         }
 
@@ -61,14 +64,13 @@ namespace DungeonCrawl.Actors.Characters
             if (ElapsedTime >= 0.15)
             {
                 
-                if (_spriteIndex == 3)
-                    _spriteIndex = 0;
-                else{_spriteIndex++;}
+                if (SpriteIndex == 3)
+                    SpriteIndex = 0;
+                else{SpriteIndex++;}
 
-                var newSprite = UsedSpriteCollection[_spriteIndex];
+                var newSprite = UsedSpriteCollection[SpriteIndex];
                 SetSprite(newSprite);
             
-                Debug.Log(_spriteIndex);
                 ElapsedTime = 0;
             }
             
