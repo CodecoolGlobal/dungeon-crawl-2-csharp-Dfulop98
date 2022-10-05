@@ -76,29 +76,88 @@ namespace Assets.Source.Actors.SpritesCollection
                 "Wizard02",
                 "Wizard03",
                 "Wizard04",
-
             };
 
-        public static List<string> PlayerWizardWithWand
+        public static List<string> WizardWithWand
             = new List<string>()
             {
-                "PlayerWizardWand1",
-                "PlayerWizardWand2",
-                "PlayerWizardWand3",
-                "PlayerWizardWand4",
+                "WizardWand01",
+                "WizardWand02",
+                "WizardWand03",
+                "WizardWand04",
+            };
 
+        public static List<string> WizardWithStick
+            = new List<string>()
+            {
+                "WizardStick01",
+                "WizardStick02",
+                "WizardStick03",
+                "WizardStick04",
+            };
+
+        public static List<string> WizardWandBlacket
+            = new List<string>()
+            {
+                "WizardWandBlacket01",
+                "WizardWandBlacket02",
+                "WizardWandBlacket03",
+                "WizardWandBlacket04",
+            };
+
+        public static List<string> WizardStickBlacket
+            = new List<string>()
+            {
+                "WizardStickBlacket01",
+                "WizardStickBlacket02",
+                "WizardStickBlacket03",
+                "WizardStickBlacket04",
             };
 
 
+        // Enemy Sprites
+
+        public static List<string> Mushroom
+            = new List<string>()
+            {
+                "mushroom01",
+                "mushroom02",
+                "mushroom03",
+                "mushroom04",
+                "mushroom05",
+                "mushroom06",
+                "mushroom07",
+                "mushroom08"
+            };
+
+        public static List<string> Slime
+            = new List<string>()
+            {
+                "Slime01",
+                "Slime02",
+                "Slime03",
+                "Slime04",
+            };
+
+        public static List<string> Minotaur
+            = new List<string>()
+            {
+                "minotaur01",
+                "minotaur02",
+                "minotaur03",
+                "minotaur04",
+            };
+
         // Item Sprites
-        
+
         public static Dictionary<string, string> Item
             = new Dictionary<string, string>()
             {
-                {"HealthPotion", "kenney_transparent_896"},
-                {"Sword","PackCastle01_43" },
-                {"Spear","PackCastle01_9"},
-                {"Key","kenney_transparent_559" }
+                {"HealthPotion", "HealtPotion"},
+                {"Sword","Sword" },
+                {"Halandzsa","Spear"},
+                {"Key","kenney_transparent_559" },
+                {"Armor", "Armor" }
             };
 
 
