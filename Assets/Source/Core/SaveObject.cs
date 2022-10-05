@@ -55,11 +55,9 @@ namespace Assets.Source.Core
             
             foreach (var actor in actors)
             {
-                if (actor is Enemy enemy)
+                if (actor is Enemy || actor is Item)
                 {
-                    enemy.LastPositionx = enemy.Position.x;
-                    enemy.LastPositiony = enemy.Position.y;
-                    json += JsonUtility.ToJson(actor);
+                    json += JsonUtility.ToJson(new ActorSaveObject('c', actor.Position.x, actor.Position.y));
                 }
             }
 

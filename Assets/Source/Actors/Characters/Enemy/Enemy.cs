@@ -26,10 +26,6 @@ namespace Assets.Source.Actors.Characters.Enemy
 
         private readonly int _detectionRange = 5;
 
-        public char MapIcon;
-        public int LastPositionx;
-        public int LastPositiony;
-
         public void ApplyDamage(Player player)
         {
             Health -= player.Damage;
