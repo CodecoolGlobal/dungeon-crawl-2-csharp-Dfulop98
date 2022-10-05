@@ -1,16 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
-    <ProjectGuid>{384E71AE-0ACD-4D1C-BF65-C3E5F67B541C}</ProjectGuid>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{FC2CCB87-E3F8-9CE2-B0CD-5131C9758E5F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -54,9 +53,6 @@
     <UnityVersion>2021.1.24f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Assets\Source\Actors\Static\StaticUtil.cs" />
     <Compile Include="Assets\Source\Actors\Static\Wall.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Interface\IDamageable.cs" />
@@ -87,6 +83,10 @@
     <Compile Include="Assets\Source\Actors\Characters\Enemy\SwordMan.cs" />
     <Compile Include="Assets\Source\Core\EventLog.cs" />
     <Compile Include="Assets\Source\Core\ActorManager.cs" />
+    <Compile Include="Assets\Source\scripts\DataPersistence\Data\GameData.cs" />
+    <Compile Include="Assets\Source\scripts\DataPersistence\FileDataHandler.cs" />
+    <Compile Include="Assets\Source\scripts\DataPersistence\DataPersistenceManager.cs" />
+    <Compile Include="Assets\Source\scripts\DataPersistence\IDataPersistence.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
