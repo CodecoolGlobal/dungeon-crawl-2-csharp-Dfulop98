@@ -11,9 +11,7 @@ using DungeonCrawl.Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Assets.Source.Actors.SpritesCollection;
-using System.Runtime.CompilerServices;
-using System.Linq;
-using System.Collections;
+
 
 namespace DungeonCrawl.Actors.Characters
 {
@@ -36,6 +34,10 @@ namespace DungeonCrawl.Actors.Characters
         public override string DefaultSpriteId => UsedSpriteCollection[SpriteIndex];
         protected override int SpriteIndex { get; set; } = 0;
         protected override float IdleTime { get; set; } = 0;
+
+        protected int MaxSpriteIndex = 3;
+
+        private bool IsAttack = false;
 
         
         // init
@@ -93,19 +95,25 @@ namespace DungeonCrawl.Actors.Characters
         }
         private void UpdateSprite(float deltaTime)
         {
+            
             ElapsedTime += deltaTime;
             if (ElapsedTime >= 0.15)
             {
                 
-                if (SpriteIndex == 3)
+                if (SpriteIndex == MaxSpriteIndex)
                     SpriteIndex = 0;
                 else{SpriteIndex++;}
 
-                var newSprite = UsedSpriteCollection[SpriteIndex];
-                SetSprite(newSprite);
+                if (IsAttack)
+                {
+                    SetSprite(UsedSpriteCollection[MaxSpriteIndex+1]);
+                    IsAttack = false;
+                }
+                else SetSprite(UsedSpriteCollection[SpriteIndex]);
             
                 ElapsedTime = 0;
             }
+            
             
         }
 
@@ -198,8 +206,11 @@ namespace DungeonCrawl.Actors.Characters
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 AttackEnemiesUnderCrosshairs();
+                IsAttack = true;
             }
         }
+
+        
 
         private void HandleContinousKeyPress(float deltaTime)
         {
