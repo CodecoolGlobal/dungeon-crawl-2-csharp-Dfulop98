@@ -116,24 +116,24 @@ namespace Assets.Source.Actors.SpritesCollection
                 "WizardStickAttack"
             };
 
-        public static List<string> WizardWandBlacket
+        public static List<string> WizardWandBlanket
             = new List<string>()
             {
                 "WizardWandBlacket01",
                 "WizardWandBlacket02",
                 "WizardWandBlacket03",
                 "WizardWandBlacket04",
-                "WizardWandBlanketAttack"
+                "WizardWandBlacketAttack"
             };
 
-        public static List<string> WizardStickBlacket
+        public static List<string> WizardStickBlanket
             = new List<string>()
             {
                 "WizardStickBlacket01",
                 "WizardStickBlacket02",
                 "WizardStickBlacket03",
                 "WizardStickBlacket04",
-                "WizardStickBlanketAttack"
+                "WizardStickBlacketAttack"
             };
         
 
@@ -180,7 +180,10 @@ namespace Assets.Source.Actors.SpritesCollection
                 {"Sword","Sword" },
                 {"Halandzsa","Spear"},
                 {"Key","kenney_transparent_559" },
-                {"Armor", "Armor" }
+                {"Armor", "Armor" },
+                {"Pálca", "WoodenStick" },
+                {"Brutál Pálca", "MagicWand" },
+                {"Köppeny", "blanket"}
             };
 
 
