@@ -174,6 +174,11 @@ namespace DungeonCrawl.Actors.Characters
             {
                 SaveObject saveGame = new SaveObject();
             }
+
+            if (Input.GetKeyDown(KeyCode.F9))
+            {
+                SaveObject.LoadGame();
+            }
         }
 
         private void HandleContinousKeyPress(float deltaTime)

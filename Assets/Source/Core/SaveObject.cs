@@ -26,6 +26,7 @@ namespace Assets.Source.Core
         public int PositionY;
         public string DefaultSpriteId;
         public List<Item> Inventory;
+        public List<ActorSaveObject> DynamicActors;
         //private string jsonMapData;
 
         public SaveObject()
@@ -40,31 +41,55 @@ namespace Assets.Source.Core
             PositionY = Player.Singleton.Position.y;
             DefaultSpriteId = Player.Singleton.DefaultSpriteId;
             Inventory = new List<Item>(Player.Singleton.Inventory);
+            DynamicActors = new List<ActorSaveObject>();
+
+            HashSet<Actor> actors = ActorManager.Singleton.GetActors();
+
+            foreach (var actor in actors)
+            {
+                if (actor is Enemy || actor is Item)
+                {
+                    DynamicActors.Add(new ActorSaveObject(actor.MapIcon, actor.Position.x, actor.Position.y));
+                }
+            }
+
             //jsonMapData = MapLoader.jsonMapData,
 
-            Debug.Log(this.Name);
             MakeSave();
         }
 
         public void MakeSave()
         {
             string json = JsonUtility.ToJson(this);
-            HashSet<Actor> actors = ActorManager.Singleton.GetActors();
-            
-            
-            
-            foreach (var actor in actors)
+            /*
+            ActorSaveObject[] actors = new ActorSaveObject[DynamicActors.Count];
+            for (int i = 0; i < DynamicActors.Count; i++)
             {
-                if (actor is Enemy || actor is Item)
-                {
-                    json += JsonUtility.ToJson(new ActorSaveObject('c', actor.Position.x, actor.Position.y));
-                }
+                actors[i] = DynamicActors[i];
             }
 
-            Debug.Log(json);
+            
+
+            foreach (var item in Inventory)
+            {
+                json += JsonUtility.ToJson(item);
+            }
+            */
             File.WriteAllText(Application.dataPath + "/text/test.json", json);
         }
 
+        public static void LoadGame()
+        {
+            if (File.Exists(Application.dataPath + "/text/test.json"))
+            {
+                string saveString = File.ReadAllText(Application.dataPath + "/text/test.json");
+                SaveObject saveObject = JsonUtility.FromJson<SaveObject>(saveString);
+            }
+            else
+            {
+                Debug.Log("error");
+            }
+        }
 
     }
 }
