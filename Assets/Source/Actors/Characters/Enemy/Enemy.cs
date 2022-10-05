@@ -43,12 +43,9 @@ namespace Assets.Source.Actors.Characters.Enemy
                 // Die
                 OnDeath(player);
                 EventLog.AddEvent($"{this.DefaultName} Dies");
-                Debug.Log($"Character died at: {this.Position.x} , {this.Position.y}");
-                Debug.Log($"On the Jsonmap: {MapLoader.Map[this.Position.x, this.Position.y]}");
+                
                 MapLoader.Map[this.Position.x, this.Position.y] = 'T';
-                Debug.Log($"On the Jsonmap after ow: {MapLoader.Map[this.Position.x, this.Position.y]}");
-                Debug.Log(MapLoader.Map[this.Position.x, this.Position.y].ToString());
-                Debug.Log(MapLoader.Map.ToString());
+                
             }
         }
 
