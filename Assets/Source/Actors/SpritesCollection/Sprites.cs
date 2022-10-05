@@ -14,6 +14,7 @@ namespace Assets.Source.Actors.SpritesCollection
                 "Warrior02",
                 "Warrior03",
                 "Warrior04",
+                "WarriorAttack"
             };
 
         public static List<string> WarriorWithSpear
@@ -23,6 +24,7 @@ namespace Assets.Source.Actors.SpritesCollection
                 "WarriorSpear02",
                 "WarriorSpear03",
                 "WarriorSpear04",
+                "WarriorSpearAttack"
             };
 
         public static List<string> WarriorWithSword
@@ -32,6 +34,7 @@ namespace Assets.Source.Actors.SpritesCollection
                 "WarriorSword02",
                 "WarriorSword03",
                 "WarriorSword04",
+                "WarriorSwordAttack"
             };
 
 
@@ -42,6 +45,7 @@ namespace Assets.Source.Actors.SpritesCollection
                 "WarriorArmor02",
                 "WarriorArmor03",
                 "WarriorArmor04",
+                "WarriorArmorAttack"
 
             };
 
@@ -52,6 +56,7 @@ namespace Assets.Source.Actors.SpritesCollection
                 "WarriorArmorSword02",
                 "WarriorArmorSword03",
                 "WarriorArmorSword04",
+                "WarriorArmorSwordAttack"
 
             };
 
@@ -62,8 +67,10 @@ namespace Assets.Source.Actors.SpritesCollection
                 "WarriorArmorSpear02",
                 "WarriorArmorSpear03",
                 "WarriorArmorSpear04",
+                "WarriorArmorSpearAttack"
 
             };
+        
 
 
 
@@ -76,6 +83,17 @@ namespace Assets.Source.Actors.SpritesCollection
                 "Wizard02",
                 "Wizard03",
                 "Wizard04",
+                "WizardAttack"
+            };
+        
+        public static List<string> WizardBlanket
+            = new List<string>()
+            {
+                "WizardBlanket01",
+                "WizardBlanket02",
+                "WizardBlanket03",
+                "WizardBlanket04",
+                "WizardBlanketAttack"
             };
 
         public static List<string> WizardWithWand
@@ -85,6 +103,7 @@ namespace Assets.Source.Actors.SpritesCollection
                 "WizardWand02",
                 "WizardWand03",
                 "WizardWand04",
+                "WizardWandAttack"
             };
 
         public static List<string> WizardWithStick
@@ -94,6 +113,7 @@ namespace Assets.Source.Actors.SpritesCollection
                 "WizardStick02",
                 "WizardStick03",
                 "WizardStick04",
+                "WizardStickAttack"
             };
 
         public static List<string> WizardWandBlacket
@@ -103,6 +123,7 @@ namespace Assets.Source.Actors.SpritesCollection
                 "WizardWandBlacket02",
                 "WizardWandBlacket03",
                 "WizardWandBlacket04",
+                "WizardWandBlanketAttack"
             };
 
         public static List<string> WizardStickBlacket
@@ -112,7 +133,9 @@ namespace Assets.Source.Actors.SpritesCollection
                 "WizardStickBlacket02",
                 "WizardStickBlacket03",
                 "WizardStickBlacket04",
+                "WizardStickBlanketAttack"
             };
+        
 
 
         // Enemy Sprites
