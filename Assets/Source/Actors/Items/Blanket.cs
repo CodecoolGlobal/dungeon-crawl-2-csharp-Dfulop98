@@ -5,9 +5,9 @@ using DungeonCrawl.Core;
 
 namespace Assets.Source.Actors.Items
 {
-    public class Armor : Item
+    public class Blanket : Item
     {
-        public override string DefaultName => "Armor";
+        public override string DefaultName => "Köppeny";
         public override string DefaultSpriteId => Sprites.Item[DefaultName];
 
         public override void Pickup(Player player)
@@ -22,14 +22,14 @@ namespace Assets.Source.Actors.Items
 
         private void UpdateSprite(Player player)
         {
-            if (player.UsedSpriteCollection != Sprites.WarriorArmorSpear
-                 && player.UsedSpriteCollection != Sprites.WarriorArmorSword)
+            if (player.UsedSpriteCollection != Sprites.WizardStickBlanket
+                 && player.UsedSpriteCollection != Sprites.WizardWandBlanket)
             {
-                if (player.UsedSpriteCollection == Sprites.WarriorWithSword)
-                    player.UsedSpriteCollection = Sprites.WarriorArmorSword;
-                else if (player.UsedSpriteCollection == Sprites.WarriorWithSpear)
-                    player.UsedSpriteCollection = Sprites.WarriorArmorSpear;
-                else { player.UsedSpriteCollection = Sprites.WarriorArmor; }
+                if (player.UsedSpriteCollection == Sprites.WizardWithStick)
+                    player.UsedSpriteCollection = Sprites.WizardStickBlanket;
+                else if (player.UsedSpriteCollection == Sprites.WizardWithWand)
+                    player.UsedSpriteCollection = Sprites.WizardWandBlanket;
+                else { player.UsedSpriteCollection = Sprites.WizardBlanket; }
             }
         }
     }

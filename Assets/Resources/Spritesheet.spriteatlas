@@ -1150,7 +1150,6 @@ SpriteAtlas:
   - {fileID: -6573777416417220690, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -3665499182118038063, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -7597160355791735302, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
-  - {fileID: 600787656912180804, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: 93302913201451361, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -527969473550898579, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: 6109444280003233473, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
@@ -1194,10 +1193,8 @@ SpriteAtlas:
   - {fileID: 3323294548786362860, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -7038384602596112438, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: 1383537614569093372, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
-  - {fileID: -3651056411140544403, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: 2510693253846615547, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -6310306340861115322, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
-  - {fileID: 7184684719435276893, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -6961687405935155622, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: 9212350716104666238, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: 2645544960966311433, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
@@ -2337,7 +2334,6 @@ SpriteAtlas:
   - Warrior02
   - WizardWand01
   - Slime01
-  - Warrior01
   - WizardStick02
   - WizardWand02
   - WizardStick03
@@ -2381,10 +2377,8 @@ SpriteAtlas:
   - WizardStickAttack
   - WizardBlanket04
   - PlayerSprites_52
-  - PlayerSprites_33
   - PlayerSprites_53
   - PlayerSprites_50
-  - PlayerSprites_21
   - PlayerSprites_51
   - PlayerSprites_39
   - PlayerSprites_25

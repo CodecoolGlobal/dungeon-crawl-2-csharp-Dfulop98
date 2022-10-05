@@ -59,6 +59,9 @@
   <ItemGroup>
     <Compile Include="Assets\Source\Actors\Characters\Player\Warrior.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Player\Wizard.cs" />
+    <Compile Include="Assets\Source\Actors\Items\Blanket.cs" />
+    <Compile Include="Assets\Source\Actors\Items\Stick.cs" />
+    <Compile Include="Assets\Source\Actors\Items\Wand.cs" />
     <Compile Include="Assets\Source\Actors\Items\WarriorArmor.cs" />
     <Compile Include="Assets\Source\Actors\SpritesCollection\Sprites.cs" />
     <Compile Include="Assets\Source\Actors\Static\StaticUtil.cs" />
