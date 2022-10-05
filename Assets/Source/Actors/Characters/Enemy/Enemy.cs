@@ -19,6 +19,7 @@ namespace Assets.Source.Actors.Characters.Enemy
         public override int Damage { get; set; }
         public virtual int ScoreValue { get; set; }
         public abstract override string DefaultName { get; }
+
         
 
         // Sprite Handle
@@ -39,7 +40,6 @@ namespace Assets.Source.Actors.Characters.Enemy
 
         private int _detectionRange = 5;
 
-
         public void ApplyDamage(Player player)
         {
             Health -= player.Damage;
@@ -54,14 +54,6 @@ namespace Assets.Source.Actors.Characters.Enemy
 
         public override bool OnCollision(Actor anotherActor)
         {
-            if (anotherActor is Player player)
-            {
-                ApplyDamage(player);
-                if (Health > 0)
-                {
-                    player.ApplyDamage(this);
-                }
-            }
             return true;
         }
 

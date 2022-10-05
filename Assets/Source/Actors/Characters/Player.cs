@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Threading;
+using System.Linq;
+using Assets.Source.Actors;
 using Assets.Source.Actors.Characters;
 using Assets.Source.Actors.Characters.Enemy;
 using Assets.Source.Actors.Items;
@@ -41,6 +42,20 @@ namespace DungeonCrawl.Actors.Characters
         public Item FloorItem = null;
         public static Player Singleton { get; private set; }
 
+        private List<Crosshair> _crosshairs = new List<Crosshair>();
+
+        private float _movementTimeThreshold = 0.35f;
+
+        public Direction Facing = Direction.Right;
+
+        private Dictionary<Direction, float> _movementCounters = new Dictionary<Direction, float>()
+        {
+            { Direction.Up, 0 },
+            { Direction.Down, 0 },
+            { Direction.Left, 0 },
+            { Direction.Right, 0 }
+        };
+
 
         private void Awake()
         {
@@ -48,15 +63,33 @@ namespace DungeonCrawl.Actors.Characters
             UsedSpriteCollection = Sprites.Warrior;
             SetSprite(UsedSpriteCollection[SpriteIndex]);
             Singleton = this;
+
+            CreateCrosshair(1);
         }
 
         protected override void OnUpdate(float deltaTime)
         {
             HealthBar_Script.CurrentHealth = (float)Health;
-
             UpdateSprite(Time.deltaTime);
-            HandleInput();
+            HandleInput(deltaTime);
+            HandleContinousKeyPress(deltaTime);
             ShowHud();
+            UpdateCrosshairs();
+        }
+
+        private void CreateCrosshair(int offset)
+        {
+            Crosshair crosshair = ActorManager.Singleton.Spawn<Crosshair>(this.Position.x, this.Position.y);
+            crosshair.Offset = offset;
+            _crosshairs.Add(crosshair);
+        }
+
+        private void UpdateCrosshairs()
+        {
+            foreach (Crosshair crosshair in _crosshairs)
+            {
+                crosshair.Move(this);
+            }
         }
         private void UpdateSprite(float deltaTime)
         {
@@ -94,36 +127,111 @@ namespace DungeonCrawl.Actors.Characters
             }
         }
 
-        private void HandleInput()
+        private void ContinualMovement(Direction direction, float deltatime)
+        {
+            switch (direction)
+            {
+                case Direction.Up:
+                    _movementCounters[direction] += deltatime;
+                    break;
+                case Direction.Down:
+                    _movementCounters[direction] += deltatime;
+                    break;
+                case Direction.Left:
+                    _movementCounters[direction] += deltatime;
+                    break;
+                case Direction.Right:
+                    _movementCounters[direction] += deltatime;
+                    break;
+            }
+
+            var directionsToZero = _movementCounters.Where(element => element.Key != direction).Select(element => element.Key).ToList();
+
+            // Reset all other direction counters to 0
+            foreach (var dir in directionsToZero)
+            {
+                _movementCounters[dir] = 0;
+            }
+
+            if (_movementCounters[direction] >= _movementTimeThreshold)
+            {
+                TryMove(direction);
+                _movementCounters[direction] = 0;
+            }
+        }
+        private void HandleInput(float deltaTime)
         {
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 // Move up
                 TryMove(Direction.Up);
+                Facing = Direction.Up;
             }
 
             if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
                 // Move down
                 TryMove(Direction.Down);
+                Facing = Direction.Down;
             }
 
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 // Move left
                 TryMove(Direction.Left);
+                Facing = Direction.Left;
             }
 
             if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 // Move right
                 TryMove(Direction.Right);
+                Facing = Direction.Right;
             }
 
             if (Input.GetKeyDown(KeyCode.E) && FloorItem != null)
             {
                 FloorItem.Pickup(this);
                 FloorItem = null;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                AttackEnemiesUnderCrosshairs();
+            }
+        }
+
+        private void HandleContinousKeyPress(float deltaTime)
+        {
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+            {
+                ContinualMovement(Direction.Up, deltaTime);
+            }
+
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            {
+                ContinualMovement(Direction.Down, deltaTime);
+            }
+
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            {
+                ContinualMovement(Direction.Left, deltaTime);
+            }
+
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            {
+                ContinualMovement(Direction.Right, deltaTime);
+            }
+        }
+
+        private void AttackEnemiesUnderCrosshairs()
+        {
+            foreach (var crosshair in _crosshairs)
+            {
+                if (ActorManager.Singleton.GetActorAt(crosshair.Position) is Enemy enemy)
+                {
+                    enemy.ApplyDamage(this);
+                }
             }
         }
 
