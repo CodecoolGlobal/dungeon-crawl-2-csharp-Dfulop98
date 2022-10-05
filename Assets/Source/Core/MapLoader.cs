@@ -37,6 +37,7 @@ namespace DungeonCrawl.Core
                 for (int j = 0; j < Map.GetLength(1); j++)
                 {       
                     SpawnActor(Map[i,j], (i, j));
+                    Debug.Log($"The {Map[i,j]} char spawned at{i}{j}");
                     jsonMapData += $"{i},{j}:{Map[i,j]} ";
                     //jsonMapData += $"{Map[i,j]} X:" + i + ",";
                     //jsonMapData += $"{Map[i,j]} Y:" + j + ",";
