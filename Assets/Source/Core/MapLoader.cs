@@ -43,7 +43,7 @@ namespace DungeonCrawl.Core
             
         }
 
-        private static void SpawnActor(char c, (int x, int y) position)
+        public static void SpawnActor(char c, (int x, int y) position)
         {
             switch (c)
             {

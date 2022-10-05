@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net.Mime;
 using Assets.Source.Actors.Items;
 using System.Threading;
@@ -50,7 +52,7 @@ namespace Assets.Source.Core
             {
                 if (actor is Enemy || actor is Item)
                 {
-                    Actors.Add($"{actor.MapIcon},{actor.Position.x},{actor.Position.y}");
+                    Actors.Add($"{actor.MapIcon};{actor.Position.x};{actor.Position.y}");
                 }
             }
 
@@ -62,8 +64,7 @@ namespace Assets.Source.Core
         public void MakeSave()
         {
             string json = JsonUtility.ToJson(this, true);
-            Debug.Log(json);
-            
+
             File.WriteAllText(Application.dataPath + "/text/test.json", json);
         }
 
@@ -73,10 +74,32 @@ namespace Assets.Source.Core
             {
                 string saveString = File.ReadAllText(Application.dataPath + "/text/test.json");
                 SaveObject saveObject = JsonUtility.FromJson<SaveObject>(saveString);
+                LoadActors(saveObject.Actors);
             }
             else
             {
                 Debug.Log("error");
+            }
+        }
+
+        private static void LoadActors(List<string> actors)
+        {
+            HashSet<Actor> originalActors = ActorManager.Singleton.GetActors();
+            var collection = originalActors.ToArray();
+
+            foreach (var actor in collection)
+            {
+                if (actor is Enemy || actor is Item)
+                {
+                    ActorManager.Singleton.DestroyActor(actor);
+                }
+            }
+
+            for (int i = 0; i < actors.Count; i++)
+            {
+                
+                List<string> data = actors[i].Split(';').ToList();
+                MapLoader.SpawnActor(data[0].First(), (Int32.Parse(data[1]), Int32.Parse(data[2])));
             }
         }
 
