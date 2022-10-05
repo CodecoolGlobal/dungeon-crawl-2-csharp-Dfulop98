@@ -26,7 +26,9 @@ namespace Assets.Source.Core
         public int PositionY;
         public string DefaultSpriteId;
         public List<Item> Inventory;
-        public List<ActorSaveObject> DynamicActors;
+
+        public List<string> Actors = new List<string>();
+
         //private string jsonMapData;
 
         public SaveObject()
@@ -41,7 +43,6 @@ namespace Assets.Source.Core
             PositionY = Player.Singleton.Position.y;
             DefaultSpriteId = Player.Singleton.DefaultSpriteId;
             Inventory = new List<Item>(Player.Singleton.Inventory);
-            DynamicActors = new List<ActorSaveObject>();
 
             HashSet<Actor> actors = ActorManager.Singleton.GetActors();
 
@@ -49,7 +50,7 @@ namespace Assets.Source.Core
             {
                 if (actor is Enemy || actor is Item)
                 {
-                    DynamicActors.Add(new ActorSaveObject(actor.MapIcon, actor.Position.x, actor.Position.y));
+                    Actors.Add($"{actor.MapIcon},{actor.Position.x},{actor.Position.y}");
                 }
             }
 
@@ -60,22 +61,9 @@ namespace Assets.Source.Core
 
         public void MakeSave()
         {
-            string json = JsonUtility.ToJson(this);
+            string json = JsonUtility.ToJson(this, true);
+            Debug.Log(json);
             
-            /*
-            ActorSaveObject[] actors = new ActorSaveObject[DynamicActors.Count];
-            for (int i = 0; i < DynamicActors.Count; i++)
-            {
-                actors[i] = DynamicActors[i];
-            }
-
-            
-
-            foreach (var item in Inventory)
-            {
-                json += JsonUtility.ToJson(item);
-            }
-            */
             File.WriteAllText(Application.dataPath + "/text/test.json", json);
         }
 
