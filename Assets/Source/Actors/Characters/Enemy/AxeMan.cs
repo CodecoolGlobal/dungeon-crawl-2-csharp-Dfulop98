@@ -2,6 +2,7 @@
 {
     public class AxeMan : Enemy
     {
+        public override char MapIcon => 'Y';
         public override int Damage { get; set; } = 10;
         public override int Health { get; set; } = 20;
         public override int ScoreValue { get; set; } = 10;

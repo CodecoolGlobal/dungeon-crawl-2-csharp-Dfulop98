@@ -8,6 +8,7 @@ namespace Assets.Source.Actors.Items
 {
     public class Sword : Item
     {
+        public override char MapIcon => 'w';
         public override string DefaultName => "Sword";
         public override string DefaultSpriteId => "PackCastle01_43";
 

@@ -6,6 +6,7 @@ namespace Assets.Source.Actors.Items
 {
     internal class HealthPotion : Item
     {
+        public override char MapIcon => ',';
         public override string DefaultName => "Health Potion";
         public override string DefaultSpriteId => "kenney_transparent_896";
 

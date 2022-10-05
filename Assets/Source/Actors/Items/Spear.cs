@@ -6,6 +6,7 @@ namespace Assets.Source.Actors.Items
 {
     internal class Spear : Item
     {
+        public override char MapIcon => 'G';
         public override string DefaultName => "Halandzsa";
         public override string DefaultSpriteId => "PackCastle01_9";
 

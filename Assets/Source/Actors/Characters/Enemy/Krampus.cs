@@ -2,6 +2,7 @@
 {
     public class Krampus : Enemy
     {
+        public override char MapIcon => 'a';
         public override int Damage { get; set; } = 5;
         public override int Health { get; set; } = 10;
         public override int ScoreValue { get; set; } = 10;

@@ -15,6 +15,7 @@ namespace DungeonCrawl.Actors.Characters
 {
     public class Player : Character, IDamageablePlayer
     {
+        public override char MapIcon => 'p';
         public override string DefaultSpriteId => "PackCastle01_0";
         public override string DefaultName => "Player";
         public int Score { get; set; } = 0;
