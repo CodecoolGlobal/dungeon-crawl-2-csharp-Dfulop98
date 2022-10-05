@@ -61,6 +61,7 @@ namespace Assets.Source.Core
         public void MakeSave()
         {
             string json = JsonUtility.ToJson(this);
+            
             /*
             ActorSaveObject[] actors = new ActorSaveObject[DynamicActors.Count];
             for (int i = 0; i < DynamicActors.Count; i++)
