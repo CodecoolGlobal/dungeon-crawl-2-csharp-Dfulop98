@@ -21,6 +21,8 @@ namespace DungeonCrawl.Actors.Characters
         public abstract string Name { get; }
         public override int Damage { get; set; } = 10;
         public override int Health { get; set; } = 100;
+
+        public int Armor { get; set; } = 0;
         public int Score { get; set; } = 0;
 
         public List<Item> Inventory = new List<Item>();
@@ -68,6 +70,7 @@ namespace DungeonCrawl.Actors.Characters
         protected override void OnUpdate(float deltaTime)
         {
             HealthBar_Script.CurrentHealth = (float)Health;
+            ArmorBar_Script.CurrentArmor = (float)Armor;
             UpdateSprite(Time.deltaTime);
             HandleInput(deltaTime);
             HandleContinousKeyPress(deltaTime);
@@ -299,18 +302,11 @@ namespace DungeonCrawl.Actors.Characters
         public override bool OnCollision(Actor anotherActor)
         {
             if (anotherActor is Item item)
-            {
                 FloorItem = item;
-            }
             else if (anotherActor is Enemy enemy)
-            {
                 ApplyDamage(enemy);
-            }
-            
             else
-            {
                 FloorItem = null;
-            }
             return false;
         }
 
@@ -322,7 +318,16 @@ namespace DungeonCrawl.Actors.Characters
 
         public void ApplyDamage(Enemy enemy)
         {
-            Health -= enemy.Damage;
+
+            if (Armor > 0)
+            {
+                Armor -= enemy.Damage;
+            }
+            else
+            {
+                Health -= enemy.Damage;
+            }
+
             EventLog.AddEvent($"{enemy.DefaultName} hits {Name} for {enemy.Damage}");
             if (Health <= 0)
             {

@@ -59,9 +59,6 @@
   <ItemGroup>
     <Compile Include="Assets\Source\Actors\Characters\Player\Warrior.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Player\Wizard.cs" />
-    <Compile Include="Assets\Source\Actors\Items\Blanket.cs" />
-    <Compile Include="Assets\Source\Actors\Items\Stick.cs" />
-    <Compile Include="Assets\Source\Actors\Items\Wand.cs" />
     <Compile Include="Assets\Source\Actors\Items\WarriorArmor.cs" />
     <Compile Include="Assets\Source\Actors\SpritesCollection\Sprites.cs" />
     <Compile Include="Assets\Source\Actors\Static\StaticUtil.cs" />
@@ -81,6 +78,7 @@
     <Compile Include="Assets\Source\Actors\Characters\Enemy\Mushroom.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Character.cs" />
     <Compile Include="Assets\Source\Actors\Static\Tree.cs" />
+    <Compile Include="Assets\Source\scripts\ArmorBar_Script.cs" />
     <Compile Include="Assets\Source\scripts\HealthBar_Script.cs" />
     <Compile Include="Assets\Source\Actors\Items\Sword.cs" />
     <Compile Include="Assets\Source\Actors\Items\Item.cs" />
