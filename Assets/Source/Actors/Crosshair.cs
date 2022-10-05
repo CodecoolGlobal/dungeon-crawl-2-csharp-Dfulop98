@@ -13,7 +13,7 @@ namespace Assets.Source.Actors
     internal class Crosshair : Actor
     {
         public override string DefaultName => "Crosshair";
-        public override string DefaultSpriteId => "kenney_transparent_1043";
+        public override string DefaultSpriteId => "Crosshair";
         public override bool Detectable => false;
         public override int Z { get; } = -2;
         public int Offset;
