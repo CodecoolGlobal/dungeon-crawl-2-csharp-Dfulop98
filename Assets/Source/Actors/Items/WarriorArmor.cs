@@ -17,12 +17,10 @@ namespace Assets.Source.Actors.Items
             player.Inventory.Add(this);
             ActorManager.Singleton.DestroyActor(this);
             UpdateSprite(player);
-            
-
             EventLog.AddEvent($"{player.Name} picks up {DefaultName}");
         }
 
-        public void UpdateSprite(Player player)
+        private void UpdateSprite(Player player)
         {
             if (player.UsedSpriteCollection != Sprites.WarriorArmorSpear
                  && player.UsedSpriteCollection != Sprites.WarriorArmorSword)
