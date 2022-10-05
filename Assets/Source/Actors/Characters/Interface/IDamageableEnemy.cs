@@ -1,6 +1,6 @@
-﻿using DungeonCrawl.Actors.Characters;
+﻿
 
-namespace Assets.Source.Actors.Characters.Enemy
+namespace DungeonCrawl.Actors.Characters
 {
     internal interface IDamageableEnemy : IDamageable
     {
