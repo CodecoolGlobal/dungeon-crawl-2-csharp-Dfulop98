@@ -73,5 +73,7 @@ namespace DungeonCrawl.Actors
         ///     Default name assigned to this actor type
         /// </summary>
         public abstract string DefaultName { get; }
+
+        public abstract char MapIcon { get; }
     }
 }

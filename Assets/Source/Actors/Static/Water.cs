@@ -42,8 +42,8 @@
     }
     public class Water6 : Actor
     {
-        // in txt : "t" right
-        public override char MapIcon => 't';
+        // in txt : "z" right
+        public override char MapIcon => 'z';
         public override string DefaultSpriteId => "Water 5";
         public override string DefaultName => "Water6";
         public override bool Detectable => true;
