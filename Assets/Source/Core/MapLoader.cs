@@ -2,7 +2,6 @@
 using DungeonCrawl.Actors.Static;
 using System;
 using System.Text.RegularExpressions;
-using Assets.Source.Actors.Characters.Enemy;
 using Assets.Source.Actors.Items;
 using UnityEngine;
 
@@ -125,7 +124,7 @@ namespace DungeonCrawl.Core
                     //player
                 case 'p':
                     ActorManager.Singleton.Spawn<WoodenFloor>(position);
-                    ActorManager.Singleton.Spawn<Player>(position);
+                    ActorManager.Singleton.Spawn<Warrior>(position);
                     CameraController.Singleton.Position = position;
                     break;
 

@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using Assets.Source.Actors.SpritesCollection;
 using UnityEditor;
 
-namespace Assets.Source.Actors.Characters.Enemy
+namespace DungeonCrawl.Actors.Characters
 {
     public abstract class Enemy : Character, IDamageableEnemy
     {

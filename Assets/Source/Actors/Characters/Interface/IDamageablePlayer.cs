@@ -1,8 +1,8 @@
-﻿namespace Assets.Source.Actors.Characters
+﻿namespace DungeonCrawl.Actors.Characters
 {
     internal interface IDamageablePlayer : IDamageable
     {
         public void OnDeath();
-        public void ApplyDamage(Enemy.Enemy enemy);
+        public void ApplyDamage(Enemy enemy);
     }
 }

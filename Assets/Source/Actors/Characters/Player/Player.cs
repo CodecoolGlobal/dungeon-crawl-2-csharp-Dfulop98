@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Assets.Source.Actors;
-using Assets.Source.Actors.Characters;
-using Assets.Source.Actors.Characters.Enemy;
 using Assets.Source.Actors.Items;
 using Assets.Source.Core;
 using Assets.Source.scripts;
@@ -15,23 +13,22 @@ using Assets.Source.Actors.SpritesCollection;
 
 namespace DungeonCrawl.Actors.Characters
 {
-    public class Player : Character, IDamageablePlayer
+    public abstract class Player : Character, IDamageablePlayer
     {
 
         // Stats
-        public override string DefaultName => "Player";
+        public override string DefaultName { get; }
+        public abstract string Name { get; }
         public override int Damage { get; set; } = 10;
         public override int Health { get; set; } = 100;
         public int Score { get; set; } = 0;
-
-        public string Name = "Röszkei Rambó";
 
         public List<Item> Inventory = new List<Item>();
         
         
         // Sprite Handle
-        public List<string> UsedSpriteCollection { get; set; }
-        public override string DefaultSpriteId => UsedSpriteCollection[SpriteIndex];
+        public abstract List<string> UsedSpriteCollection { get; set; }
+        public override string DefaultSpriteId { get; }
         protected override int SpriteIndex { get; set; } = 0;
         protected override float IdleTime { get; set; } = 0;
 
@@ -62,13 +59,12 @@ namespace DungeonCrawl.Actors.Characters
         private void Awake()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
-            UsedSpriteCollection = Sprites.Warrior;
             SetSprite(UsedSpriteCollection[SpriteIndex]);
             Singleton = this;
-
             CreateCrosshair(1);
         }
 
+        
         protected override void OnUpdate(float deltaTime)
         {
             HealthBar_Script.CurrentHealth = (float)Health;

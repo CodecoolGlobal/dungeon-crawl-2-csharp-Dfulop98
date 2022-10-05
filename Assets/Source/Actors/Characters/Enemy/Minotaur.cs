@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 
-namespace Assets.Source.Actors.Characters.Enemy
+namespace DungeonCrawl.Actors.Characters
 {
     public class Minotaur : Enemy
     {
