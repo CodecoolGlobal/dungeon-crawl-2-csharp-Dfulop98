@@ -8,7 +8,7 @@ namespace Assets.Source.Actors.Items
     internal class HealthPotion : Item
     {
         public override string DefaultName => "Health Potion";
-        public override string DefaultSpriteId => Sprites.ItemSprites["HealthPotion"];
+        public override string DefaultSpriteId => Sprites.Item["HealthPotion"];
 
         public override void Pickup(Player player)
         {

@@ -8,14 +8,21 @@ namespace Assets.Source.Actors.Items
     internal class Spear : Item
     {
         public override string DefaultName => "Halandzsa";
-        public override string DefaultSpriteId => Sprites.ItemSprites["Spear"];
+        public override string DefaultSpriteId => Sprites.Item[DefaultName];
 
         public override void Pickup(Player player)
         {
             // Apply change
             player.Damage += 1000;
             player.Inventory.Add(this);
-            player.UsedSpriteCollection = Sprites.PlayerWSPearSprites;
+
+            if (player.UsedSpriteCollection == Sprites.Warrior
+                || player.UsedSpriteCollection == Sprites.WarriorWithSword)
+                player.UsedSpriteCollection = Sprites.WarriorWithSpear;
+            else if (player.UsedSpriteCollection == Sprites.WarriorArmor
+                || player.UsedSpriteCollection == Sprites.WarriorArmorSword)
+                player.UsedSpriteCollection = Sprites.WarriorArmorSpear;
+
             ActorManager.Singleton.DestroyActor(this);
             EventLog.AddEvent($"{player.Name} picks up {DefaultName}");
 

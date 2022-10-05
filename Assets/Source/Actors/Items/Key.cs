@@ -9,7 +9,7 @@ namespace Assets.Source.Actors.Items
     {
         // in txt: K
         public override string DefaultName => "Key";
-        public override string DefaultSpriteId => Sprites.ItemSprites["Key"];
+        public override string DefaultSpriteId => Sprites.Item["Key"];
         public override void Pickup(Player player)
         {
           
