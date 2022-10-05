@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Assets.Source.Actors.SpritesCollection;
 using DungeonCrawl.Actors;
+using DungeonCrawl.Actors.Characters;
 using UnityEngine;
 using UnityEngine.U2D;
 
@@ -81,7 +83,7 @@ namespace DungeonCrawl.Core
         /// <param name="id"></param>
         /// <returns></returns>
         
-        
+
         public Sprite GetSprite(string id)
         {
             

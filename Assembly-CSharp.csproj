@@ -54,6 +54,14 @@
     <UnityVersion>2021.1.24f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Source\Actors\Items\WarriorArmor.cs" />
+    <Compile Include="Assets\Source\Actors\SpritesCollection\Sprites.cs" />
+
+
     <Compile Include="Assets\Source\Actors\Static\StaticUtil.cs" />
     <Compile Include="Assets\Source\Actors\Static\Wall.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Interface\IDamageable.cs" />
@@ -68,7 +76,7 @@
     <Compile Include="Assets\Source\Actors\Characters\Player.cs" />
     <Compile Include="Assets\Source\Actors\Static\Water.cs" />
     <Compile Include="Assets\Source\Actors\Static\Door.cs" />
-    <Compile Include="Assets\Source\Actors\Characters\Enemy\AxeMan.cs" />
+    <Compile Include="Assets\Source\Actors\Characters\Enemy\Mushroom.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Character.cs" />
     <Compile Include="Assets\Source\Actors\Static\Tree.cs" />
     <Compile Include="Assets\Source\scripts\HealthBar_Script.cs" />
@@ -76,12 +84,12 @@
     <Compile Include="Assets\Source\Actors\Items\Item.cs" />
     <Compile Include="Assets\Source\Core\MapLoader.cs" />
     <Compile Include="Assets\Source\Utilities.cs" />
-    <Compile Include="Assets\Source\Actors\Characters\Enemy\Krampus.cs" />
+    <Compile Include="Assets\Source\Actors\Characters\Enemy\Minotaur.cs" />
     <Compile Include="Assets\Source\Actors\Items\Key.cs" />
     <Compile Include="Assets\Source\Actors\Items\HealthPotion.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Enemy\Enemy.cs" />
     <Compile Include="Assets\Source\Core\GameManager.cs" />
-    <Compile Include="Assets\Source\Actors\Characters\Enemy\SwordMan.cs" />
+    <Compile Include="Assets\Source\Actors\Characters\Enemy\Slime.cs" />
     <Compile Include="Assets\Source\Core\EventLog.cs" />
     <Compile Include="Assets\Source\Core\ActorManager.cs" />
     <Compile Include="Assets\Source\Actors\Crosshair.cs" />
@@ -787,8 +795,7 @@
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

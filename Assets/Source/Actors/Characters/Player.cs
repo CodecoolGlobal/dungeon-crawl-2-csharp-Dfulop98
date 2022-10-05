@@ -10,23 +10,36 @@ using DungeonCrawl.Actors.Static;
 using DungeonCrawl.Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Assets.Source.Actors.SpritesCollection;
+using System.Runtime.CompilerServices;
+using System.Linq;
+using System.Collections;
 
 namespace DungeonCrawl.Actors.Characters
 {
     public class Player : Character, IDamageablePlayer
     {
-        public override string DefaultSpriteId => "PackCastle01_0";
+
+        // Stats
         public override string DefaultName => "Player";
-        public int Score { get; set; } = 0;
         public override int Damage { get; set; } = 10;
         public override int Health { get; set; } = 100;
-
-        public List<Item> Inventory = new List<Item>();
-
-        public Item FloorItem = null;
+        public int Score { get; set; } = 0;
 
         public string Name = "Röszkei Rambó";
 
+        public List<Item> Inventory = new List<Item>();
+        
+        
+        // Sprite Handle
+        public List<string> UsedSpriteCollection { get; set; }
+        public override string DefaultSpriteId => UsedSpriteCollection[SpriteIndex];
+        protected override int SpriteIndex { get; set; } = 0;
+        protected override float IdleTime { get; set; } = 0;
+
+        
+        // init
+        public Item FloorItem = null;
         public static Player Singleton { get; private set; }
 
         private List<Crosshair> _crosshairs = new List<Crosshair>();
@@ -43,11 +56,12 @@ namespace DungeonCrawl.Actors.Characters
             { Direction.Right, 0 }
         };
 
+
         private void Awake()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
-
-            SetSprite(DefaultSpriteId);
+            UsedSpriteCollection = Sprites.Warrior;
+            SetSprite(UsedSpriteCollection[SpriteIndex]);
             Singleton = this;
 
             CreateCrosshair(1);
@@ -56,7 +70,7 @@ namespace DungeonCrawl.Actors.Characters
         protected override void OnUpdate(float deltaTime)
         {
             HealthBar_Script.CurrentHealth = (float)Health;
-
+            UpdateSprite(Time.deltaTime);
             HandleInput(deltaTime);
             HandleContinousKeyPress(deltaTime);
             ShowHud();
@@ -76,6 +90,23 @@ namespace DungeonCrawl.Actors.Characters
             {
                 crosshair.Move(this);
             }
+        }
+        private void UpdateSprite(float deltaTime)
+        {
+            ElapsedTime += deltaTime;
+            if (ElapsedTime >= 0.15)
+            {
+                
+                if (SpriteIndex == 3)
+                    SpriteIndex = 0;
+                else{SpriteIndex++;}
+
+                var newSprite = UsedSpriteCollection[SpriteIndex];
+                SetSprite(newSprite);
+            
+                ElapsedTime = 0;
+            }
+            
         }
 
         private void ShowHud()
@@ -206,6 +237,8 @@ namespace DungeonCrawl.Actors.Characters
 
         public override void TryMove(Direction direction)
         {
+            //this.SetSprite(Sprites.PlayerSprites["move1"]);
+
             var vector = direction.ToVector();
             (int x, int y) targetPosition = (Position.x + vector.x, Position.y + vector.y);
 
@@ -240,6 +273,7 @@ namespace DungeonCrawl.Actors.Characters
 
             }
         }
+        
 
         private string CreateInventoryString()
         {
@@ -290,5 +324,7 @@ namespace DungeonCrawl.Actors.Characters
                 UserInterface.Singleton.SetText($"Health: {Health}\nDamage: {Damage}\nScore: {Score}", UserInterface.TextPosition.TopRight, "magenta");
             }
         }
+
+        
     }
 }

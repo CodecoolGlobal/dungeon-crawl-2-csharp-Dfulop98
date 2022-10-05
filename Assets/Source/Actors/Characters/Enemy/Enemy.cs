@@ -6,24 +6,40 @@ using DungeonCrawl;
 using UnityEngine;
 using Random = System.Random;
 using EventLog = Assets.Source.Core.EventLog;
+using System.Collections.Generic;
+using Assets.Source.Actors.SpritesCollection;
+using UnityEditor;
 
 namespace Assets.Source.Actors.Characters.Enemy
 {
     public abstract class Enemy : Character, IDamageableEnemy
     {
+        // Enemy Stats
         public override int Health { get; set; }
         public override int Damage { get; set; }
         public virtual int ScoreValue { get; set; }
-
-        public abstract override string DefaultSpriteId { get; }
-
         public abstract override string DefaultName { get; }
 
-        private static readonly Random SeedRandom = new Random();
+        
 
-        private readonly Random _rnd = new Random(SeedRandom.Next());
+        // Sprite Handle
+        
+        protected abstract List<string> UsedSpriteCollection { get; set; }
+        public override string DefaultSpriteId => UsedSpriteCollection[SpriteIndex];
+        protected override int SpriteIndex { get; set; }
+        protected abstract int MaxIndex { get; set; }
+        protected override float IdleTime { get; set; }
+        protected abstract float MaxIdleTime { get; set; }
 
-        private readonly int _detectionRange = 5;
+        
+        
+        // Random instance
+        private static Random _seedRandom = new Random();
+        private Random _rnd = new Random(_seedRandom.Next());
+
+
+        private int _detectionRange = 5;
+
         public void ApplyDamage(Player player)
         {
             Health -= player.Damage;
@@ -66,12 +82,16 @@ namespace Assets.Source.Actors.Characters.Enemy
 
         protected override void Update()
         {
+
+            UpdateSprite(Time.deltaTime);
             OnUpdate(Time.deltaTime);
         }
+        
 
         protected override void OnUpdate(float deltaTime)
         {
             ElapsedTime += deltaTime;
+            
             if (ElapsedTime >= 1)
             {
                 var dir = CalculateDirection();
@@ -80,6 +100,29 @@ namespace Assets.Source.Actors.Characters.Enemy
                 ElapsedTime = 0;
             }
         }
+
+        private void UpdateSprite(float deltaTime)
+        {
+
+            IdleTime += deltaTime;
+            if (IdleTime >= MaxIdleTime)
+            {
+
+                if (SpriteIndex == MaxIndex)
+                    SpriteIndex = 0;
+                else { SpriteIndex++; }
+
+                var newSprite = UsedSpriteCollection[SpriteIndex];
+                SetSprite(newSprite);
+
+                IdleTime = 0;
+            }
+
+
+
+        }
+
+
 
         protected bool DetectPlayer()
         {

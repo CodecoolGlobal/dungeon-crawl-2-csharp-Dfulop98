@@ -132,15 +132,15 @@ namespace DungeonCrawl.Core
                     //mobs
                 case 'a':
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
-                    ActorManager.Singleton.Spawn<Krampus>(position);
+                    ActorManager.Singleton.Spawn<Minotaur>(position);
                     break;
                 case 'q':
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
-                    ActorManager.Singleton.Spawn<SwordMan>(position);
+                    ActorManager.Singleton.Spawn<Slime>(position);
                     break;
                 case 'Y':
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
-                    ActorManager.Singleton.Spawn<AxeMan>(position);
+                    ActorManager.Singleton.Spawn<Mushroom>(position);
                     break;
                 case ' ':
                     break;
@@ -152,6 +152,10 @@ namespace DungeonCrawl.Core
                 case 'w':
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
                     ActorManager.Singleton.Spawn<Sword>(position);
+                    break;
+                case 'e':
+                    ActorManager.Singleton.Spawn<GrassFloor>(position);
+                    ActorManager.Singleton.Spawn<Armor>(position);
                     break;
                 case ',':
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
