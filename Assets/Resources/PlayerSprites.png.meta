@@ -1,0 +1,2457 @@
+fileFormatVersion: 2
+guid: b943535e36c53db48ae9bbba7859b8ca
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 600787656912180804
+    second: Warrior01
+  - first:
+      213: -6573777416417220690
+    second: Warrior02
+  - first:
+      213: 3561037995832689329
+    second: Warrior03
+  - first:
+      213: 5670999935819666744
+    second: Warrior04
+  - first:
+      213: -6556743904625465184
+    second: WarriorAttack
+  - first:
+      213: 7777069500747275281
+    second: PlayerSprites_5
+  - first:
+      213: -1907178489979809653
+    second: blanket
+  - first:
+      213: 5458758677676582336
+    second: PlayerSprites_7
+  - first:
+      213: 1650604073877677656
+    second: Armor
+  - first:
+      213: -1202370827357078574
+    second: Spear
+  - first:
+      213: 1226698290922342999
+    second: PlayerSprites_10
+  - first:
+      213: -2650982196621262989
+    second: Wizard01
+  - first:
+      213: 4906320411871050636
+    second: Wizard02
+  - first:
+      213: -3446259362212464047
+    second: Wizard03
+  - first:
+      213: 6911948736729229215
+    second: Wizard04
+  - first:
+      213: 4984640475262563321
+    second: WizardAttack
+  - first:
+      213: -3731662067933768952
+    second: MagicWand
+  - first:
+      213: -3665499182118038063
+    second: WizardWand01
+  - first:
+      213: -527969473550898579
+    second: WizardWand02
+  - first:
+      213: -5335293324663507051
+    second: WizardWand03
+  - first:
+      213: -4696992072520464199
+    second: WizardWand04
+  - first:
+      213: 7184684719435276893
+    second: PlayerSprites_21
+  - first:
+      213: 2296633166852407765
+    second: WizardWandAttack
+  - first:
+      213: 2187212451455908630
+    second: Sword
+  - first:
+      213: -8331322116368789667
+    second: PlayerSprites_24
+  - first:
+      213: 2645544960966311433
+    second: PlayerSprites_25
+  - first:
+      213: 7659029137066544238
+    second: WoodeStick
+  - first:
+      213: 2572769797556459918
+    second: WizardWandBlacket01
+  - first:
+      213: 8805975539182170407
+    second: WizardWandBlacket02
+  - first:
+      213: 8548618440016749387
+    second: WizardWandBlacket03
+  - first:
+      213: 3723365212929536919
+    second: WizardWandBlacket04
+  - first:
+      213: 5786896978501575650
+    second: PlayerSprites_31
+  - first:
+      213: -5730566781356175803
+    second: WizardWandBlacketAttack
+  - first:
+      213: -3651056411140544403
+    second: PlayerSprites_33
+  - first:
+      213: -8168332641009394939
+    second: WizardBlacket01
+  - first:
+      213: 3919475699358871922
+    second: WizardBlacket02
+  - first:
+      213: -962875921394492947
+    second: WizardBlacket03
+  - first:
+      213: -7038384602596112438
+    second: WizardBlacket04
+  - first:
+      213: -1093389774342442321
+    second: WizardBlacketAttack
+  - first:
+      213: 9212350716104666238
+    second: PlayerSprites_39
+  - first:
+      213: -5109403078686314359
+    second: WizardStick01
+  - first:
+      213: 93302913201451361
+    second: WizardStick02
+  - first:
+      213: 6109444280003233473
+    second: WizardStick03
+  - first:
+      213: 6229577118154470024
+    second: WizardStick04
+  - first:
+      213: 3323294548786362860
+    second: WizardStickAttack
+  - first:
+      213: 2983075048774014283
+    second: WizardStickBlacket0
+  - first:
+      213: -1766246839444463483
+    second: WizardStickBlacket02
+  - first:
+      213: 3029378327609832570
+    second: WizardStickBlacket04
+  - first:
+      213: -1484777090196401527
+    second: WizardStickBlacket05
+  - first:
+      213: -6609775787918025098
+    second: WizardStickBlacketAttack
+  - first:
+      213: -6310306340861115322
+    second: PlayerSprites_50
+  - first:
+      213: -6961687405935155622
+    second: PlayerSprites_51
+  - first:
+      213: 1383537614569093372
+    second: PlayerSprites_52
+  - first:
+      213: 2510693253846615547
+    second: PlayerSprites_53
+  - first:
+      213: 5491791034780103867
+    second: WarriorSpear01
+  - first:
+      213: -8236569659322557908
+    second: WarriorSpear02
+  - first:
+      213: -6460274081446962631
+    second: WarriorSpear03
+  - first:
+      213: -7719832934267146039
+    second: WarriorSpear04
+  - first:
+      213: 1052830161814069994
+    second: WarriorSpearAttack
+  - first:
+      213: -7690088798550290957
+    second: PlayerSprites_59
+  - first:
+      213: -6058323214212567514
+    second: WarriorArmor01
+  - first:
+      213: -6748064755096570516
+    second: WarriorArmor02
+  - first:
+      213: -3340098164644101374
+    second: WarriorArmor03
+  - first:
+      213: 9158296215821677844
+    second: WarriorArmor04
+  - first:
+      213: 6640984227506043024
+    second: WarriorArmorAttack
+  - first:
+      213: -5341428339340968647
+    second: PlayerSprites_65
+  - first:
+      213: 7327615044952572187
+    second: PlayerSprites_66
+  - first:
+      213: 7530350558373686698
+    second: PlayerSprites_67
+  - first:
+      213: -2035044334069802682
+    second: WarriorArmorSpear01
+  - first:
+      213: 804183277796719818
+    second: WarriorArmorSpear02
+  - first:
+      213: -7925334328944590444
+    second: WarriorArmorSpear03
+  - first:
+      213: 4134244576707982056
+    second: WarriorArmorSpear04
+  - first:
+      213: -5145127216404212003
+    second: WarriorArmorSpearAttack
+  - first:
+      213: -6173244361975239257
+    second: WarriorSword01
+  - first:
+      213: -3455584290130082644
+    second: WarriorSword02
+  - first:
+      213: -4939389897178487434
+    second: WarriorSword03
+  - first:
+      213: -4708902113239141003
+    second: WarriorSword04
+  - first:
+      213: -4622132508615236563
+    second: PlayerSprites_77
+  - first:
+      213: -3518600090219396457
+    second: WarriorArmorSword01
+  - first:
+      213: 877109621843844605
+    second: WarriorArmorSword02
+  - first:
+      213: 3767768439264838013
+    second: WarriorArmorSword03
+  - first:
+      213: -1023801928786111941
+    second: WarriorArmorSword04
+  - first:
+      213: 3712323348182225130
+    second: WarriorArmorSwordAttack
+  - first:
+      213: 4613350787656922165
+    second: mushroom01
+  - first:
+      213: 1911302321199760291
+    second: mushroom02
+  - first:
+      213: -2778507170650983465
+    second: mushroom03
+  - first:
+      213: -1153626385286753624
+    second: mushroom04
+  - first:
+      213: -5762734077135585103
+    second: mushroom05
+  - first:
+      213: -2494688365134188788
+    second: mushroom06
+  - first:
+      213: -3532662454620019516
+    second: mushroom07
+  - first:
+      213: -5402384334591392313
+    second: mushroom08
+  - first:
+      213: 2892452062432297388
+    second: minotaur01
+  - first:
+      213: -74016810642809366
+    second: minotaur02
+  - first:
+      213: -6937423713505086466
+    second: minotaur03
+  - first:
+      213: 4355295255169142647
+    second: minotaur04
+  - first:
+      213: 1954707715482972154
+    second: minotaur05
+  - first:
+      213: -7597160355791735302
+    second: Slime01
+  - first:
+      213: 4068937055486310653
+    second: Slime02
+  - first:
+      213: -1150925577064176684
+    second: Slime03
+  - first:
+      213: 2391053990865280104
+    second: Slime04
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Warrior01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 2890
+        width: 97
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44690bbd03d665800800000000000000
+      internalID: 600787656912180804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior02
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 2894
+        width: 100
+        height: 109
+      alignment: 9
+      pivot: {x: 0.53195006, y: 0.49414286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea767f5e44045c4a0800000000000000
+      internalID: -6573777416417220690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior03
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 2897
+        width: 101
+        height: 109
+      alignment: 9
+      pivot: {x: 0.5379605, y: 0.50586385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b2c645a0395b6130800000000000000
+      internalID: 3561037995832689329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior04
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 2899
+        width: 102
+        height: 110
+      alignment: 9
+      pivot: {x: 0.5501177, y: 0.50581056}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8355bc7356073be40800000000000000
+      internalID: 5670999935819666744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorAttack
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 2899
+        width: 121
+        height: 110
+      alignment: 9
+      pivot: {x: 0.5950575, y: 0.52323776}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a867996824c105a0800000000000000
+      internalID: -6556743904625465184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blanket
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 2945
+        width: 125
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b80dc7d94475885e0800000000000000
+      internalID: -1907178489979809653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Armor
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 2896
+        width: 72
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 856aa40f8af18e610800000000000000
+      internalID: 1650604073877677656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spear
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 2720
+        width: 52
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dbb61b5a12505fe0800000000000000
+      internalID: -1202370827357078574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSprites_10
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 2779
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a4105a89b160110800000000000000
+      internalID: 1226698290922342999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wizard01
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 2719
+        width: 97
+        height: 154
+      alignment: 9
+      pivot: {x: 0.5065877, y: 0.3547744}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f3188dcb1d53bd0800000000000000
+      internalID: -2650982196621262989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wizard02
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 2723
+        width: 100
+        height: 154
+      alignment: 9
+      pivot: {x: 0.5638998, y: 0.35477597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8b72d77b60c61440800000000000000
+      internalID: 4906320411871050636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wizard03
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 2726
+        width: 102
+        height: 154
+      alignment: 9
+      pivot: {x: 0.5626469, y: 0.36307356}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a367f7e5d6c20d0800000000000000
+      internalID: -3446259362212464047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wizard04
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 2728
+        width: 101
+        height: 154
+      alignment: 9
+      pivot: {x: 0.556941, y: 0.35892478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f97a47641cc2cef50800000000000000
+      internalID: 6911948736729229215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardAttack
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 2725
+        width: 121
+        height: 157
+      alignment: 9
+      pivot: {x: 0.60561955, y: 0.3575494}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f33f0d3a100d2540800000000000000
+      internalID: 4984640475262563321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicWand
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 2729
+        width: 85
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8031203de19763cc0800000000000000
+      internalID: -3731662067933768952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardWand01
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 2540
+        width: 134
+        height: 159
+      alignment: 9
+      pivot: {x: 0.6399961, y: 0.35252064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d59e5d1ae7812dc0800000000000000
+      internalID: -3665499182118038063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardWand02
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 2545
+        width: 139
+        height: 157
+      alignment: 9
+      pivot: {x: 0.68135303, y: 0.34690672}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6aafb4af864ca8f0800000000000000
+      internalID: -527969473550898579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardWand03
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 2548
+        width: 131
+        height: 157
+      alignment: 9
+      pivot: {x: 0.65215224, y: 0.3581092}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5973be22dfa35f5b0800000000000000
+      internalID: -5335293324663507051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardWand04
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 2551
+        width: 124
+        height: 156
+      alignment: 9
+      pivot: {x: 0.63237494, y: 0.3609572}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b88794889ee0deb0800000000000000
+      internalID: -4696992072520464199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSprites_21
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 2641
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d52ed1dafa025b360800000000000000
+      internalID: 7184684719435276893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardWandAttack
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 2548
+        width: 192
+        height: 158
+      alignment: 9
+      pivot: {x: 0.7473176, y: 0.35529724}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d14e9972b74fdf10800000000000000
+      internalID: 2296633166852407765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 2616
+        width: 73
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b3751e22a8a5e10800000000000000
+      internalID: 2187212451455908630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSprites_24
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 2614
+        width: 77
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5f8b782da2316c80800000000000000
+      internalID: -8331322116368789667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSprites_25
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 2597
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90eb8b3102dd6b420800000000000000
+      internalID: 2645544960966311433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodeStick
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 2529
+        width: 73
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6cc73fbb665a4a60800000000000000
+      internalID: 7659029137066544238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardWandBlacket01
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 2356
+        width: 165
+        height: 158
+      alignment: 9
+      pivot: {x: 0.53300345, y: 0.34244123}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e89d430ff7054b320800000000000000
+      internalID: 2572769797556459918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardWandBlacket02
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 2360
+        width: 171
+        height: 157
+      alignment: 9
+      pivot: {x: 0.5545922, y: 0.32657307}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7217bb9c81c153a70800000000000000
+      internalID: 8805975539182170407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardWandBlacket03
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 2365
+        width: 162
+        height: 157
+      alignment: 9
+      pivot: {x: 0.5286358, y: 0.33648333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b436d8dbd2bc2a670800000000000000
+      internalID: 8548618440016749387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardWandBlacket04
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 2367
+        width: 153
+        height: 157
+      alignment: 9
+      pivot: {x: 0.5049869, y: 0.3315274}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79336b51fec0ca330800000000000000
+      internalID: 3723365212929536919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardWandBlacketAttack
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 2363
+        width: 223
+        height: 159
+      alignment: 9
+      pivot: {x: 0.65558803, y: 0.33854014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e8c9bcfdfe870b0800000000000000
+      internalID: -5730566781356175803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSprites_33
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 2375
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d682e07c987d45dc0800000000000000
+      internalID: -3651056411140544403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardBlacket01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 2186
+        width: 129
+        height: 159
+      alignment: 9
+      pivot: {x: 0.4035111, y: 0.33364657}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50b186d9db044ae80800000000000000
+      internalID: -8168332641009394939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardBlacket02
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 2191
+        width: 132
+        height: 157
+      alignment: 9
+      pivot: {x: 0.42338446, y: 0.31666282}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 271bf0ed166c46630800000000000000
+      internalID: 3919475699358871922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardBlacket03
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 2195
+        width: 133
+        height: 156
+      alignment: 9
+      pivot: {x: 0.41811147, y: 0.32546136}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de91186737d23a2f0800000000000000
+      internalID: -962875921394492947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardBlacket04
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 2196
+        width: 133
+        height: 157
+      alignment: 9
+      pivot: {x: 0.42980957, y: 0.32657307}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac70ea1be72a25e90800000000000000
+      internalID: -7038384602596112438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardBlacketAttack
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 2186
+        width: 148
+        height: 158
+      alignment: 9
+      pivot: {x: 0.47371778, y: 0.34244123}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa236431bcf73d0f0800000000000000
+      internalID: -1093389774342442321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSprites_39
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 2055
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7cebbbca28d8df70800000000000000
+      internalID: 9212350716104666238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardStick01
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 2002
+        width: 111
+        height: 157
+      alignment: 9
+      pivot: {x: 0.5841016, y: 0.33648333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9807d9088f0c719b0800000000000000
+      internalID: -5109403078686314359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardStick02
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 2005
+        width: 112
+        height: 157
+      alignment: 9
+      pivot: {x: 0.59029686, y: 0.34639356}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 161b1e5518a7b4100800000000000000
+      internalID: 93302913201451361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardStick03
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 2010
+        width: 106
+        height: 157
+      alignment: 9
+      pivot: {x: 0.5733905, y: 0.3513479}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c682a4143b19c450800000000000000
+      internalID: 6109444280003233473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardStick04
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 2012
+        width: 105
+        height: 156
+      alignment: 9
+      pivot: {x: 0.5814982, y: 0.34540892}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 882bf7c1267e37650800000000000000
+      internalID: 6229577118154470024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardStickAttack
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 2008
+        width: 168
+        height: 157
+      alignment: 9
+      pivot: {x: 0.7176383, y: 0.36125815}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce93768d8c6be1e20800000000000000
+      internalID: 3323294548786362860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardStickBlacket0
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 1829
+        width: 143
+        height: 159
+      alignment: 9
+      pivot: {x: 0.46361324, y: 0.31299827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b45918ca3f2066920800000000000000
+      internalID: 2983075048774014283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardStickBlacket02
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 1833
+        width: 144
+        height: 157
+      alignment: 9
+      pivot: {x: 0.46902785, y: 0.32008547}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 580a1458bd70d77e0800000000000000
+      internalID: -1766246839444463483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardStickBlacket04
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 1838
+        width: 138
+        height: 156
+      alignment: 9
+      pivot: {x: 0.44074923, y: 0.31893218}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a747373e9838a0a20800000000000000
+      internalID: 3029378327609832570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardStickBlacket05
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 1840
+        width: 137
+        height: 157
+      alignment: 9
+      pivot: {x: 0.44574243, y: 0.33902425}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98294386a13056be0800000000000000
+      internalID: -1484777090196401527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardStickBlacketAttack
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1838
+        width: 205
+        height: 158
+      alignment: 9
+      pivot: {x: 0.6377873, y: 0.33533797}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e1b24e0fb5544a0800000000000000
+      internalID: -6609775787918025098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSprites_50
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 1912
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644041101d94d68a0800000000000000
+      internalID: -6310306340861115322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSprites_51
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 1909
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56aceb503e136f90800000000000000
+      internalID: -6961687405935155622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSprites_52
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1894
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf838c15120533310800000000000000
+      internalID: 1383537614569093372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSprites_53
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 1814
+        width: 63
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf54f7f4636c7d220800000000000000
+      internalID: 2510693253846615547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorSpear01
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 1599
+        width: 129
+        height: 199
+      alignment: 9
+      pivot: {x: 0.6131599, y: 0.27993545}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb43eb079d2c63c40800000000000000
+      internalID: 5491791034780103867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorSpear02
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 1599
+        width: 109
+        height: 206
+      alignment: 9
+      pivot: {x: 0.59207237, y: 0.27412668}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2a9158b883d1bd80800000000000000
+      internalID: -8236569659322557908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorSpear03
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 1599
+        width: 114
+        height: 203
+      alignment: 9
+      pivot: {x: 0.61204344, y: 0.27078864}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93ad0bf63fe7856a0800000000000000
+      internalID: -6460274081446962631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorSpear04
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 1599
+        width: 127
+        height: 205
+      alignment: 9
+      pivot: {x: 0.62930995, y: 0.27302486}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c035a309d4add490800000000000000
+      internalID: -7719832934267146039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorSpearAttack
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 1599
+        width: 246
+        height: 140
+      alignment: 9
+      pivot: {x: 0.81153435, y: 0.38269827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2aebb34776c9e00800000000000000
+      internalID: 1052830161814069994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSprites_59
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 1587
+        width: 53
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fd03374bf0574590800000000000000
+      internalID: -7690088798550290957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorArmor01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1424
+        width: 98
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5186195, y: 0.37924734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62e6b5292238ceba0800000000000000
+      internalID: -6058323214212567514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorArmor02
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 1428
+        width: 100
+        height: 134
+      alignment: 9
+      pivot: {x: 0.5456177, y: 0.37063736}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c65b227abde0a52a0800000000000000
+      internalID: -6748064755096570516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorArmor03
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 1431
+        width: 101
+        height: 137
+      alignment: 9
+      pivot: {x: 0.5722656, y: 0.38012874}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20344757a6695a1d0800000000000000
+      internalID: -3340098164644101374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorArmor04
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 1434
+        width: 101
+        height: 132
+      alignment: 9
+      pivot: {x: 0.5632324, y: 0.38249993}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415fad3b2edc81f70800000000000000
+      internalID: 9158296215821677844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorArmorAttack
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 1431
+        width: 121
+        height: 132
+      alignment: 9
+      pivot: {x: 0.6281819, y: 0.39632347}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 098387f28f3892c50800000000000000
+      internalID: 6640984227506043024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSprites_65
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 1469
+        width: 78
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d7068b93f6fd5b0800000000000000
+      internalID: -5341428339340968647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSprites_66
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 1549
+        width: 7
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b11c43d5f0be0b560800000000000000
+      internalID: 7327615044952572187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSprites_67
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 1532
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aad27027fed218860800000000000000
+      internalID: 7530350558373686698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorArmorSpear01
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 1193
+        width: 127
+        height: 205
+      alignment: 9
+      pivot: {x: 0.6346761, y: 0.254335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6491995d5f112c3e0800000000000000
+      internalID: -2035044334069802682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorArmorSpear02
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 1197
+        width: 134
+        height: 204
+      alignment: 9
+      pivot: {x: 0.6630971, y: 0.24847233}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: accf16f2e68092b00800000000000000
+      internalID: 804183277796719818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorArmorSpear03
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1203
+        width: 127
+        height: 208
+      alignment: 9
+      pivot: {x: 0.6571225, y: 0.24874115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4918c050b6e830290800000000000000
+      internalID: -7925334328944590444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorArmorSpear04
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 1203
+        width: 129
+        height: 208
+      alignment: 9
+      pivot: {x: 0.66941893, y: 0.24874173}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e2b341d989cf5930800000000000000
+      internalID: 4134244576707982056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorArmorSpearAttack
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 1202
+        width: 253
+        height: 140
+      alignment: 9
+      pivot: {x: 0.81924284, y: 0.35068098}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd658068e06d898b0800000000000000
+      internalID: -5145127216404212003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorSword01
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1027
+        width: 116
+        height: 127
+      alignment: 9
+      pivot: {x: 0.5901064, y: 0.42518052}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad68c4c5fa345aa0800000000000000
+      internalID: -6173244361975239257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorSword02
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 1031
+        width: 117
+        height: 125
+      alignment: 9
+      pivot: {x: 0.61370116, y: 0.41638184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca44067856c4b00d0800000000000000
+      internalID: -3455584290130082644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorSword03
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 1034
+        width: 117
+        height: 129
+      alignment: 9
+      pivot: {x: 0.6055796, y: 0.41897464}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 675e58bfe03c37bb0800000000000000
+      internalID: -4939389897178487434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorSword04
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 1037
+        width: 117
+        height: 129
+      alignment: 9
+      pivot: {x: 0.60557985, y: 0.4116088}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5757b421a7e96aeb0800000000000000
+      internalID: -4708902113239141003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSprites_77
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 1037
+        width: 189
+        height: 110
+      alignment: 9
+      pivot: {x: 0.75640774, y: 0.5086393}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d242437f8f2eadfb0800000000000000
+      internalID: -4622132508615236563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorArmorSword01
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 865
+        width: 116
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5982979, y: 0.39519724}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 792c0db3cdb6b2fc0800000000000000
+      internalID: -3518600090219396457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorArmorSword02
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 870
+        width: 117
+        height: 134
+      alignment: 9
+      pivot: {x: 0.6218228, y: 0.40781552}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfd541fcd8e1c2c00800000000000000
+      internalID: 877109621843844605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorArmorSword03
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 873
+        width: 117
+        height: 137
+      alignment: 9
+      pivot: {x: 0.6461873, y: 0.3959618}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d710f4ade6dc94430800000000000000
+      internalID: 3767768439264838013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorArmorSword04
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 876
+        width: 117
+        height: 132
+      alignment: 9
+      pivot: {x: 0.6299444, y: 0.39202142}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b321852f199bac1f0800000000000000
+      internalID: -1023801928786111941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarriorArmorSwordAttack
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 874
+        width: 189
+        height: 132
+      alignment: 9
+      pivot: {x: 0.76646304, y: 0.38482296}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae05acb9a62d48330800000000000000
+      internalID: 3712323348182225130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom01
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 758
+        width: 76
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5343f8a491ae50040800000000000000
+      internalID: 4613350787656922165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom02
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 758
+        width: 80
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a3cd79a55f468a10800000000000000
+      internalID: 1911302321199760291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom03
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 758
+        width: 76
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d3f87f0372c079d0800000000000000
+      internalID: -2778507170650983465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom04
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 758
+        width: 80
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a2177d2aee7dffe0800000000000000
+      internalID: -1153626385286753624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom05
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 758
+        width: 76
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b08b4d93e7a600b0800000000000000
+      internalID: -5762734077135585103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom06
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 758
+        width: 75
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f60ea3626116dd0800000000000000
+      internalID: -2494688365134188788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom07
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 758
+        width: 76
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4a301e63679fec0800000000000000
+      internalID: -3532662454620019516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom08
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 758
+        width: 75
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c58b8c1210e605b0800000000000000
+      internalID: -5402384334591392313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minotaur01
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 567
+        width: 175
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca18f1f63dd042820800000000000000
+      internalID: 2892452062432297388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minotaur02
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 566
+        width: 177
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aed5a365a1a09fef0800000000000000
+      internalID: -74016810642809366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minotaur03
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 567
+        width: 177
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3782c73e159bf90800000000000000
+      internalID: -6937423713505086466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minotaur04
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 569
+        width: 177
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f0d4095fd117c30800000000000000
+      internalID: 4355295255169142647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minotaur05
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 570
+        width: 175
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: affe31d8f44802b10800000000000000
+      internalID: 1954707715482972154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime01
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 379
+        width: 92
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af57a5b68e6719690800000000000000
+      internalID: -7597160355791735302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime02
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 378
+        width: 97
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df87fad91b4c77830800000000000000
+      internalID: 4068937055486310653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime03
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 378
+        width: 95
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d3ad2819471700f0800000000000000
+      internalID: -1150925577064176684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime04
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 376
+        width: 99
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c1e44bfeabe2120800000000000000
+      internalID: 2391053990865280104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
