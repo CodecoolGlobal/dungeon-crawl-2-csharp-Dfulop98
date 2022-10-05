@@ -13,8 +13,8 @@
         public abstract void TryMove(Direction direction);
         public override int Z => -1;
 
-        
+        protected abstract int SpriteIndex { get; set; }
+        protected abstract float IdleTime { get; set; }
 
-        
     }
 }
