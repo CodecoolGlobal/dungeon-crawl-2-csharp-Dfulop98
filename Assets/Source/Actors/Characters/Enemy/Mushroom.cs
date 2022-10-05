@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices.ComTypes;
 
-namespace Assets.Source.Actors.Characters.Enemy
+namespace DungeonCrawl.Actors.Characters
 {
     public class Mushroom : Enemy
     {
