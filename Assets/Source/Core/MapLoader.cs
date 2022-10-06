@@ -83,13 +83,11 @@ namespace DungeonCrawl.Core
                     break;
                 case 's':
                     ActorManager.Singleton.Spawn<SandFloor>(position);
-                    break;
-                
+                    break;              
                 case 'D':
                     ActorManager.Singleton.Spawn<WoodenFloor>(position);
                     ActorManager.Singleton.Spawn<Door>(position);
                     break;
-                
                 case 'r':
                     ActorManager.Singleton.Spawn<WoodenFloor>(position);
                     break;
@@ -99,7 +97,7 @@ namespace DungeonCrawl.Core
                     break;
                 case 'T':
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
-                    ActorManager.Singleton.Spawn<Actors.Static.Tree>(position);
+                    ActorManager.Singleton.Spawn<MapTree>(position);
                     break;
                 case '.':
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
