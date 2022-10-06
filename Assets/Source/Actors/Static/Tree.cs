@@ -6,9 +6,8 @@ namespace DungeonCrawl.Actors.Static
     {
         // in txt : "T"
         public override char MapIcon => 'T';
-        private int _rndId = StaticUtil.RandomSprite(51, 49, 48, 52);
-         
-        public override string DefaultSpriteId => $"kenney_transparent_{_rndId}";
+      
+        public override string DefaultSpriteId => "MapTree";
         public override string DefaultName => "Tree";
     }
 }
