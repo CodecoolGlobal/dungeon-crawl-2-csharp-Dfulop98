@@ -15,8 +15,7 @@ namespace Assets.Source.Actors.Items
         public override void Pickup(Player player)
         {
             player.Armor = 100;
-            player.Inventory.Add(this.DefaultName);
-            player.ChooseSpriteCollection();
+            PlayerUtilities.ChooseSpriteCollection();
             ActorManager.Singleton.DestroyActor(this);
             EventLog.AddEvent($"{player.Name} picks up {DefaultName}");
         }
