@@ -73,7 +73,7 @@ namespace DungeonCrawl.Actors.Characters
             ArmorBar_Script.CurrentArmor = (float)Armor;
 
             UpdateSprite(Time.deltaTime);
-            PlayerUtilities.HandleInput(deltaTime);
+            PlayerUtilities.HandleInput();
             PlayerUtilities.HandleContinousKeyPress(deltaTime);
             ShowHud();
             UpdateCrosshairs();

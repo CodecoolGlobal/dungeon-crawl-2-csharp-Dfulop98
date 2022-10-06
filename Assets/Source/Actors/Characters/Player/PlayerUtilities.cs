@@ -8,7 +8,7 @@ namespace DungeonCrawl.Actors.Characters;
 
 public class PlayerUtilities
 {
-    public static void HandleInput(float deltaTime)
+    public static void HandleInput()
     {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
