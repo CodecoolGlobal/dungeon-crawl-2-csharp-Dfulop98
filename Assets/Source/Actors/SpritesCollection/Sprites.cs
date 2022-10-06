@@ -5,7 +5,6 @@ namespace Assets.Source.Actors.SpritesCollection
 {
     static class Sprites
     {
-
         // Warrior Player Sprite collection
         public static List<string> Warrior
             = new List<string>()
@@ -36,7 +35,6 @@ namespace Assets.Source.Actors.SpritesCollection
                 "WarriorSword04",
                 "WarriorSwordAttack"
             };
-
 
         public static List<string> WarriorArmor
             = new List<string>()
@@ -71,11 +69,7 @@ namespace Assets.Source.Actors.SpritesCollection
 
             };
         
-
-
-
         // Wizard Sprites
-
         public static List<string> Wizard
             = new List<string>()
             {
@@ -136,10 +130,7 @@ namespace Assets.Source.Actors.SpritesCollection
                 "WizardStickBlacketAttack"
             };
         
-
-
         // Enemy Sprites
-
         public static List<string> Mushroom
             = new List<string>()
             {
@@ -172,7 +163,6 @@ namespace Assets.Source.Actors.SpritesCollection
             };
 
         // Item Sprites
-
         public static Dictionary<string, string> Item
             = new Dictionary<string, string>()
             {
@@ -185,7 +175,5 @@ namespace Assets.Source.Actors.SpritesCollection
                 {"Brutál Pálca", "MagicWand" },
                 {"Köppeny", "blanket"}
             };
-
-
     }
 }

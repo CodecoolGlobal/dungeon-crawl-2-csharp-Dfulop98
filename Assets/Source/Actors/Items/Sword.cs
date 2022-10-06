@@ -10,13 +10,13 @@ namespace Assets.Source.Actors.Items
     public class Sword : Item
     {
         public override char MapIcon => 'w';
-        public override string DefaultName => "Sword";
+        public override string DefaultName => ClassName;
+        public static readonly string ClassName = "Sword";
         public override string DefaultSpriteId => Sprites.Item[DefaultName];
 
         public override void Pickup(Player player)
         {
             // Apply change
-            player.Damage += 10;
             UpdateSprite(player);
             player.Inventory.Add(this.DefaultName);
             ActorManager.Singleton.DestroyActor(this);
