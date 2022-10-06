@@ -2,7 +2,6 @@
 using DungeonCrawl.Actors.Static;
 using System;
 using System.Text.RegularExpressions;
-using Assets.Source.Actors.Characters.Enemy;
 using Assets.Source.Actors.Items;
 using UnityEngine;
 
@@ -125,22 +124,22 @@ namespace DungeonCrawl.Core
                     //player
                 case 'p':
                     ActorManager.Singleton.Spawn<WoodenFloor>(position);
-                    ActorManager.Singleton.Spawn<Player>(position);
+                    ActorManager.Singleton.Spawn<Wizard>(position);
                     CameraController.Singleton.Position = position;
                     break;
 
                     //mobs
                 case 'a':
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
-                    ActorManager.Singleton.Spawn<Krampus>(position);
+                    ActorManager.Singleton.Spawn<Minotaur>(position);
                     break;
                 case 'q':
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
-                    ActorManager.Singleton.Spawn<SwordMan>(position);
+                    ActorManager.Singleton.Spawn<Slime>(position);
                     break;
                 case 'Y':
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
-                    ActorManager.Singleton.Spawn<AxeMan>(position);
+                    ActorManager.Singleton.Spawn<Mushroom>(position);
                     break;
                 case ' ':
                     break;
@@ -151,7 +150,11 @@ namespace DungeonCrawl.Core
                     break;
                 case 'w':
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
-                    ActorManager.Singleton.Spawn<Sword>(position);
+                    ActorManager.Singleton.Spawn<Stick>(position);
+                    break;
+                case 'e':
+                    ActorManager.Singleton.Spawn<GrassFloor>(position);
+                    ActorManager.Singleton.Spawn<Blanket>(position);
                     break;
                 case ',':
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
@@ -159,7 +162,7 @@ namespace DungeonCrawl.Core
                     break;
                 case 'G':
                     ActorManager.Singleton.Spawn<WoodenFloor>(position);
-                    ActorManager.Singleton.Spawn<Spear>(position);
+                    ActorManager.Singleton.Spawn<Wand>(position);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

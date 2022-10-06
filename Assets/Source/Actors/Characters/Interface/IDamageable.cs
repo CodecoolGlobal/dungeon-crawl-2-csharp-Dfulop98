@@ -1,4 +1,4 @@
-﻿namespace Assets.Source.Actors.Characters
+﻿namespace DungeonCrawl.Actors.Characters
 {
     internal interface IDamageable
     {

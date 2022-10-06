@@ -1,6 +1,7 @@
 ﻿using DungeonCrawl.Core;
 using Assets.Source.Core;
 using DungeonCrawl.Actors.Characters;
+using Assets.Source.Actors.SpritesCollection;
 
 namespace Assets.Source.Actors.Items
 {
@@ -8,7 +9,7 @@ namespace Assets.Source.Actors.Items
     {
         public override char MapIcon => ',';
         public override string DefaultName => "Health Potion";
-        public override string DefaultSpriteId => "kenney_transparent_896";
+        public override string DefaultSpriteId => Sprites.Item["HealthPotion"];
 
         public override void Pickup(Player player)
         {
