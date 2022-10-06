@@ -8,8 +8,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
-    <ProjectGuid>{FC2CCB87-E3F8-9CE2-B0CD-5131C9758E5F}</ProjectGuid>
+    <RootNamespace>
+    </RootNamespace>
+    <ProjectGuid>{384E71AE-0ACD-4D1C-BF65-C3E5F67B541C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -70,7 +71,7 @@
     <Compile Include="Assets\Source\Actors\Static\Door.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Enemy\Mushroom.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Character.cs" />
-    <Compile Include="Assets\Source\Actors\Static\Tree.cs" />
+    <Compile Include="Assets\Source\Actors\Static\MapTree.cs" />
     <Compile Include="Assets\Source\scripts\HealthBar_Script.cs" />
     <Compile Include="Assets\Source\Actors\Items\Sword.cs" />
     <Compile Include="Assets\Source\Actors\Items\Item.cs" />
