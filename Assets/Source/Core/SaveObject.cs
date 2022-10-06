@@ -26,6 +26,7 @@ namespace Assets.Source.Core
 
         public void MakeSave()
         {
+            EventLog.AddEvent("Game saved");
             Name = Player.Singleton.Name;
             Score = Player.Singleton.Score;
             Damage = Player.Singleton.Damage;
@@ -54,6 +55,7 @@ namespace Assets.Source.Core
 
         public static void LoadGame()
         {
+            EventLog.AddEvent("Game Loaded");
             if (File.Exists(Application.dataPath + "/text/test.json"))
             {
                 string saveString = File.ReadAllText(Application.dataPath + "/text/test.json");
