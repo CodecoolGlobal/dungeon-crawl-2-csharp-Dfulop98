@@ -22,7 +22,7 @@ namespace DungeonCrawl.Actors.Characters
         public override int Damage { get; set; } = 10;
         public override int Health { get; set; } = 100;
 
-        public List<Item> Inventory = new List<Item>();
+        public List<string> Inventory = new List<string>();
 
         public Item FloorItem = null;
 
@@ -30,7 +30,7 @@ namespace DungeonCrawl.Actors.Characters
 
         public static Player Singleton { get; private set; }
 
-        private List<Crosshair> _crosshairs = new List<Crosshair>();
+        public List<Crosshair> Crosshairs = new List<Crosshair>();
 
         private float _movementTimeThreshold = 0.35f;
 
@@ -64,16 +64,16 @@ namespace DungeonCrawl.Actors.Characters
             UpdateCrosshairs();
         }
 
-        private void CreateCrosshair(int offset)
+        public void CreateCrosshair(int offset)
         {
             Crosshair crosshair = ActorManager.Singleton.Spawn<Crosshair>(this.Position.x, this.Position.y);
             crosshair.Offset = offset;
-            _crosshairs.Add(crosshair);
+            Crosshairs.Add(crosshair);
         }
 
         private void UpdateCrosshairs()
         {
-            foreach (Crosshair crosshair in _crosshairs)
+            foreach (Crosshair crosshair in Crosshairs)
             {
                 crosshair.Move(this);
             }
@@ -206,7 +206,7 @@ namespace DungeonCrawl.Actors.Characters
 
         private void AttackEnemiesUnderCrosshairs()
         {
-            foreach (var crosshair in _crosshairs)
+            foreach (var crosshair in Crosshairs)
             {
                 if (ActorManager.Singleton.GetActorAt(crosshair.Position) is Enemy enemy)
                 {
@@ -241,14 +241,13 @@ namespace DungeonCrawl.Actors.Characters
             }
             else if (actorAtTargetPosition is Door door)
             {
-                foreach (Item element in Inventory)
+                foreach (var inventoryItem in Inventory)
                 {
-                    if (element is Key key)
+                    if (inventoryItem == "Key")
                     {
                         door.DoorOpen();
                     }
                 }
-
             }
         }
 
@@ -261,7 +260,7 @@ namespace DungeonCrawl.Actors.Characters
             else
             {
                 string output = "Inventory: \n";
-                Inventory.ForEach(item => output += $"{item.Name}\n");
+                Inventory.ForEach(item => output += $"{item}\n");
                 return output;
             }
         }

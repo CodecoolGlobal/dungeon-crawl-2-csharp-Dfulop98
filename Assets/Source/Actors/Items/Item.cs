@@ -11,5 +11,6 @@ namespace Assets.Source.Actors.Items
             Name = DefaultName;
         }
         public abstract void Pickup(Player player);
+
     }
 }

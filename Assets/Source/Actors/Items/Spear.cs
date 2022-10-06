@@ -14,7 +14,7 @@ namespace Assets.Source.Actors.Items
         {
             // Apply change
             player.Damage += 1000;
-            player.Inventory.Add(this);
+            player.Inventory.Add(this.DefaultName);
             ActorManager.Singleton.DestroyActor(this);
             EventLog.AddEvent($"{player.Name} picks up {DefaultName}");
         }

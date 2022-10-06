@@ -2,19 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net.Mime;
 using Assets.Source.Actors.Items;
-using System.Threading;
-using Assets.Source.Actors.Characters;
 using Assets.Source.Actors.Characters.Enemy;
-using Assets.Source.Core;
-using Assets.Source.scripts;
 using DungeonCrawl.Actors;
 using DungeonCrawl.Actors.Characters;
-using DungeonCrawl.Actors.Static;
 using DungeonCrawl.Core;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Assets.Source.Core
 {
@@ -27,7 +20,7 @@ namespace Assets.Source.Core
         public int PositionX;
         public int PositionY;
         public string DefaultSpriteId;
-        public List<Item> Inventory;
+        public List<string> Inventory;
 
         public List<string> Actors = new List<string>();
 
@@ -44,7 +37,7 @@ namespace Assets.Source.Core
             PositionX = Player.Singleton.Position.x;
             PositionY = Player.Singleton.Position.y;
             DefaultSpriteId = Player.Singleton.DefaultSpriteId;
-            Inventory = new List<Item>(Player.Singleton.Inventory);
+            Inventory = new List<string>(Player.Singleton.Inventory);
 
             HashSet<Actor> actors = ActorManager.Singleton.GetActors();
 
@@ -55,8 +48,6 @@ namespace Assets.Source.Core
                     Actors.Add($"{actor.MapIcon};{actor.Position.x};{actor.Position.y}");
                 }
             }
-
-            //jsonMapData = MapLoader.jsonMapData,
 
             MakeSave();
         }
@@ -74,7 +65,7 @@ namespace Assets.Source.Core
             {
                 string saveString = File.ReadAllText(Application.dataPath + "/text/test.json");
                 SaveObject saveObject = JsonUtility.FromJson<SaveObject>(saveString);
-                LoadActors(saveObject.Actors);
+                LoadActors(saveObject);
             }
             else
             {
@@ -82,7 +73,7 @@ namespace Assets.Source.Core
             }
         }
 
-        private static void LoadActors(List<string> actors)
+        private static void LoadActors(SaveObject save)
         {
             HashSet<Actor> originalActors = ActorManager.Singleton.GetActors();
             var collection = originalActors.ToArray();
@@ -95,12 +86,20 @@ namespace Assets.Source.Core
                 }
             }
 
-            for (int i = 0; i < actors.Count; i++)
+            // Spawn Enemies and Items
+            for (int i = 0; i < save.Actors.Count; i++)
             {
-                
-                List<string> data = actors[i].Split(';').ToList();
+                List<string> data = save.Actors[i].Split(';').ToList();
                 MapLoader.SpawnActor(data[0].First(), (Int32.Parse(data[1]), Int32.Parse(data[2])));
             }
+
+            // Spawn player
+            Player.Singleton.Position = (save.PositionX, save.PositionY);
+            Player.Singleton.Damage = save.Damage;
+            Player.Singleton.Health = save.Health;
+            Player.Singleton.Score = save.Score;
+            Player.Singleton.Name = save.Name;
+            Player.Singleton.Inventory = new List<string>(save.Inventory);
         }
 
     }
