@@ -63,7 +63,6 @@
     <Compile Include="Assets\Source\Core\CameraController.cs" />
     <Compile Include="Assets\Source\Core\UserInterface.cs" />
     <Compile Include="Assets\Source\Actors\Actor.cs" />
-    <Compile Include="Assets\Source\Core\ActorSaveObject.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Interface\IDamageablePlayer.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Interface\IDamageableEnemy.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Player\Player.cs" />

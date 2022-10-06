@@ -8,14 +8,14 @@ namespace Assets.Source.Actors.Items
 {
     internal class Wand : Item
     {
-        public override string DefaultName => "Brutál Pálca";
+        public override string DefaultName => ClassName;
+        public static readonly string ClassName = "Brutál Pálca";
         public override char MapIcon => 'G';
         public override string DefaultSpriteId => Sprites.Item[DefaultName];
 
         public override void Pickup(Player player)
         {
             // Apply change
-            player.Damage += 1000;
             player.Inventory.Add(this.DefaultName);
             UpdateSprite(player);
             ActorManager.Singleton.DestroyActor(this);

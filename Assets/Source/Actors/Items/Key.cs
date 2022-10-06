@@ -9,7 +9,8 @@ namespace Assets.Source.Actors.Items
     {
         // in txt: K
         public override char MapIcon => 'K';
-        public override string DefaultName => "Key";
+        public override string DefaultName => ClassName;
+        public static readonly string ClassName = "Key";
         public override string DefaultSpriteId => Sprites.Item["Key"];
         public override void Pickup(Player player)
         {
