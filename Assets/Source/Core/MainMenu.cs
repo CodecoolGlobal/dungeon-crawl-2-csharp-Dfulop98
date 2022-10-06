@@ -5,9 +5,9 @@ namespace Assets.Source.Core
 {
     internal class MainMenu : MonoBehaviour
     {
-        public void NewGame()
+        public void LoadNameGame()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene("NameMenu");
         }
         public void QuitGame()
         {
