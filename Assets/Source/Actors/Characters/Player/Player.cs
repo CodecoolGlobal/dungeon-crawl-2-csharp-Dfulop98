@@ -37,11 +37,12 @@ namespace DungeonCrawl.Actors.Characters
 
         // init
         public Item FloorItem = null;
+        private string _currentWeapon = "Fist";
         public List<string> Inventory = new List<string>();
+        public List<Crosshair> Crosshairs = new List<Crosshair>();
 
         public static Player Singleton { get; private set; }
 
-        public List<Crosshair> Crosshairs = new List<Crosshair>();
 
         private float _movementTimeThreshold = 0.35f;
 
@@ -59,7 +60,7 @@ namespace DungeonCrawl.Actors.Characters
             _spriteRenderer = GetComponent<SpriteRenderer>();
             SetSprite(UsedSpriteCollection[SpriteIndex]);
             Singleton = this;
-            CreateCrosshair(1);
+            SwitchWeapon(1);
         }
 
         protected override void OnUpdate(float deltaTime)
@@ -72,6 +73,58 @@ namespace DungeonCrawl.Actors.Characters
             HandleContinousKeyPress(deltaTime);
             ShowHud();
             UpdateCrosshairs();
+        }
+
+        private void SwitchWeapon(int choice)
+        {
+            Crosshairs.ForEach(crosshair => ActorManager.Singleton.DestroyActor(crosshair));
+            Crosshairs.Clear();
+            switch (choice)
+            {
+                case 1:
+                    _currentWeapon = "Fist";
+                    Damage = 5;
+                    CreateCrosshair(1);
+                    break;
+                case 2:
+                    if (Inventory.Contains("Sword"))
+                    {
+                        _currentWeapon = "Sword";
+                        Damage = 15;
+                        CreateCrosshair(1);
+                    }
+                    else if (Inventory.Contains("Pálca"))
+                    {
+                        _currentWeapon = "Pálca";
+                        Damage = 15;
+                        CreateCrosshair(1);
+                    }
+                    else
+                    {
+                        SwitchWeapon(1);
+                    }
+                    break;
+                case 3:
+                    if (Inventory.Contains("Halandzsa"))
+                    {
+                        _currentWeapon = "Halandzsa";
+                        Damage = 10;
+                        CreateCrosshair(1);
+                        CreateCrosshair(2);
+                    }
+                    else if (Inventory.Contains("Brutál Pálca"))
+                    {
+                        _currentWeapon = "Brutál Pálca";
+                        Damage = 10;
+                        CreateCrosshair(1);
+                        CreateCrosshair(2);
+                    }
+                    else
+                    {
+                        SwitchWeapon(1);
+                    }
+                    break;
+            }
         }
 
         public void CreateCrosshair(int offset)
@@ -114,7 +167,7 @@ namespace DungeonCrawl.Actors.Characters
             ArmorBar_Script.ArmorBar.fillAmount = ArmorBar_Script.CurrentArmor/ ArmorBar_Script.MaxArmor;
 
             UserInterface.Singleton.SetText($"Damage: {Damage}\nScore: {Score}", UserInterface.TextPosition.TopRight, "magenta");
-            UserInterface.Singleton.SetText($"Health: {Health}\n", UserInterface.TextPosition.TopLeft, "red");
+            UserInterface.Singleton.SetText($"Health: {Health}\nArmor: {Armor}\nCurrent Weapon: {_currentWeapon}", UserInterface.TextPosition.TopLeft, "red");
 
             UserInterface.Singleton.SetText($"{CreateInventoryString()}", UserInterface.TextPosition.BottomRight, "red");
             if (FloorItem != null)
@@ -206,6 +259,21 @@ namespace DungeonCrawl.Actors.Characters
             if (Input.GetKeyDown(KeyCode.F9))
             {
                 SaveObject.LoadGame();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                SwitchWeapon(1);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                SwitchWeapon(2);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                SwitchWeapon(3);
             }
         }
 
