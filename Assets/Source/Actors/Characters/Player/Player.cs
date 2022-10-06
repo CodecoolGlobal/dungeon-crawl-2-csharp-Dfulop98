@@ -21,6 +21,7 @@ namespace DungeonCrawl.Actors.Characters
         public abstract string Name { get; }
         public override int Damage { get; set; } = 10;
         public override int Health { get; set; } = 100;
+        public int Armor { get; set; } = 0;
         public int Score { get; set; } = 0;
 
         public List<Item> Inventory = new List<Item>();
@@ -68,6 +69,8 @@ namespace DungeonCrawl.Actors.Characters
         protected override void OnUpdate(float deltaTime)
         {
             HealthBar_Script.CurrentHealth = (float)Health;
+            ArmorBar_Script.CurrentArmor = (float)Armor;
+
             UpdateSprite(Time.deltaTime);
             HandleInput(deltaTime);
             HandleContinousKeyPress(deltaTime);
@@ -116,6 +119,7 @@ namespace DungeonCrawl.Actors.Characters
         private void ShowHud()
         {
             HealthBar_Script.HealthBar.fillAmount = HealthBar_Script.CurrentHealth / HealthBar_Script.MaxHealth;
+            ArmorBar_Script.ArmorBar.fillAmount = ArmorBar_Script.CurrentArmor/ ArmorBar_Script.MaxArmor;
 
             UserInterface.Singleton.SetText($"Damage: {Damage}\nScore: {Score}", UserInterface.TextPosition.TopRight, "magenta");
             UserInterface.Singleton.SetText($"Health: {Health}\n", UserInterface.TextPosition.TopLeft, "red");
@@ -322,13 +326,48 @@ namespace DungeonCrawl.Actors.Characters
 
         public void ApplyDamage(Enemy enemy)
         {
-            Health -= enemy.Damage;
+            if(Armor > 0)
+            {
+                Armor -= enemy.Damage;   
+                if(Armor - enemy.Damage <= 0)
+                {
+
+                    HandleArmorSprite();
+                }
+            }
+            else
+            {
+                Health -= enemy.Damage;
+            }
             EventLog.AddEvent($"{enemy.DefaultName} hits {Name} for {enemy.Damage}");
             if (Health <= 0)
             {
                 // Die
                 OnDeath();
                 UserInterface.Singleton.SetText($"Health: {Health}\nDamage: {Damage}\nScore: {Score}", UserInterface.TextPosition.TopRight, "magenta");
+            }
+
+        }
+        private void HandleArmorSprite()
+        {
+            if (DefaultName == "Wizard")
+            {
+                if (UsedSpriteCollection == Sprites.WizardBlanket)
+                    UsedSpriteCollection = Sprites.Wizard;
+                else if (UsedSpriteCollection == Sprites.WizardStickBlanket)
+                    UsedSpriteCollection = Sprites.WizardWithStick;
+                else if (UsedSpriteCollection == Sprites.WizardWandBlanket)
+                    UsedSpriteCollection = Sprites.WizardWithWand;
+            }
+
+            if (DefaultName == "Warrior")
+            {
+                if (UsedSpriteCollection == Sprites.WarriorArmor)
+                    UsedSpriteCollection = Sprites.Warrior;
+                else if (UsedSpriteCollection == Sprites.WarriorArmorSword)
+                    UsedSpriteCollection = Sprites.WarriorWithSword;
+                else if (UsedSpriteCollection == Sprites.WarriorArmorSpear)
+                    UsedSpriteCollection = Sprites.WarriorWithSpear;
             }
         }
 
