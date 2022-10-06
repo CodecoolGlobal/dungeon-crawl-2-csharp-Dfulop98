@@ -399,7 +399,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 120}
-  m_SizeDelta: {x: 600, y: 50}
+  m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &710196575
 MonoBehaviour:
@@ -421,7 +421,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tanya Defender I
+  m_text: Tanya Defender II
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8088ebaee8bbca341b982eb37c78a5a1, type: 2}
   m_sharedMaterial: {fileID: -2516067319761301891, guid: 8088ebaee8bbca341b982eb37c78a5a1, type: 2}

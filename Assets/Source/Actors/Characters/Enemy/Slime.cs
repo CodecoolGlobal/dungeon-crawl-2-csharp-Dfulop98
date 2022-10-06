@@ -7,10 +7,10 @@ namespace DungeonCrawl.Actors.Characters
     {
         public override char MapIcon => 'q';
         // Stats
-        public override int Damage { get; set; } = 25;
-        public override int Health { get; set; } = 30;
-        public override int ScoreValue { get; set; } = 20;
-        public override string DefaultName => "KardosJános";
+        public override int Damage { get; set; } = 15;
+        public override int Health { get; set; } = 20;
+        public override int ScoreValue { get; set; } = 15;
+        public override string DefaultName => "Takony János";
 
         // Sprite Handle
         
