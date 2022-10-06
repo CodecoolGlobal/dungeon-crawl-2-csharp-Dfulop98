@@ -25,6 +25,8 @@ namespace Assets.Source.Core
         public List<string> UsedSpriteCollection;
         public List<string> Actors = new List<string>();
 
+        private static string _saveLocation = "/save.json";
+
         public void MakeSave()
         {
             EventLog.AddEvent("Game saved");
@@ -51,15 +53,15 @@ namespace Assets.Source.Core
 
             string json = JsonUtility.ToJson(this, true);
 
-            File.WriteAllText(Application.dataPath + "/text/test.json", json);
+            File.WriteAllText(Application.dataPath + _saveLocation, json);
         }
 
         public static void LoadGame()
         {
             EventLog.AddEvent("Game Loaded");
-            if (File.Exists(Application.dataPath + "/text/test.json"))
+            if (File.Exists(Application.dataPath + _saveLocation))
             {
-                string saveString = File.ReadAllText(Application.dataPath + "/text/test.json");
+                string saveString = File.ReadAllText(Application.dataPath + _saveLocation);
                 SaveObject saveObject = JsonUtility.FromJson<SaveObject>(saveString);
                 LoadActors(saveObject);
             }
