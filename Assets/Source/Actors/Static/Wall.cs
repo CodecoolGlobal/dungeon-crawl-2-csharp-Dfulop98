@@ -1,9 +1,11 @@
 ﻿namespace DungeonCrawl.Actors.Static
 {
-    public class Wall : Actor
+    
+
+    public class StoneWall : Actor
     {
         public override char MapIcon => '#';
-        public override string DefaultSpriteId => "Wall 3";
+        public override string DefaultSpriteId => "StoneWall";
         public override string DefaultName => "Wall";
     }
 }
