@@ -13,8 +13,6 @@ namespace Assets.Source.Actors.Items
 
         public override void Pickup(Player player)
         {
-            // Apply change
-            player.Damage += 1000;
             UpdateSprite(player);
             player.Inventory.Add(this.DefaultName);
             ActorManager.Singleton.DestroyActor(this);
