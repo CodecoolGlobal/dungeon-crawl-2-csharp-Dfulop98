@@ -75,36 +75,12 @@ namespace DungeonCrawl.Core
                 case 'b':
                     ActorManager.Singleton.Spawn<Water1>(position);
                     break;
-                case 'n':
-                    ActorManager.Singleton.Spawn<DirtFloor9>(position);
-                    break;
-                case 'm':
-                    ActorManager.Singleton.Spawn<DirtFloor8>(position);
-                    break;
-                case 'j':
-                    ActorManager.Singleton.Spawn<DirtFloor7>(position);
-                    break;
-                case 'k':
-                    ActorManager.Singleton.Spawn<DirtFloor6>(position);
-                    break;
-                case 'l':
-                    ActorManager.Singleton.Spawn<DirtFloor5>(position);
-                    break;
-                case 'i':
-                    ActorManager.Singleton.Spawn<DirtFloor4>(position);
-                    break;
-                case 'u':
-                    ActorManager.Singleton.Spawn<DirtFloor2>(position);
-                    break;
-                case 'o':
-                    ActorManager.Singleton.Spawn<DirtFloor3>(position);
-                    break;
                 case 'D':
                     ActorManager.Singleton.Spawn<WoodenFloor>(position);
                     ActorManager.Singleton.Spawn<Door>(position);
                     break;
                 case 's':
-                    ActorManager.Singleton.Spawn<DirtFloor1>(position);
+                    ActorManager.Singleton.Spawn<SandFloor>(position);
                     break;
                 case 'r':
                     ActorManager.Singleton.Spawn<WoodenFloor>(position);
@@ -115,7 +91,7 @@ namespace DungeonCrawl.Core
                     break;
                 case 'T':
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
-                    ActorManager.Singleton.Spawn<Actors.Static.Tree>(position);
+                    ActorManager.Singleton.Spawn<MapTree>(position);
                     break;
                 case '.':
                     ActorManager.Singleton.Spawn<GrassFloor>(position);
