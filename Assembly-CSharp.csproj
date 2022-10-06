@@ -81,6 +81,7 @@
     <Compile Include="Assets\Source\Actors\Characters\Enemy\Mushroom.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Character.cs" />
     <Compile Include="Assets\Source\Actors\Static\Tree.cs" />
+    <Compile Include="Assets\Source\scripts\ArmorBar_Script.cs" />
     <Compile Include="Assets\Source\scripts\HealthBar_Script.cs" />
     <Compile Include="Assets\Source\Actors\Items\Sword.cs" />
     <Compile Include="Assets\Source\Actors\Items\Item.cs" />
