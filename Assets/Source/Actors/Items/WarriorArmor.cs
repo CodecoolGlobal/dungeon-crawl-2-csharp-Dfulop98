@@ -5,7 +5,7 @@ using DungeonCrawl.Core;
 
 namespace Assets.Source.Actors.Items
 {
-    public class Armor : Item
+    public class WarriorArmor : Item
     {
         public override string DefaultName => ClassName;
         public static readonly string ClassName = "Armor";
@@ -14,6 +14,7 @@ namespace Assets.Source.Actors.Items
 
         public override void Pickup(Player player)
         {
+            player.Armor = 100;
             ActorManager.Singleton.DestroyActor(this);
             PlayerUtilities.ChooseSpriteCollection();
             EventLog.AddEvent($"{player.Name} picks up {DefaultName}");

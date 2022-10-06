@@ -9,7 +9,7 @@ namespace Assets.Source.Actors.Items
 {
     public class Sword : Item
     {
-        public override char MapIcon => 'w';
+        public override char MapIcon => 'W';
         public override string DefaultName => ClassName;
         public static readonly string ClassName = "Sword";
         public override string DefaultSpriteId => Sprites.Item[DefaultName];

@@ -58,7 +58,7 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 554546904ba13ba46a62842d40e04718, type: 3}
+  - {fileID: -728488644960612398, guid: 554546904ba13ba46a62842d40e04718, type: 3}
   - {fileID: -5833473681668384405, guid: e57de2e11356f6141abc3bf5160041d8, type: 3}
   - {fileID: 2551541108661590903, guid: a9e6ed46d54ae5942be27e50de233f16, type: 3}
   - {fileID: -3218248262026354849, guid: a9e6ed46d54ae5942be27e50de233f16, type: 3}
@@ -1155,10 +1155,10 @@ SpriteAtlas:
   - {fileID: 1650604073877677656, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: 3561037995832689329, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: 6229577118154470024, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
-  - {fileID: 2983075048774014283, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -6573777416417220690, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -3665499182118038063, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -7597160355791735302, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
+  - {fileID: 600787656912180804, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: 93302913201451361, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -527969473550898579, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: 6109444280003233473, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
@@ -1193,7 +1193,6 @@ SpriteAtlas:
   - {fileID: 2572769797556459918, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -1093389774342442321, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: 3712323348182225130, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
-  - {fileID: 7659029137066544238, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -3731662067933768952, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -962875921394492947, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: 3919475699358871922, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
@@ -1220,10 +1219,12 @@ SpriteAtlas:
   - {fileID: 1911302321199760291, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -5402384334591392313, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -1202370827357078574, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
-  - {fileID: 3029378327609832570, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
+  - {fileID: 7659029137066544238, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -1484777090196401527, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
+  - {fileID: 2983075048774014283, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -6556743904625465184, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -1766246839444463483, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
+  - {fileID: 3029378327609832570, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -4622132508615236563, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -7719832934267146039, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   - {fileID: -8236569659322557908, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
@@ -2344,10 +2345,10 @@ SpriteAtlas:
   - Armor
   - Warrior03
   - WizardStick04
-  - WizardStickBlacket0
   - Warrior02
   - WizardWand01
   - Slime01
+  - Warrior01
   - WizardStick02
   - WizardWand02
   - WizardStick03
@@ -2382,7 +2383,6 @@ SpriteAtlas:
   - WizardWandBlacket01
   - WizardBlanketAttack
   - WarriorArmorSwordAttack
-  - WoodeStick
   - MagicWand
   - WizardBlanket03
   - WizardBlanket02
@@ -2409,10 +2409,12 @@ SpriteAtlas:
   - mushroom02
   - mushroom08
   - Spear
+  - WoodenStick
   - WizardStickBlacket04
-  - WizardStickBlacket05
+  - WizardStickBlacket01
   - WarriorAttack
   - WizardStickBlacket02
+  - WizardStickBlacket03
   - WarriorSwordAttack
   - WarriorSpear04
   - WarriorSpear02

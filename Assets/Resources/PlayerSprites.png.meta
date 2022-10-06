@@ -82,7 +82,7 @@ TextureImporter:
     second: PlayerSprites_25
   - first:
       213: 7659029137066544238
-    second: WoodeStick
+    second: WoodenStick
   - first:
       213: 2572769797556459918
     second: WizardWandBlacket01
@@ -139,16 +139,16 @@ TextureImporter:
     second: WizardStickAttack
   - first:
       213: 2983075048774014283
-    second: WizardStickBlacket0
+    second: WizardStickBlacket01
   - first:
       213: -1766246839444463483
     second: WizardStickBlacket02
   - first:
       213: 3029378327609832570
-    second: WizardStickBlacket04
+    second: WizardStickBlacket03
   - first:
       213: -1484777090196401527
-    second: WizardStickBlacket05
+    second: WizardStickBlacket04
   - first:
       213: -6609775787918025098
     second: WizardStickBlacketAttack
@@ -406,7 +406,7 @@ TextureImporter:
       name: Warrior02
       rect:
         serializedVersion: 2
-        x: 230
+        x: 232
         y: 2894
         width: 100
         height: 109
@@ -770,8 +770,8 @@ TextureImporter:
       name: MagicWand
       rect:
         serializedVersion: 2
-        x: 864
-        y: 2729
+        x: 866
+        y: 2731
         width: 85
         height: 99
       alignment: 0
@@ -1018,7 +1018,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WoodeStick
+      name: WoodenStick
       rect:
         serializedVersion: 2
         x: 959
@@ -1050,7 +1050,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 45
-        y: 2359
+        y: 2361
         width: 161
         height: 155
       alignment: 9
@@ -1546,10 +1546,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WizardStickBlacket0
+      name: WizardStickBlacket01
       rect:
         serializedVersion: 2
-        x: 66
+        x: 68
         y: 1829
         width: 143
         height: 159
@@ -1602,7 +1602,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WizardStickBlacket04
+      name: WizardStickBlacket03
       rect:
         serializedVersion: 2
         x: 378
@@ -1630,7 +1630,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WizardStickBlacket05
+      name: WizardStickBlacket04
       rect:
         serializedVersion: 2
         x: 519
@@ -3085,6 +3085,27 @@ TextureImporter:
       bones: []
       spriteID: 86c1e44bfeabe2120800000000000000
       internalID: 2391053990865280104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior01
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 2884
+        width: 110
+        height: 121
+      alignment: 9
+      pivot: {x: 0.5198821, y: 0.4483364}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44690bbd03d665800800000000000000
+      internalID: 600787656912180804
       vertices: []
       indices: 
       edges: []

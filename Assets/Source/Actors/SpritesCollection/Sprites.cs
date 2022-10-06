@@ -166,7 +166,7 @@ namespace Assets.Source.Actors.SpritesCollection
         public static Dictionary<string, string> Item
             = new Dictionary<string, string>()
             {
-                {"HealthPotion", "HealtPotion"},
+                {"HealthPotion", "HealthPotion"},
                 {"Sword","Sword" },
                 {"Halandzsa","Spear"},
                 {"Key","kenney_transparent_559" },

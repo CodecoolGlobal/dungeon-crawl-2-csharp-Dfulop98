@@ -11,7 +11,7 @@ namespace Assets.Source.Actors.Items
     {
         public override string DefaultName => ClassName;
         public static readonly string ClassName = "Pálca";
-        public override char MapIcon => 'w';
+        public override char MapIcon => 'W';
         public override string DefaultSpriteId => Sprites.Item[DefaultName];
 
         public override void Pickup(Player player)

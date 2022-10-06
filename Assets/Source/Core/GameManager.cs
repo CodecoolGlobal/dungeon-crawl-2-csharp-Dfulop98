@@ -12,12 +12,9 @@ namespace DungeonCrawl.Core
     {
         private void Start()
         {
-
-            Debug.Log(UserInfo.UserName);
-            Debug.Log(UserInfo.UserClass);
-            
             MapLoader.LoadMap("map_1", true, UserInfo.UserClass);
-            MapLoader.LoadMap("map_1", false, UserInfo.UserClass);
+            MapLoader.LoadMap("map_1_dynamic", false, UserInfo.UserClass);
+            Player.Singleton.Name = UserInfo.UserName;
         }
     }
 }

@@ -113,8 +113,16 @@ namespace DungeonCrawl.Core
                 //player
                 // TODO handle class choice and spawn accordingly
                 case 'p':
-                    ActorManager.Singleton.Spawn<Wizard>(position);
-                    CameraController.Singleton.Position = position;
+                    if (userClass == "Wizard")
+                    {
+                        ActorManager.Singleton.Spawn<Wizard>(position);
+                        CameraController.Singleton.Position = position;
+                    }
+                    else
+                    {
+                        ActorManager.Singleton.Spawn<Warrior>(position);
+                        CameraController.Singleton.Position = position;
+                    }
                     break;
 
                 //mobs
@@ -133,17 +141,39 @@ namespace DungeonCrawl.Core
                 case 'K':
                     ActorManager.Singleton.Spawn<Key>(position);
                     break;
-                case 'w':
-                    ActorManager.Singleton.Spawn<Stick>(position);
+                case 'W':
+                    if (userClass == "Wizard")
+                    {
+                        ActorManager.Singleton.Spawn<Stick>(position);
+                    }
+                    else
+                    {
+                        ActorManager.Singleton.Spawn<Sword>(position);
+                    }
                     break;
                 case 'e':
-                    ActorManager.Singleton.Spawn<Blanket>(position);
+                    if (userClass == "Wizard")
+                    {
+                        ActorManager.Singleton.Spawn<Blanket>(position);
+                    }
+                    else
+                    {
+                        ActorManager.Singleton.Spawn<WarriorArmor>(position);
+                    }
                     break;
                 case ',':
                     ActorManager.Singleton.Spawn<HealthPotion>(position);
                     break;
                 case 'G':
-                    ActorManager.Singleton.Spawn<Wand>(position);
+                    if (userClass == "Wizard")
+                    {
+                        ActorManager.Singleton.Spawn<Wand>(position);
+                    }
+                    else
+                    {
+                        ActorManager.Singleton.Spawn<Spear>(position);
+                    }
+                    
                     break;
 
             }
