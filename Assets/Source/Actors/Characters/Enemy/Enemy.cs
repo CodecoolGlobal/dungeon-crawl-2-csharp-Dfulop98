@@ -109,12 +109,7 @@ namespace DungeonCrawl.Actors.Characters
 
                 IdleTime = 0;
             }
-
-
-
         }
-
-
 
         protected bool DetectPlayer()
         {
