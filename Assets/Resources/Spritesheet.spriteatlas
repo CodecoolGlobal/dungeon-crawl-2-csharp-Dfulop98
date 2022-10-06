@@ -49,12 +49,16 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 554546904ba13ba46a62842d40e04718, type: 3}
     - {fileID: 2800000, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
     - {fileID: 2800000, guid: 04e2afcd01bc71b449680e6d011ea151, type: 3}
+    - {fileID: 2800000, guid: 6f3e77476eb4973419182003164f417c, type: 3}
+    - {fileID: 2800000, guid: e57de2e11356f6141abc3bf5160041d8, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 554546904ba13ba46a62842d40e04718, type: 3}
+  - {fileID: -5833473681668384405, guid: e57de2e11356f6141abc3bf5160041d8, type: 3}
+  - {fileID: 3586087900285728792, guid: 6f3e77476eb4973419182003164f417c, type: 3}
   - {fileID: -4972309323787973953, guid: e44b7f78b0d7d86478e2926ad69f82c2, type: 3}
   - {fileID: -2007934298846182444, guid: e44b7f78b0d7d86478e2926ad69f82c2, type: 3}
   - {fileID: 660458254016727159, guid: e44b7f78b0d7d86478e2926ad69f82c2, type: 3}
@@ -1239,6 +1243,8 @@ SpriteAtlas:
   - {fileID: -1023801928786111941, guid: b943535e36c53db48ae9bbba7859b8ca, type: 3}
   m_PackedSpriteNamesToIndex:
   - HealthPotion
+  - MapTree
+  - SandFloor
   - kenney_transparent_370
   - kenney_transparent_498
   - kenney_transparent_260
