@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Assets.Source.Actors.Items;
-using Assets.Source.Actors.Characters.Enemy;
 using DungeonCrawl.Actors;
 using DungeonCrawl.Actors.Characters;
 using DungeonCrawl.Core;
@@ -17,10 +16,12 @@ namespace Assets.Source.Core
         public int Score;
         public int Health;
         public int Damage;
+        public int Armor;
         public int PositionX;
         public int PositionY;
         public string DefaultSpriteId;
         public List<string> Inventory;
+        public List<string> UsedSpriteCollection;
         public List<string> Actors = new List<string>();
 
         public void MakeSave()
@@ -29,9 +30,11 @@ namespace Assets.Source.Core
             Score = Player.Singleton.Score;
             Damage = Player.Singleton.Damage;
             Health = Player.Singleton.Health;
+            Armor = Player.Singleton.Armor;
             PositionX = Player.Singleton.Position.x;
             PositionY = Player.Singleton.Position.y;
             DefaultSpriteId = Player.Singleton.DefaultSpriteId;
+            UsedSpriteCollection = new List<string>(Player.Singleton.UsedSpriteCollection);
             Inventory = new List<string>(Player.Singleton.Inventory);
 
             HashSet<Actor> actors = ActorManager.Singleton.GetActors();
@@ -88,9 +91,11 @@ namespace Assets.Source.Core
             CameraController.Singleton.Position = Player.Singleton.Position;
             Player.Singleton.Damage = save.Damage;
             Player.Singleton.Health = save.Health;
+            Player.Singleton.Armor = save.Armor;
             Player.Singleton.Score = save.Score;
             Player.Singleton.Name = save.Name;
             Player.Singleton.Inventory = new List<string>(save.Inventory);
+            Player.Singleton.UsedSpriteCollection = new List<string>(save.UsedSpriteCollection);
         }
 
     }

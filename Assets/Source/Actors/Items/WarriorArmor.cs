@@ -8,13 +8,14 @@ namespace Assets.Source.Actors.Items
     public class Armor : Item
     {
         public override string DefaultName => "Armor";
+        public override char MapIcon => 'e';
         public override string DefaultSpriteId => Sprites.Item[DefaultName];
 
         public override void Pickup(Player player)
         {
             // Apply change
             // TODO: add to armor status
-            player.Inventory.Add(this);
+            player.Inventory.Add(this.DefaultName);
             ActorManager.Singleton.DestroyActor(this);
             UpdateSprite(player);
             EventLog.AddEvent($"{player.Name} picks up {DefaultName}");

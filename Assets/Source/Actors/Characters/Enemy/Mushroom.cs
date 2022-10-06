@@ -6,6 +6,7 @@ namespace DungeonCrawl.Actors.Characters
 {
     public class Mushroom : Enemy
     {
+        public override char MapIcon => 'Y';
         // Stats
         public override int Damage { get; set; } = 10;
         public override int Health { get; set; } = 20;

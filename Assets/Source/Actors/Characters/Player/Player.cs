@@ -16,11 +16,10 @@ namespace DungeonCrawl.Actors.Characters
     public abstract class Player : Character, IDamageablePlayer
     {
         public override char MapIcon => 'p';
-        public int Score { get; set; } = 0;
 
         // Stats
         public override string DefaultName { get; }
-        public abstract string Name { get; }
+        public abstract string Name { get; set; }
         public override int Damage { get; set; } = 10;
         public override int Health { get; set; } = 100;
         public int Armor { get; set; } = 0;
