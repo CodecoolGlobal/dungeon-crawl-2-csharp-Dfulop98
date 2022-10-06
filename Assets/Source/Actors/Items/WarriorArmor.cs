@@ -7,7 +7,8 @@ namespace Assets.Source.Actors.Items
 {
     public class Armor : Item
     {
-        public override string DefaultName => "Armor";
+        public override string DefaultName => ClassName;
+        public static readonly string ClassName = "Armor";
         public override char MapIcon => 'e';
         public override string DefaultSpriteId => Sprites.Item[DefaultName];
 

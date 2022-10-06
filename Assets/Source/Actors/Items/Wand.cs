@@ -8,7 +8,8 @@ namespace Assets.Source.Actors.Items
 {
     internal class Wand : Item
     {
-        public override string DefaultName => "Brutál Pálca";
+        public override string DefaultName => ClassName;
+        public static readonly string ClassName = "Brutál Pálca";
         public override char MapIcon => 'G';
         public override string DefaultSpriteId => Sprites.Item[DefaultName];
 

@@ -87,15 +87,15 @@ namespace DungeonCrawl.Actors.Characters
                     CreateCrosshair(1);
                     break;
                 case 2:
-                    if (Inventory.Contains("Sword"))
+                    if (Inventory.Contains(Sword.ClassName))
                     {
-                        _currentWeapon = "Sword";
+                        _currentWeapon = Sword.ClassName;
                         Damage = 15;
                         CreateCrosshair(1);
                     }
-                    else if (Inventory.Contains("Pálca"))
+                    else if (Inventory.Contains(Stick.ClassName))
                     {
-                        _currentWeapon = "Pálca";
+                        _currentWeapon = Stick.ClassName;
                         Damage = 15;
                         CreateCrosshair(1);
                     }
@@ -105,16 +105,16 @@ namespace DungeonCrawl.Actors.Characters
                     }
                     break;
                 case 3:
-                    if (Inventory.Contains("Halandzsa"))
+                    if (Inventory.Contains(Spear.ClassName))
                     {
-                        _currentWeapon = "Halandzsa";
+                        _currentWeapon = Spear.ClassName;
                         Damage = 10;
                         CreateCrosshair(1);
                         CreateCrosshair(2);
                     }
-                    else if (Inventory.Contains("Brutál Pálca"))
+                    else if (Inventory.Contains(Wand.ClassName))
                     {
-                        _currentWeapon = "Brutál Pálca";
+                        _currentWeapon = Wand.ClassName;
                         Damage = 10;
                         CreateCrosshair(1);
                         CreateCrosshair(2);

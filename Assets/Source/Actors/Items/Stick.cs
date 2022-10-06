@@ -1,4 +1,5 @@
-﻿using Assets.Source.Actors.SpritesCollection;
+﻿using System.Collections.Specialized;
+using Assets.Source.Actors.SpritesCollection;
 using Assets.Source.Core;
 using DungeonCrawl.Actors.Characters;
 using DungeonCrawl.Core;
@@ -8,7 +9,8 @@ namespace Assets.Source.Actors.Items
 {
     internal class Stick : Item
     {
-        public override string DefaultName => "Pálca";
+        public override string DefaultName => ClassName;
+        public static readonly string ClassName = "Pálca";
         public override char MapIcon => 'w';
         public override string DefaultSpriteId => Sprites.Item[DefaultName];
 

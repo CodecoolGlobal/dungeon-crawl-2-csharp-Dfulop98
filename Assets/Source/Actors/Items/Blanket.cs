@@ -7,7 +7,8 @@ namespace Assets.Source.Actors.Items
 {
     public class Blanket : Item
     {
-        public override string DefaultName => "Köppeny";
+        public override string DefaultName => ClassName;
+        public static readonly string ClassName = "Köppeny";
         public override char MapIcon => 'e';
         public override string DefaultSpriteId => Sprites.Item[DefaultName];
 

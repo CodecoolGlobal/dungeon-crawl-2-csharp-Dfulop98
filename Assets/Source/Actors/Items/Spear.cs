@@ -8,7 +8,8 @@ namespace Assets.Source.Actors.Items
     internal class Spear : Item
     {
         public override char MapIcon => 'G';
-        public override string DefaultName => "Halandzsa";
+        public override string DefaultName => ClassName;
+        public static readonly string ClassName = "Halandzsa";
         public override string DefaultSpriteId => Sprites.Item[DefaultName];
 
         public override void Pickup(Player player)
