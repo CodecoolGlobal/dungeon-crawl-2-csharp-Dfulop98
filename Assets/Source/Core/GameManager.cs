@@ -10,7 +10,8 @@ namespace DungeonCrawl.Core
     {
         private void Start()
         {
-            MapLoader.LoadMap(1);
+            MapLoader.LoadMap("map_1", true);
+            MapLoader.LoadMap("map_1", false);
         }
     }
 }
