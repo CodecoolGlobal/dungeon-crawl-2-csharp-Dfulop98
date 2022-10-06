@@ -37,14 +37,18 @@ namespace DungeonCrawl.Actors.Characters
 
         // init
         public Item FloorItem = null;
-        private string _currentWeapon = "Fist";
+        public string CurrentWeapon = "Fist";
         public List<string> Inventory = new List<string>();
         public List<Crosshair> Crosshairs = new List<Crosshair>();
 
         public static Player Singleton { get; private set; }
 
-
-        private float _movementTimeThreshold = 0.35f;
+        // Consts
+        private const float MovementTimeThreshold = 0.35f;
+        private const float SpriteUpdateTimeThreshold = 0.15f;
+        private const int BasicWeaponDamage = 5;
+        private const int MiddleWeaponDamage = 15;
+        private const int LongWeaponDamage = 10;
 
         public Direction Facing = Direction.Right;
 
@@ -82,21 +86,21 @@ namespace DungeonCrawl.Actors.Characters
             switch (choice)
             {
                 case 1:
-                    _currentWeapon = "Fist";
-                    Damage = 5;
+                    CurrentWeapon = "Fist";
+                    Damage = BasicWeaponDamage;
                     CreateCrosshair(1);
                     break;
                 case 2:
                     if (Inventory.Contains(Sword.ClassName))
                     {
-                        _currentWeapon = Sword.ClassName;
-                        Damage = 15;
+                        CurrentWeapon = Sword.ClassName;
+                        Damage = MiddleWeaponDamage;
                         CreateCrosshair(1);
                     }
                     else if (Inventory.Contains(Stick.ClassName))
                     {
-                        _currentWeapon = Stick.ClassName;
-                        Damage = 15;
+                        CurrentWeapon = Stick.ClassName;
+                        Damage = MiddleWeaponDamage;
                         CreateCrosshair(1);
                     }
                     else
@@ -107,15 +111,15 @@ namespace DungeonCrawl.Actors.Characters
                 case 3:
                     if (Inventory.Contains(Spear.ClassName))
                     {
-                        _currentWeapon = Spear.ClassName;
-                        Damage = 10;
+                        CurrentWeapon = Spear.ClassName;
+                        Damage = LongWeaponDamage;
                         CreateCrosshair(1);
                         CreateCrosshair(2);
                     }
                     else if (Inventory.Contains(Wand.ClassName))
                     {
-                        _currentWeapon = Wand.ClassName;
-                        Damage = 10;
+                        CurrentWeapon = Wand.ClassName;
+                        Damage = LongWeaponDamage;
                         CreateCrosshair(1);
                         CreateCrosshair(2);
                     }
@@ -125,7 +129,7 @@ namespace DungeonCrawl.Actors.Characters
                     }
                     break;
             }
-            ChooseSpriteCollection();
+            PlayerUtilities.ChooseSpriteCollection();
         }
 
         public void CreateCrosshair(int offset)
@@ -143,74 +147,10 @@ namespace DungeonCrawl.Actors.Characters
             }
         }
 
-        public void ChooseSpriteCollection()
-        {
-            if (DefaultName == Warrior.ClassName && Armor > 0)
-            {
-                if (_currentWeapon == "Fist")
-                {
-                    UsedSpriteCollection = new List<string>(Sprites.WarriorArmor);
-                }
-                else if (_currentWeapon == Sword.ClassName)
-                {
-                    UsedSpriteCollection = new List<string>(Sprites.WarriorArmorSword);
-                }
-                else if (_currentWeapon == Spear.ClassName)
-                {
-                    UsedSpriteCollection = new List<string>(Sprites.WarriorArmorSpear);
-                }
-            }
-            else if (DefaultName == Warrior.ClassName && Armor <= 0)
-            {
-                if (_currentWeapon == "Fist")
-                {
-                    UsedSpriteCollection = new List<string>(Sprites.Warrior);
-                }
-                else if (_currentWeapon == Sword.ClassName)
-                {
-                    UsedSpriteCollection = new List<string>(Sprites.WarriorWithSword);
-                }
-                else if (_currentWeapon == Spear.ClassName)
-                {
-                    UsedSpriteCollection = new List<string>(Sprites.WarriorWithSpear);
-                }
-            }
-            else if (DefaultName == Wizard.ClassName && Armor > 0)
-            {
-                if (_currentWeapon == "Fist")
-                {
-                    UsedSpriteCollection = new List<string>(Sprites.WizardBlanket);
-                }
-                else if (_currentWeapon == Stick.ClassName)
-                {
-                    UsedSpriteCollection = new List<string>(Sprites.WizardStickBlanket);
-                }
-                else if (_currentWeapon == Wand.ClassName)
-                {
-                    UsedSpriteCollection = new List<string>(Sprites.WizardWandBlanket);
-                }
-            }
-            else if (DefaultName == Wizard.ClassName && Armor <= 0)
-            {
-                if (_currentWeapon == "Fist")
-                {
-                    UsedSpriteCollection = new List<string>(Sprites.Wizard);
-                }
-                else if (_currentWeapon == Stick.ClassName)
-                {
-                    UsedSpriteCollection = new List<string>(Sprites.WizardWithStick);
-                }
-                else if (_currentWeapon == Wand.ClassName)
-                {
-                    UsedSpriteCollection = new List<string>(Sprites.WizardWithWand);
-                }
-            }
-        }
-        
         private void UpdateSprite(float deltaTime)
         {
             ElapsedTime += deltaTime;
-            if (ElapsedTime >= 0.15)
+            if (ElapsedTime >= SpriteUpdateTimeThreshold)
             {
                 if (SpriteIndex == MaxSpriteIndex)
                     SpriteIndex = 0;
@@ -233,7 +173,7 @@ namespace DungeonCrawl.Actors.Characters
             ArmorBar_Script.ArmorBar.fillAmount = ArmorBar_Script.CurrentArmor/ ArmorBar_Script.MaxArmor;
 
             UserInterface.Singleton.SetText($"Damage: {Damage}\nScore: {Score}", UserInterface.TextPosition.TopRight, "magenta");
-            UserInterface.Singleton.SetText($"Health: {Health}\nArmor: {Armor}\nCurrent Weapon: {_currentWeapon}", UserInterface.TextPosition.TopLeft, "red");
+            UserInterface.Singleton.SetText($"Health: {Health}\nArmor: {Armor}\nCurrent Weapon: {CurrentWeapon}", UserInterface.TextPosition.TopLeft, "red");
 
             UserInterface.Singleton.SetText($"{CreateInventoryString()}", UserInterface.TextPosition.BottomRight, "red");
             if (FloorItem != null)
@@ -272,7 +212,7 @@ namespace DungeonCrawl.Actors.Characters
                 _movementCounters[dir] = 0;
             }
 
-            if (_movementCounters[direction] >= _movementTimeThreshold)
+            if (_movementCounters[direction] >= MovementTimeThreshold)
             {
                 TryMove(direction);
                 _movementCounters[direction] = 0;
@@ -457,8 +397,7 @@ namespace DungeonCrawl.Actors.Characters
                 Armor -= enemy.Damage;   
                 if(Armor - enemy.Damage <= 0)
                 {
-
-                    ChooseSpriteCollection();
+                    PlayerUtilities.ChooseSpriteCollection();
                 }
             }
             else

@@ -8,8 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{FC2CCB87-E3F8-9CE2-B0CD-5131C9758E5F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -94,6 +93,7 @@
     <Compile Include="Assets\Source\scripts\ArmorBar_Script.cs" />
     <Compile Include="Assets\Source\Actors\Items\Stick.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Player\Warrior.cs" />
+    <Compile Include="Assets\Source\Actors\Characters\Player\PlayerUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
