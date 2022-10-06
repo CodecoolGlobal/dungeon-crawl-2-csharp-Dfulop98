@@ -14,9 +14,10 @@ namespace Assets.Source.Actors.Items
         {
             // Apply change
             // TODO: add to armor status
+            player.Armor = 100;
             player.Inventory.Add(this);
-            ActorManager.Singleton.DestroyActor(this);
             UpdateSprite(player);
+            ActorManager.Singleton.DestroyActor(this);
             EventLog.AddEvent($"{player.Name} picks up {DefaultName}");
         }
 
