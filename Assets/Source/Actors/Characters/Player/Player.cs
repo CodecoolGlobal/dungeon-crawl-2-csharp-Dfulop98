@@ -125,6 +125,7 @@ namespace DungeonCrawl.Actors.Characters
                     }
                     break;
             }
+            ChooseSpriteCollection();
         }
 
         public void CreateCrosshair(int offset)
@@ -142,7 +143,7 @@ namespace DungeonCrawl.Actors.Characters
             }
         }
 
-        private void ChooseSpriteCollection()
+        public void ChooseSpriteCollection()
         {
             if (DefaultName == Warrior.ClassName && Armor > 0)
             {
@@ -378,8 +379,6 @@ namespace DungeonCrawl.Actors.Characters
 
         public override void TryMove(Direction direction)
         {
-            //this.SetSprite(Sprites.PlayerSprites["move1"]);
-
             var vector = direction.ToVector();
             (int x, int y) targetPosition = (Position.x + vector.x, Position.y + vector.y);
 
@@ -413,7 +412,6 @@ namespace DungeonCrawl.Actors.Characters
                 }
             }
         }
-        
 
         private string CreateInventoryString()
         {
@@ -439,7 +437,6 @@ namespace DungeonCrawl.Actors.Characters
             {
                 ApplyDamage(enemy);
             }
-            
             else
             {
                 FloorItem = null;
@@ -461,7 +458,7 @@ namespace DungeonCrawl.Actors.Characters
                 if(Armor - enemy.Damage <= 0)
                 {
 
-                    HandleArmorSprite();
+                    ChooseSpriteCollection();
                 }
             }
             else
@@ -474,29 +471,6 @@ namespace DungeonCrawl.Actors.Characters
                 // Die
                 OnDeath();
                 UserInterface.Singleton.SetText($"Health: {Health}\nDamage: {Damage}\nScore: {Score}", UserInterface.TextPosition.TopRight, "magenta");
-            }
-
-        }
-        private void HandleArmorSprite()
-        {
-            if (DefaultName == "Wizard")
-            {
-                if (UsedSpriteCollection == Sprites.WizardBlanket)
-                    UsedSpriteCollection = Sprites.Wizard;
-                else if (UsedSpriteCollection == Sprites.WizardStickBlanket)
-                    UsedSpriteCollection = Sprites.WizardWithStick;
-                else if (UsedSpriteCollection == Sprites.WizardWandBlanket)
-                    UsedSpriteCollection = Sprites.WizardWithWand;
-            }
-
-            if (DefaultName == "Warrior")
-            {
-                if (UsedSpriteCollection == Sprites.WarriorArmor)
-                    UsedSpriteCollection = Sprites.Warrior;
-                else if (UsedSpriteCollection == Sprites.WarriorArmorSword)
-                    UsedSpriteCollection = Sprites.WarriorWithSword;
-                else if (UsedSpriteCollection == Sprites.WarriorArmorSpear)
-                    UsedSpriteCollection = Sprites.WarriorWithSpear;
             }
         }
     }

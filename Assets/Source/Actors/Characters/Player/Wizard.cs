@@ -13,7 +13,5 @@ namespace DungeonCrawl.Actors.Characters
         // Sprite Handle
         public override List<string> UsedSpriteCollection { get; set; } = Sprites.Wizard;
         public override string DefaultSpriteId => UsedSpriteCollection[SpriteIndex];
-
-
     }
 }
