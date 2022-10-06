@@ -6,7 +6,8 @@ namespace DungeonCrawl.Actors.Characters
     public class Warrior : Player
     {
         // Stats
-        public override string DefaultName => "Warrior";
+        public override string DefaultName => ClassName;
+        public static string ClassName = "Warrior";
         public override string Name { get; set; } = "Röszkei Rambó";
 
         // Sprite Handle

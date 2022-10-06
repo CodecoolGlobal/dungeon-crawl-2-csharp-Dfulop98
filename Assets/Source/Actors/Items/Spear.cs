@@ -18,7 +18,6 @@ namespace Assets.Source.Actors.Items
             player.Inventory.Add(this.DefaultName);
             ActorManager.Singleton.DestroyActor(this);
             EventLog.AddEvent($"{player.Name} picks up {DefaultName}");
-
         }
 
         private void UpdateSprite(Player player)

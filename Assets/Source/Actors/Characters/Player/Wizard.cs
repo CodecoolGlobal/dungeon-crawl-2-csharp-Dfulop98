@@ -6,7 +6,8 @@ namespace DungeonCrawl.Actors.Characters
     public class Wizard : Player
     {
         // Stats
-        public override string DefaultName => "Wizard";
+        public override string DefaultName => ClassName;
+        public static string ClassName = "Wizard";
         public override string Name { get; set; } = "Röszkei Gandalf";
 
         // Sprite Handle

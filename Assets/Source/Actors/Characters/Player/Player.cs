@@ -141,6 +141,71 @@ namespace DungeonCrawl.Actors.Characters
                 crosshair.Move(this);
             }
         }
+
+        private void ChooseSpriteCollection()
+        {
+            if (DefaultName == Warrior.ClassName && Armor > 0)
+            {
+                if (_currentWeapon == "Fist")
+                {
+                    UsedSpriteCollection = new List<string>(Sprites.WarriorArmor);
+                }
+                else if (_currentWeapon == Sword.ClassName)
+                {
+                    UsedSpriteCollection = new List<string>(Sprites.WarriorArmorSword);
+                }
+                else if (_currentWeapon == Spear.ClassName)
+                {
+                    UsedSpriteCollection = new List<string>(Sprites.WarriorArmorSpear);
+                }
+            }
+            else if (DefaultName == Warrior.ClassName && Armor <= 0)
+            {
+                if (_currentWeapon == "Fist")
+                {
+                    UsedSpriteCollection = new List<string>(Sprites.Warrior);
+                }
+                else if (_currentWeapon == Sword.ClassName)
+                {
+                    UsedSpriteCollection = new List<string>(Sprites.WarriorWithSword);
+                }
+                else if (_currentWeapon == Spear.ClassName)
+                {
+                    UsedSpriteCollection = new List<string>(Sprites.WarriorWithSpear);
+                }
+            }
+            else if (DefaultName == Wizard.ClassName && Armor > 0)
+            {
+                if (_currentWeapon == "Fist")
+                {
+                    UsedSpriteCollection = new List<string>(Sprites.WizardBlanket);
+                }
+                else if (_currentWeapon == Stick.ClassName)
+                {
+                    UsedSpriteCollection = new List<string>(Sprites.WizardStickBlanket);
+                }
+                else if (_currentWeapon == Wand.ClassName)
+                {
+                    UsedSpriteCollection = new List<string>(Sprites.WizardWandBlanket);
+                }
+            }
+            else if (DefaultName == Wizard.ClassName && Armor <= 0)
+            {
+                if (_currentWeapon == "Fist")
+                {
+                    UsedSpriteCollection = new List<string>(Sprites.Wizard);
+                }
+                else if (_currentWeapon == Stick.ClassName)
+                {
+                    UsedSpriteCollection = new List<string>(Sprites.WizardWithStick);
+                }
+                else if (_currentWeapon == Wand.ClassName)
+                {
+                    UsedSpriteCollection = new List<string>(Sprites.WizardWithWand);
+                }
+            }
+        }
+        
         private void UpdateSprite(float deltaTime)
         {
             ElapsedTime += deltaTime;
