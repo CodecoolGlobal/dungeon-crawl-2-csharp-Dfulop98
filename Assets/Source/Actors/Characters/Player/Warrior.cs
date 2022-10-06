@@ -7,8 +7,8 @@ namespace DungeonCrawl.Actors.Characters
     {
         // Stats
         public override string DefaultName => "Warrior";
-        public override string Name => "Röszke Rambo";
-        
+        public override string Name { get; set; } = "Röszkei Rambó";
+
         // Sprite Handle
         public override List<string> UsedSpriteCollection { get; set; } = Sprites.Warrior;
         public override string DefaultSpriteId => UsedSpriteCollection[SpriteIndex];

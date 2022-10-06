@@ -10,8 +10,9 @@ using DungeonCrawl.Core;
 
 namespace Assets.Source.Actors
 {
-    internal class Crosshair : Actor
+    public class Crosshair : Actor
     {
+        public override char MapIcon => ')';
         public override string DefaultName => "Crosshair";
         public override string DefaultSpriteId => "Crosshair";
         public override bool Detectable => false;

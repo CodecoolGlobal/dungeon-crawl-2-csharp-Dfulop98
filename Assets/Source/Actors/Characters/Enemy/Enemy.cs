@@ -4,6 +4,7 @@ using DungeonCrawl.Core;
 using System;
 using DungeonCrawl;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Random = System.Random;
 using EventLog = Assets.Source.Core.EventLog;
 using System.Collections.Generic;
@@ -20,10 +21,7 @@ namespace DungeonCrawl.Actors.Characters
         public virtual int ScoreValue { get; set; }
         public abstract override string DefaultName { get; }
 
-        
-
         // Sprite Handle
-        
         protected abstract List<string> UsedSpriteCollection { get; set; }
         public override string DefaultSpriteId => UsedSpriteCollection[SpriteIndex];
         protected override int SpriteIndex { get; set; }
@@ -31,12 +29,9 @@ namespace DungeonCrawl.Actors.Characters
         protected override float IdleTime { get; set; }
         protected abstract float MaxIdleTime { get; set; }
 
-        
-        
         // Random instance
         private static Random _seedRandom = new Random();
         private Random _rnd = new Random(_seedRandom.Next());
-
 
         private int _detectionRange = 5;
 
@@ -82,12 +77,10 @@ namespace DungeonCrawl.Actors.Characters
 
         protected override void Update()
         {
-
             UpdateSprite(Time.deltaTime);
             OnUpdate(Time.deltaTime);
         }
         
-
         protected override void OnUpdate(float deltaTime)
         {
             ElapsedTime += deltaTime;
@@ -103,7 +96,6 @@ namespace DungeonCrawl.Actors.Characters
 
         private void UpdateSprite(float deltaTime)
         {
-
             IdleTime += deltaTime;
             if (IdleTime >= MaxIdleTime)
             {

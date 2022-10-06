@@ -9,13 +9,14 @@ namespace Assets.Source.Actors.Items
     internal class Stick : Item
     {
         public override string DefaultName => "Pálca";
+        public override char MapIcon => 'w';
         public override string DefaultSpriteId => Sprites.Item[DefaultName];
 
         public override void Pickup(Player player)
         {
             // Apply change
             player.Damage += 10;
-            player.Inventory.Add(this);
+            player.Inventory.Add(this.DefaultName);
             UpdateSprite(player);
             ActorManager.Singleton.DestroyActor(this);
             EventLog.AddEvent($"{player.Name} picks up {DefaultName}");

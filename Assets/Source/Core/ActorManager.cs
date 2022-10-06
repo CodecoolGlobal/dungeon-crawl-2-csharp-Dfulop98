@@ -82,15 +82,9 @@ namespace DungeonCrawl.Core
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        
-
         public Sprite GetSprite(string id)
         {
-            
-             return _spriteAtlas.GetSprite(id);
-                    
-            
-            
+            return _spriteAtlas.GetSprite(id);
         }
 
         /// <summary>
@@ -126,6 +120,11 @@ namespace DungeonCrawl.Core
             _allActors.Add(component);
 
             return component;
+        }
+
+        public HashSet<Actor> GetActors()
+        {
+            return _allActors;
         }
     }
 }

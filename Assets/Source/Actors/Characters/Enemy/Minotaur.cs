@@ -6,6 +6,8 @@ namespace DungeonCrawl.Actors.Characters
 {
     public class Minotaur : Enemy
     {
+        public override char MapIcon => 'a';
+
         // Stats
         public override int Damage { get; set; } = 5;
         public override int Health { get; set; } = 10;
@@ -17,7 +19,7 @@ namespace DungeonCrawl.Actors.Characters
         protected override List<string> UsedSpriteCollection { get; set; } = Sprites.Minotaur;
         public override string DefaultSpriteId => UsedSpriteCollection[SpriteIndex];
         protected override int SpriteIndex { get; set; } = 0;
-        protected override int MaxIndex { get; set; } = 4;
+        protected override int MaxIndex { get; set; } = 3;
         protected override float IdleTime { get; set; } = 0;
         protected override float MaxIdleTime { get; set; } = 0.45f;
 

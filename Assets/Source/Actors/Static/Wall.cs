@@ -2,7 +2,7 @@
 {
     public class Wall : Actor
     {
-       
+        public override char MapIcon => '#';
         public override string DefaultSpriteId => "Wall 3";
         public override string DefaultName => "Wall";
     }

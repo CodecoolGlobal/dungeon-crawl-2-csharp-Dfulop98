@@ -8,6 +8,7 @@ namespace Assets.Source.Actors.Items
     public class Blanket : Item
     {
         public override string DefaultName => "Köppeny";
+        public override char MapIcon => 'e';
         public override string DefaultSpriteId => Sprites.Item[DefaultName];
 
         public override void Pickup(Player player)
@@ -15,7 +16,7 @@ namespace Assets.Source.Actors.Items
             // Apply change
             // TODO: add to armor status
             player.Armor = 100;
-            player.Inventory.Add(this);
+            player.Inventory.Add(this.DefaultName);
             UpdateSprite(player);
             ActorManager.Singleton.DestroyActor(this);
             EventLog.AddEvent($"{player.Name} picks up {DefaultName}");
