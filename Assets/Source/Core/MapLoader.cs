@@ -16,7 +16,7 @@ namespace DungeonCrawl.Core
         ///     Constructs map from txt file and spawns actors at appropriate positions
         /// </summary>
         /// <param name="mapName"></param>
-        public static void LoadMap(string mapName, bool isStatic)
+        public static void LoadMap(string mapName, bool isStatic, string playerClass)
         {
             var lines = Regex.Split(Resources.Load<TextAsset>($"{mapName}").text, "\r\n|\r|\n");
 
@@ -38,7 +38,7 @@ namespace DungeonCrawl.Core
                     }
                     else
                     {
-                        SpawnDynamicActor(character, (x, -y));
+                        SpawnDynamicActor(character, (x, -y), playerClass);
                     }
                 }
             }
@@ -106,7 +106,7 @@ namespace DungeonCrawl.Core
             }
         }
 
-        public static void SpawnDynamicActor(char c, (int x, int y) position)
+        public static void SpawnDynamicActor(char c, (int x, int y) position, string userClass)
         {
             switch (c)
             {

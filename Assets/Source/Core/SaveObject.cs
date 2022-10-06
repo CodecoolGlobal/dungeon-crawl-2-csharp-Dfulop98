@@ -6,6 +6,7 @@ using Assets.Source.Actors.Items;
 using DungeonCrawl.Actors;
 using DungeonCrawl.Actors.Characters;
 using DungeonCrawl.Core;
+using GetUserInfo;
 using UnityEngine;
 
 namespace Assets.Source.Core
@@ -85,7 +86,7 @@ namespace Assets.Source.Core
             for (int i = 0; i < save.Actors.Count; i++)
             {
                 List<string> data = save.Actors[i].Split(';').ToList();
-                MapLoader.SpawnDynamicActor(data[0].First(), (Int32.Parse(data[1]), Int32.Parse(data[2])));
+                MapLoader.SpawnDynamicActor(data[0].First(), (Int32.Parse(data[1]), Int32.Parse(data[2])), UserInfo.UserClass);
             }
 
             // Spawn player
