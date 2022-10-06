@@ -21,15 +21,10 @@ namespace Assets.Source.Core
         public int PositionY;
         public string DefaultSpriteId;
         public List<string> Inventory;
-
         public List<string> Actors = new List<string>();
 
-        //private string jsonMapData;
-
-        public SaveObject()
+        public void MakeSave()
         {
-            Debug.Log("Save");
-
             Name = Player.Singleton.Name;
             Score = Player.Singleton.Score;
             Damage = Player.Singleton.Damage;
@@ -49,11 +44,6 @@ namespace Assets.Source.Core
                 }
             }
 
-            MakeSave();
-        }
-
-        public void MakeSave()
-        {
             string json = JsonUtility.ToJson(this, true);
 
             File.WriteAllText(Application.dataPath + "/text/test.json", json);
@@ -95,6 +85,7 @@ namespace Assets.Source.Core
 
             // Spawn player
             Player.Singleton.Position = (save.PositionX, save.PositionY);
+            CameraController.Singleton.Position = Player.Singleton.Position;
             Player.Singleton.Damage = save.Damage;
             Player.Singleton.Health = save.Health;
             Player.Singleton.Score = save.Score;

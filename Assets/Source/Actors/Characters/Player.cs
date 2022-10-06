@@ -173,6 +173,7 @@ namespace DungeonCrawl.Actors.Characters
             if (Input.GetKeyDown(KeyCode.F5))
             {
                 SaveObject saveGame = new SaveObject();
+                saveGame.MakeSave();
             }
 
             if (Input.GetKeyDown(KeyCode.F9))
