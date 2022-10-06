@@ -35,7 +35,6 @@ namespace DungeonCrawl.Actors.Characters
 
         private bool IsAttack = false;
 
-        
         // init
         public Item FloorItem = null;
         public List<string> Inventory = new List<string>();
@@ -55,8 +54,6 @@ namespace DungeonCrawl.Actors.Characters
             { Direction.Left, 0 },
             { Direction.Right, 0 }
         };
-
-
         private void Awake()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -65,7 +62,6 @@ namespace DungeonCrawl.Actors.Characters
             CreateCrosshair(1);
         }
 
-        
         protected override void OnUpdate(float deltaTime)
         {
             HealthBar_Script.CurrentHealth = (float)Health;
@@ -94,11 +90,9 @@ namespace DungeonCrawl.Actors.Characters
         }
         private void UpdateSprite(float deltaTime)
         {
-            
             ElapsedTime += deltaTime;
             if (ElapsedTime >= 0.15)
             {
-                
                 if (SpriteIndex == MaxSpriteIndex)
                     SpriteIndex = 0;
                 else{SpriteIndex++;}
@@ -112,8 +106,6 @@ namespace DungeonCrawl.Actors.Characters
             
                 ElapsedTime = 0;
             }
-            
-            
         }
 
         private void ShowHud()
@@ -171,28 +163,24 @@ namespace DungeonCrawl.Actors.Characters
         {
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
-                // Move up
                 TryMove(Direction.Up);
                 Facing = Direction.Up;
             }
 
             if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
-                // Move down
                 TryMove(Direction.Down);
                 Facing = Direction.Down;
             }
 
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                // Move left
                 TryMove(Direction.Left);
                 Facing = Direction.Left;
             }
 
             if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
-                // Move right
                 TryMove(Direction.Right);
                 Facing = Direction.Right;
             }
@@ -378,7 +366,5 @@ namespace DungeonCrawl.Actors.Characters
                     UsedSpriteCollection = Sprites.WarriorWithSpear;
             }
         }
-
-        
     }
 }
