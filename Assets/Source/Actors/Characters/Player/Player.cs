@@ -33,7 +33,7 @@ namespace DungeonCrawl.Actors.Characters
 
         protected int MaxSpriteIndex = 3;
 
-        private bool IsAttack = false;
+        public bool IsAttack = false;
 
         // init
         public Item FloorItem = null;
@@ -73,13 +73,13 @@ namespace DungeonCrawl.Actors.Characters
             ArmorBar_Script.CurrentArmor = (float)Armor;
 
             UpdateSprite(Time.deltaTime);
-            HandleInput(deltaTime);
-            HandleContinousKeyPress(deltaTime);
+            PlayerUtilities.HandleInput(deltaTime);
+            PlayerUtilities.HandleContinousKeyPress(deltaTime);
             ShowHud();
             UpdateCrosshairs();
         }
 
-        private void SwitchWeapon(int choice)
+        public void SwitchWeapon(int choice)
         {
             Crosshairs.ForEach(crosshair => ActorManager.Singleton.DestroyActor(crosshair));
             Crosshairs.Clear();
@@ -186,7 +186,7 @@ namespace DungeonCrawl.Actors.Characters
             }
         }
 
-        private void ContinualMovement(Direction direction, float deltatime)
+        public void ContinualMovement(Direction direction, float deltatime)
         {
             switch (direction)
             {
@@ -218,95 +218,8 @@ namespace DungeonCrawl.Actors.Characters
                 _movementCounters[direction] = 0;
             }
         }
-        private void HandleInput(float deltaTime)
-        {
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                TryMove(Direction.Up);
-                Facing = Direction.Up;
-            }
 
-            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                TryMove(Direction.Down);
-                Facing = Direction.Down;
-            }
-
-            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                TryMove(Direction.Left);
-                Facing = Direction.Left;
-            }
-
-            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                TryMove(Direction.Right);
-                Facing = Direction.Right;
-            }
-
-            if (Input.GetKeyDown(KeyCode.E) && FloorItem != null)
-            {
-                FloorItem.Pickup(this);
-                FloorItem = null;
-            }
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                AttackEnemiesUnderCrosshairs();
-                IsAttack = true;
-            }
-
-            if (Input.GetKeyDown(KeyCode.F5))
-            {
-                SaveObject saveGame = new SaveObject();
-                saveGame.MakeSave();
-            }
-
-            if (Input.GetKeyDown(KeyCode.F9))
-            {
-                SaveObject.LoadGame();
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                SwitchWeapon(1);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                SwitchWeapon(2);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                SwitchWeapon(3);
-            }
-        }
-
-        private void HandleContinousKeyPress(float deltaTime)
-        {
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-            {
-                ContinualMovement(Direction.Up, deltaTime);
-            }
-
-            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-            {
-                ContinualMovement(Direction.Down, deltaTime);
-            }
-
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-            {
-                ContinualMovement(Direction.Left, deltaTime);
-            }
-
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-            {
-                ContinualMovement(Direction.Right, deltaTime);
-            }
-        }
-
-        private void AttackEnemiesUnderCrosshairs()
+        public void AttackEnemiesUnderCrosshairs()
         {
             foreach (var crosshair in Crosshairs)
             {
