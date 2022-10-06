@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{FC2CCB87-E3F8-9CE2-B0CD-5131C9758E5F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -62,7 +63,6 @@
     <Compile Include="Assets\Source\Core\CameraController.cs" />
     <Compile Include="Assets\Source\Core\UserInterface.cs" />
     <Compile Include="Assets\Source\Actors\Actor.cs" />
-    <Compile Include="Assets\Source\Core\ActorSaveObject.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Interface\IDamageablePlayer.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Interface\IDamageableEnemy.cs" />
     <Compile Include="Assets\Source\Actors\Characters\Player\Player.cs" />
