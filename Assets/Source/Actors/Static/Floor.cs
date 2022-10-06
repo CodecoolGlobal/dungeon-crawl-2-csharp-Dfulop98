@@ -23,7 +23,7 @@
         // in txt "s" full
         public override char MapIcon => 's';
         public override string DefaultSpriteId => "SandFloor";
-        public override string DefaultName => "DirtFloor1";
+        public override string DefaultName => "SandFloor";
         public override bool Detectable => false;
     }
 }
