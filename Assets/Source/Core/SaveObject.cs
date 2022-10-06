@@ -83,7 +83,7 @@ namespace Assets.Source.Core
             for (int i = 0; i < save.Actors.Count; i++)
             {
                 List<string> data = save.Actors[i].Split(';').ToList();
-                MapLoader.SpawnActor(data[0].First(), (Int32.Parse(data[1]), Int32.Parse(data[2])));
+                MapLoader.SpawnDynamicActor(data[0].First(), (Int32.Parse(data[1]), Int32.Parse(data[2])));
             }
 
             // Spawn player
