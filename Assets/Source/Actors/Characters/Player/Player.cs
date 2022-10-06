@@ -33,18 +33,22 @@ namespace DungeonCrawl.Actors.Characters
 
         protected int MaxSpriteIndex = 3;
 
-        private bool IsAttack = false;
+        public bool IsAttack = false;
 
-        
         // init
         public Item FloorItem = null;
+        public string CurrentWeapon = "Fist";
         public List<string> Inventory = new List<string>();
+        public List<Crosshair> Crosshairs = new List<Crosshair>();
 
         public static Player Singleton { get; private set; }
 
-        public List<Crosshair> Crosshairs = new List<Crosshair>();
-
-        private float _movementTimeThreshold = 0.35f;
+        // Consts
+        private const float MovementTimeThreshold = 0.35f;
+        private const float SpriteUpdateTimeThreshold = 0.15f;
+        private const int BasicWeaponDamage = 5;
+        private const int MiddleWeaponDamage = 15;
+        private const int LongWeaponDamage = 10;
 
         public Direction Facing = Direction.Right;
 
@@ -55,27 +59,77 @@ namespace DungeonCrawl.Actors.Characters
             { Direction.Left, 0 },
             { Direction.Right, 0 }
         };
-
-
         private void Awake()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
             SetSprite(UsedSpriteCollection[SpriteIndex]);
             Singleton = this;
-            CreateCrosshair(1);
+            SwitchWeapon(1);
         }
 
-        
         protected override void OnUpdate(float deltaTime)
         {
             HealthBar_Script.CurrentHealth = (float)Health;
             ArmorBar_Script.CurrentArmor = (float)Armor;
 
             UpdateSprite(Time.deltaTime);
-            HandleInput(deltaTime);
-            HandleContinousKeyPress(deltaTime);
+            PlayerUtilities.HandleInput();
+            PlayerUtilities.HandleContinousKeyPress(deltaTime);
             ShowHud();
             UpdateCrosshairs();
+        }
+
+        public void SwitchWeapon(int choice)
+        {
+            Crosshairs.ForEach(crosshair => ActorManager.Singleton.DestroyActor(crosshair));
+            Crosshairs.Clear();
+            switch (choice)
+            {
+                case 1:
+                    CurrentWeapon = "Fist";
+                    Damage = BasicWeaponDamage;
+                    CreateCrosshair(1);
+                    break;
+                case 2:
+                    if (Inventory.Contains(Sword.ClassName))
+                    {
+                        CurrentWeapon = Sword.ClassName;
+                        Damage = MiddleWeaponDamage;
+                        CreateCrosshair(1);
+                    }
+                    else if (Inventory.Contains(Stick.ClassName))
+                    {
+                        CurrentWeapon = Stick.ClassName;
+                        Damage = MiddleWeaponDamage;
+                        CreateCrosshair(1);
+                    }
+                    else
+                    {
+                        SwitchWeapon(1);
+                    }
+                    break;
+                case 3:
+                    if (Inventory.Contains(Spear.ClassName))
+                    {
+                        CurrentWeapon = Spear.ClassName;
+                        Damage = LongWeaponDamage;
+                        CreateCrosshair(1);
+                        CreateCrosshair(2);
+                    }
+                    else if (Inventory.Contains(Wand.ClassName))
+                    {
+                        CurrentWeapon = Wand.ClassName;
+                        Damage = LongWeaponDamage;
+                        CreateCrosshair(1);
+                        CreateCrosshair(2);
+                    }
+                    else
+                    {
+                        SwitchWeapon(1);
+                    }
+                    break;
+            }
+            PlayerUtilities.ChooseSpriteCollection();
         }
 
         public void CreateCrosshair(int offset)
@@ -92,13 +146,12 @@ namespace DungeonCrawl.Actors.Characters
                 crosshair.Move(this);
             }
         }
+
         private void UpdateSprite(float deltaTime)
         {
-            
             ElapsedTime += deltaTime;
-            if (ElapsedTime >= 0.15)
+            if (ElapsedTime >= SpriteUpdateTimeThreshold)
             {
-                
                 if (SpriteIndex == MaxSpriteIndex)
                     SpriteIndex = 0;
                 else{SpriteIndex++;}
@@ -112,8 +165,6 @@ namespace DungeonCrawl.Actors.Characters
             
                 ElapsedTime = 0;
             }
-            
-            
         }
 
         private void ShowHud()
@@ -122,7 +173,7 @@ namespace DungeonCrawl.Actors.Characters
             ArmorBar_Script.ArmorBar.fillAmount = ArmorBar_Script.CurrentArmor/ ArmorBar_Script.MaxArmor;
 
             UserInterface.Singleton.SetText($"Damage: {Damage}\nScore: {Score}", UserInterface.TextPosition.TopRight, "magenta");
-            UserInterface.Singleton.SetText($"Health: {Health}\n", UserInterface.TextPosition.TopLeft, "red");
+            UserInterface.Singleton.SetText($"Health: {Health}\nArmor: {Armor}\nCurrent Weapon: {CurrentWeapon}", UserInterface.TextPosition.TopLeft, "red");
 
             UserInterface.Singleton.SetText($"{CreateInventoryString()}", UserInterface.TextPosition.BottomRight, "red");
             if (FloorItem != null)
@@ -135,7 +186,7 @@ namespace DungeonCrawl.Actors.Characters
             }
         }
 
-        private void ContinualMovement(Direction direction, float deltatime)
+        public void ContinualMovement(Direction direction, float deltatime)
         {
             switch (direction)
             {
@@ -161,90 +212,14 @@ namespace DungeonCrawl.Actors.Characters
                 _movementCounters[dir] = 0;
             }
 
-            if (_movementCounters[direction] >= _movementTimeThreshold)
+            if (_movementCounters[direction] >= MovementTimeThreshold)
             {
                 TryMove(direction);
                 _movementCounters[direction] = 0;
             }
         }
-        private void HandleInput(float deltaTime)
-        {
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                // Move up
-                TryMove(Direction.Up);
-                Facing = Direction.Up;
-            }
 
-            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                // Move down
-                TryMove(Direction.Down);
-                Facing = Direction.Down;
-            }
-
-            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                // Move left
-                TryMove(Direction.Left);
-                Facing = Direction.Left;
-            }
-
-            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                // Move right
-                TryMove(Direction.Right);
-                Facing = Direction.Right;
-            }
-
-            if (Input.GetKeyDown(KeyCode.E) && FloorItem != null)
-            {
-                FloorItem.Pickup(this);
-                FloorItem = null;
-            }
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                AttackEnemiesUnderCrosshairs();
-                IsAttack = true;
-            }
-
-            if (Input.GetKeyDown(KeyCode.F5))
-            {
-                SaveObject saveGame = new SaveObject();
-                saveGame.MakeSave();
-            }
-
-            if (Input.GetKeyDown(KeyCode.F9))
-            {
-                SaveObject.LoadGame();
-            }
-        }
-
-        private void HandleContinousKeyPress(float deltaTime)
-        {
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-            {
-                ContinualMovement(Direction.Up, deltaTime);
-            }
-
-            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-            {
-                ContinualMovement(Direction.Down, deltaTime);
-            }
-
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-            {
-                ContinualMovement(Direction.Left, deltaTime);
-            }
-
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-            {
-                ContinualMovement(Direction.Right, deltaTime);
-            }
-        }
-
-        private void AttackEnemiesUnderCrosshairs()
+        public void AttackEnemiesUnderCrosshairs()
         {
             foreach (var crosshair in Crosshairs)
             {
@@ -257,8 +232,6 @@ namespace DungeonCrawl.Actors.Characters
 
         public override void TryMove(Direction direction)
         {
-            //this.SetSprite(Sprites.PlayerSprites["move1"]);
-
             var vector = direction.ToVector();
             (int x, int y) targetPosition = (Position.x + vector.x, Position.y + vector.y);
 
@@ -292,7 +265,6 @@ namespace DungeonCrawl.Actors.Characters
                 }
             }
         }
-        
 
         private string CreateInventoryString()
         {
@@ -318,7 +290,6 @@ namespace DungeonCrawl.Actors.Characters
             {
                 ApplyDamage(enemy);
             }
-            
             else
             {
                 FloorItem = null;
@@ -339,8 +310,7 @@ namespace DungeonCrawl.Actors.Characters
                 Armor -= enemy.Damage;   
                 if(Armor - enemy.Damage <= 0)
                 {
-
-                    HandleArmorSprite();
+                    PlayerUtilities.ChooseSpriteCollection();
                 }
             }
             else
@@ -354,31 +324,6 @@ namespace DungeonCrawl.Actors.Characters
                 OnDeath();
                 UserInterface.Singleton.SetText($"Health: {Health}\nDamage: {Damage}\nScore: {Score}", UserInterface.TextPosition.TopRight, "magenta");
             }
-
         }
-        private void HandleArmorSprite()
-        {
-            if (DefaultName == "Wizard")
-            {
-                if (UsedSpriteCollection == Sprites.WizardBlanket)
-                    UsedSpriteCollection = Sprites.Wizard;
-                else if (UsedSpriteCollection == Sprites.WizardStickBlanket)
-                    UsedSpriteCollection = Sprites.WizardWithStick;
-                else if (UsedSpriteCollection == Sprites.WizardWandBlanket)
-                    UsedSpriteCollection = Sprites.WizardWithWand;
-            }
-
-            if (DefaultName == "Warrior")
-            {
-                if (UsedSpriteCollection == Sprites.WarriorArmor)
-                    UsedSpriteCollection = Sprites.Warrior;
-                else if (UsedSpriteCollection == Sprites.WarriorArmorSword)
-                    UsedSpriteCollection = Sprites.WarriorWithSword;
-                else if (UsedSpriteCollection == Sprites.WarriorArmorSpear)
-                    UsedSpriteCollection = Sprites.WarriorWithSpear;
-            }
-        }
-
-        
     }
 }

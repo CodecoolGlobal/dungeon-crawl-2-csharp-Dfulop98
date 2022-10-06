@@ -7,31 +7,16 @@ namespace Assets.Source.Actors.Items
 {
     public class Armor : Item
     {
-        public override string DefaultName => "Armor";
+        public override string DefaultName => ClassName;
+        public static readonly string ClassName = "Armor";
         public override char MapIcon => 'e';
         public override string DefaultSpriteId => Sprites.Item[DefaultName];
 
         public override void Pickup(Player player)
         {
-            // Apply change
-            // TODO: add to armor status
-            player.Inventory.Add(this.DefaultName);
             ActorManager.Singleton.DestroyActor(this);
-            UpdateSprite(player);
+            PlayerUtilities.ChooseSpriteCollection();
             EventLog.AddEvent($"{player.Name} picks up {DefaultName}");
-        }
-
-        private void UpdateSprite(Player player)
-        {
-            if (player.UsedSpriteCollection != Sprites.WarriorArmorSpear
-                 && player.UsedSpriteCollection != Sprites.WarriorArmorSword)
-            {
-                if (player.UsedSpriteCollection == Sprites.WarriorWithSword)
-                    player.UsedSpriteCollection = Sprites.WarriorArmorSword;
-                else if (player.UsedSpriteCollection == Sprites.WarriorWithSpear)
-                    player.UsedSpriteCollection = Sprites.WarriorArmorSpear;
-                else { player.UsedSpriteCollection = Sprites.WarriorArmor; }
-            }
         }
     }
 }

@@ -11,9 +11,14 @@ namespace DungeonCrawl.Core
     {
         private void Start()
         {
+
             MapLoader.LoadMap(1);
             Debug.Log(UserInfo.UserName);
             Debug.Log(UserInfo.UserClass);
+            
+            MapLoader.LoadMap("map_1", true);
+            MapLoader.LoadMap("map_1", false);
+
         }
     }
 }
