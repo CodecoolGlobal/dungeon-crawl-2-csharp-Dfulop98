@@ -9,12 +9,14 @@
         public override bool Detectable => false;
     }
 
+    
+    
     public class WoodenFloor : Actor
     {
-        // in txt "r"
-        public override char MapIcon => 'r';
-        public override string DefaultSpriteId => "Wall 1";
+        public override char MapIcon => '#';
+        public override string DefaultSpriteId => "WoodWall";
         public override string DefaultName => "WoodenFloor";
+
         public override bool Detectable => false;
     }
 
